@@ -43,6 +43,9 @@ m4.loadEvent = new function(){
 m4.swipeX = new function(){
 	this.init = function(){
 		this.reset();
+
+		var icoClassNames = ['point', 'bank', 'card', 'stock', 'insur'];
+		
 		m4.swipeX.obj = new Swiper(this.swipeWrap[0], {
 			wrapperClass: "inner",
 			slideClass: "swipeCon",
@@ -62,6 +65,9 @@ m4.swipeX = new function(){
 				TweenMax.delayedCall(.4, function(){
 					m4.loadEvent.handlePoint(activeIndex);
 				})
+			},
+			paginationBulletRender: function(swiper, index, Class){
+				return  '<span class="'+ Class + ' ' + icoClassNames[index] +'"></span>';
 			}
 		});
 	};
@@ -78,13 +84,70 @@ m4.swipeX = new function(){
 		m4.swipeX.obj.destroy(true, true);
 	};
 };
+
+m4.allMenu = new function(){
+
+	var classNames = {
+        toggle: 'active',
+    }
+
+
+	this.init = function(){
+		this.$btnOpen = m4.$body.find(".btnOpen");
+		this.$allMenu = m4.$body.find(".allMenu");
+		this.$dim = m4.$body.find(".dim");
+		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true) })
+		this.addEvent();
+	}
+
+	this.addEvent = function(){
+		var that = this;
+		this.$btnOpen.on("click", function(){
+			var $that = $(this);
+            if($that.toggleClass(classNames.toggle).hasClass(classNames.toggle)){
+                TweenMax.to(that.$allMenu, .45, { y:0, ease:Circ.easeIn })
+                // TweenMax.to($that, .45, { right:50+'%', x: 50+'%', rotation:135, delay:.1, ease:Power1.easeOut })
+				// TweenMax.to(that.$allMenu, .35, { borderRadius:0, delay:.2, ease:Linear.easeNone })
+				TweenMax.set(that.$dim, {zIndex:1});
+				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut })
+            } else {
+                TweenMax.to(that.$allMenu, .45, {
+                    // width: 64,
+                    // height: 64,
+                    // x: 0,
+                    y: that.$allMenu.outerHeight(true),
+                    delay:.1
+                    // borderRadius: 50+'%'
+				})
+				TweenMax.to(that.$dim, .7, { opacity:0, delay:.1, ease: Power1.easeOut, onComplete:function(){
+					TweenMax.set(that.$dim, { zIndex: -1 })
+				}})
+                // TweenMax.to($that, .45, { right:0, x: 0+'%', rotation:0, ease:Power1.easeIn })
+            }
+			
+		})
+
+		this.$dim.on("click", function(){
+			var $that = $(this);
+			TweenMax.to(that.$allMenu, .45, {y: that.$allMenu.outerHeight(true) })
+			TweenMax.to($that, .7, { opacity:0, delay:.1, ease: Power1.easeOut, onComplete:function(){
+				TweenMax.set($that, { zIndex: -1 })
+				that.$btnOpen.removeClass(classNames.toggle)
+			}})
+		})
+
+	}
+
+}
+
+
 // UI Init
 m4.UI = new function(){
 	this.init = function(){
 		m4.loadEvent.init();
 		m4.hasJqueryObject( m4.$body.find(".topView") ) && m4.topEvent.init();
 		m4.hasJqueryObject( m4.$body.find(".cardList") ) && m4.swipeX.init();
-		m4.hasJqueryObject( m4.$body.find(".btnView") ) && m4.view.init();
+		m4.hasJqueryObject( m4.$body.find(".allMenu") ) && m4.allMenu.init();
 	};
 };
 
