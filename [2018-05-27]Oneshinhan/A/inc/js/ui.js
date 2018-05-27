@@ -68,11 +68,9 @@ m4.swipeX = new function(){
 				})
 				
 			},
-			onSlideChangeStart: function(swiper){
+			onSlideChangeEnd: function(swiper){
 				var activeIndex = swiper.activeIndex;
-				TweenMax.delayedCall(.4, function(){
-					m4.loadEvent.handlePoint(activeIndex);
-				})
+				m4.loadEvent.handlePoint(activeIndex);
 			},
 			paginationBulletRender: function(swiper, index, Class){
 				return  '<span class="'+ Class + ' ' + icoClassNames[index] +'"></span>';
