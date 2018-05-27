@@ -35,28 +35,33 @@ m4.view = new function(){
 	this.handleClick = function(){
 		var key = $(this).data("key"),
 			$that = $(this);
-		if(!m4.view.$listCon.hasClass("current")){
-			m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
-		}
+		// if(!m4.view.$listCon.hasClass("current")){
+		// 	m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
+		// }
 		m4.view.$listCon.addClass("current");
 		if(!$(this).hasClass("current")){
 			$(this).addClass("current").parents("li").addClass("current");
-			m4.view.$view.eq(key).show();
-			var imgHeight = m4.view.$view.eq(key).find("img").height();
-			TweenMax.to(m4.view.$view.eq(key), .5, { delay:.3, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
-				// m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
-			} });
+			m4.view.$view.eq(key).slideDown(500)
+			// m4.view.$view.eq(key).show();
+			// var imgHeight = m4.view.$view.eq(key).find("img").height();
+			// TweenMax.to(m4.view.$view.eq(key), .5, { delay:.1, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
+			// 	m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
+			// } });
 			TweenMax.to($("html, body"), .5, { scrollTop: $(this).parents("li").offset().top - 7, delay:.35, ease:Linear.easeNone })
 		} else{
-			$(this).removeClass("current").parents("li").removeClass("current");;
-			TweenMax.to(m4.view.$view.eq(key), .4, { height:0, ease:Power1.easeOut, onComplete:function(){ 
-				m4.view.$view.eq(key).hide(); 
+			$(this).removeClass("current").parents("li").removeClass("current");
+			m4.view.$view.eq(key).slideUp(500)
+			TweenMax.delayedCall(.4, function(){
 				if(m4.view.$listCon.find(".viewCtrl.current").length === 0){
 					m4.view.$listCon.removeClass("current");
 					m4.view.Tween.reverse();
 				}
 				m4.$contents.css({ height:"auto" });
-			} });
+			})
+			// TweenMax.to(m4.view.$view.eq(key), .4, { height:0, ease:Power1.easeOut, onComplete:function(){ 
+			// 	m4.view.$view.eq(key).hide(); 
+				
+			// } });
 		}
 		
 
