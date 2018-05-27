@@ -59,6 +59,14 @@ m4.swipeX = new function(){
 				m4.loadEvent.$conBottom.eq(swiper.activeIndex).find("li").each(function(){
 					TweenMax.set($(this), { y: $(this).outerHeight(true), opacity:0 })
 				})
+				TweenMax.delayedCall(.7, function(){
+					$(".paging").find("span").each(function(idx){
+						TweenMax.to($(this), .5, { scale:1, opacity:1, delay:.1 * idx })
+					})
+
+					TweenMax.to($(".btnOpen"), 1, { opacity:1, delay:.2, ease:Power1.easeOut })
+				})
+				
 			},
 			onSlideChangeStart: function(swiper){
 				var activeIndex = swiper.activeIndex;
@@ -88,7 +96,8 @@ m4.swipeX = new function(){
 m4.allMenu = new function(){
 
 	var classNames = {
-        toggle: 'active',
+		toggle: 'active',
+		con: '.con',
     }
 
 
@@ -98,6 +107,8 @@ m4.allMenu = new function(){
 		this.$dim = m4.$body.find(".dim");
 		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true) })
 		this.addEvent();
+
+
 	}
 
 	this.addEvent = function(){
@@ -105,24 +116,30 @@ m4.allMenu = new function(){
 		this.$btnOpen.on("click", function(){
 			var $that = $(this);
             if($that.toggleClass(classNames.toggle).hasClass(classNames.toggle)){
+				that.$allMenu.find(classNames.con).each(function(){
+					TweenMax.set($(this), { y: $(this).find("img").height(), opacity:0 })
+				})
+
                 TweenMax.to(that.$allMenu, .45, { y:0, ease:Circ.easeIn })
-                // TweenMax.to($that, .45, { right:50+'%', x: 50+'%', rotation:135, delay:.1, ease:Power1.easeOut })
-				// TweenMax.to(that.$allMenu, .35, { borderRadius:0, delay:.2, ease:Linear.easeNone })
 				TweenMax.set(that.$dim, {zIndex:1});
 				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut })
-            } else {
-                TweenMax.to(that.$allMenu, .45, {
-                    // width: 64,
-                    // height: 64,
-                    // x: 0,
-                    y: that.$allMenu.outerHeight(true),
-                    delay:.1
-                    // borderRadius: 50+'%'
+
+				TweenMax.delayedCall(.35, function(){
+					that.$allMenu.find(classNames.con).each(function(idx){
+						TweenMax.to($(this), .35, { y:0, opacity:1, delay: .2 * idx, ease:Power1.easeOut })
+					})
 				})
-				TweenMax.to(that.$dim, .7, { opacity:0, delay:.1, ease: Power1.easeOut, onComplete:function(){
+				
+
+            } else {
+				// that.$allMenu.find(classNames.con).each(function(idx){
+				// 	TweenMax.to($(this),  .35, { y: $(this).find("img").height(), opacity:0, delay:.2 * idx, ease:Power1.easeOut })
+				// })
+
+                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease:Circ.easeIn })
+				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
 					TweenMax.set(that.$dim, { zIndex: -1 })
 				}})
-                // TweenMax.to($that, .45, { right:0, x: 0+'%', rotation:0, ease:Power1.easeIn })
             }
 			
 		})
