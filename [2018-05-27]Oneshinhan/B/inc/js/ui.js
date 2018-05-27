@@ -35,13 +35,17 @@ m4.view = new function(){
 	this.handleClick = function(){
 		var key = $(this).data("key"),
 			$that = $(this);
-		// if(!m4.view.$listCon.hasClass("current")){
-		// 	m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
-		// }
+		// console.log($that)
+		if(key !== 1) return; 
+		
+		if(!m4.view.$listCon.hasClass("current")){
+			m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
+		}
 		m4.view.$listCon.addClass("current");
 		if(!$(this).hasClass("current")){
+			console.log(1234)
 			$(this).addClass("current").parents("li").addClass("current");
-			m4.view.$view.eq(key).delay(100).slideDown(500)
+			m4.view.$view.delay(100).slideDown(500)
 			// m4.view.$view.eq(key).show();
 			// var imgHeight = m4.view.$view.eq(key).find("img").height();
 			// TweenMax.to(m4.view.$view.eq(key), .5, { delay:.1, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
@@ -50,7 +54,7 @@ m4.view = new function(){
 			TweenMax.to($("html, body"), .35, { scrollTop: $(this).parents("li").offset().top - 7, delay:.35, ease:Linear.easeNone })
 		} else{
 			$(this).removeClass("current").parents("li").removeClass("current");
-			m4.view.$view.eq(key).delay(100).slideUp(500)
+			m4.view.$view.delay(100).slideUp(500)
 			TweenMax.delayedCall(.4, function(){
 				if(m4.view.$listCon.find(".viewCtrl.current").length === 0){
 					m4.view.$listCon.removeClass("current");
@@ -106,10 +110,10 @@ m4.allMenu = new function(){
 				that.$allMenu.find(classNames.con).each(function(){
 					TweenMax.set($(this), { y: $(this).find("img").height(), opacity:0 })
 				})
-                TweenMax.to(that.$allMenu, .45, { y:0, ease:Circ.easeIn })
+                TweenMax.to(that.$allMenu, .6, { y:0, ease: Power1.easeOut })
 				TweenMax.set(that.$dim, {zIndex:4});
 				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut, onComplete:function(){
-					m4.$body.css({overflow:'hidden'})
+					// m4.$body.css({overflow:'hidden'})
 				}})
 
 				TweenMax.delayedCall(.35, function(){
@@ -124,8 +128,8 @@ m4.allMenu = new function(){
 				// 	TweenMax.to($(this),  .35, { y: $(this).find("img").height(), opacity:0, delay:.2 * idx, ease:Power1.easeOut })
 				// })
 
-                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease:Circ.easeIn, onComplete:function(){
-					m4.$body.removeAttr("style");
+                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease: Power1.easeOut, onComplete:function(){
+					// m4.$body.removeAttr("style");
 				}})
 				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
 					TweenMax.set(that.$dim, { zIndex: -1 })
