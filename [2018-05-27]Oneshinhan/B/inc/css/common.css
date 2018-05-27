@@ -34,7 +34,7 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 .clfix:after {content:"";display:block;clear:both;visibility:hidden;height:0;}
 
 /* Layout */
-body {background: #fff;}
+body {background: #fff; overflow: hidden;}
 #wrap {position:relative;overflow:hidden;width:100%;}
 /* #header {position:relative;height:43px;padding:0 16px;background:#2196f3;} */
 img {max-width: 100%;}
