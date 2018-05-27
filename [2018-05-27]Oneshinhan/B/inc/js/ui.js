@@ -41,7 +41,7 @@ m4.view = new function(){
 	this.handleClick = function(){
 		var key = $(this).data("key");
 		if(!m4.view.$listCon.hasClass("current")){
-			m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:-195, ease:Power1.easeOut });
+			m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
 		}
 		m4.view.$listCon.addClass("current");
 		if(!$(this).hasClass("current")){
@@ -49,7 +49,7 @@ m4.view = new function(){
 			m4.view.$view.eq(key).show();
 			var imgHeight = m4.view.$view.eq(key).find("img").height();
 			TweenMax.to(m4.view.$view.eq(key), .5, { delay:.3, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
-				m4.$contents.css({ height:m4.view.$listCon.outerHeight(true) });
+				m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
 			} });
 		} else{
 			$(this).removeClass("current");
