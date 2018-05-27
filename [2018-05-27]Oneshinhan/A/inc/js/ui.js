@@ -8,42 +8,36 @@ m4.loadEvent = new function(){
 	};
 	
 	this.reset = function(){
+		this.$conBottom = m4.$body.find(".conBottom");
+		this.$banner = m4.$body.find(".topBanner");
+		this.$viewWrap = m4.$body.find(".viewWrap");
 		this.$point = m4.$body.find(".point");
-		TweenMax.set(this.$point, { y:20, force3D:true });
+		this.$txt = m4.$body.find(".txt");
+		this.$btn = m4.$body.find(".btn");
 	};
 
 	this.addEvents = function(){
-		TweenMax.delayedCall(.4, m4.loadEvent.handlePoint);
+		TweenMax.delayedCall(.4, function(){
+			m4.loadEvent.handlePoint(0);
+		});
 	};
 
-	this.handlePoint = function(){
-		TweenMax.to(m4.loadEvent.$point, .4, { y:0, opacity:1, ease:Power1.easeOut });
-	};
-};
+	this.handlePoint = function(index){
+		TweenMax.to(m4.loadEvent.$viewWrap.eq(index).find(".txt"), .4, { y:0, opacity:1, delay:.1, ease:Power1.easeOut });
+		TweenMax.to(m4.loadEvent.$point.eq(index), .5, { y:0, opacity:1, delay:.2, ease:Power1.easeOut });
+		TweenMax.to(m4.loadEvent.$btn.eq(index), 1, { opacity:1, delay:.3, ease:Linear.easeNone})
 
-m4.topEvent = new function(){
-	this.init = function(){
-		this.reset();
-		this.$ctrlTop.on("click", this.handleClick);
-	};
-
-	this.reset = function(){
-		this.$ctrlTop = m4.$body.find(".ctrlTop");
-		this.$topView = m4.$body.find(".topView");
-	};
-
-	this.handleClick = function(){
-		if(!$(this).hasClass("current")){
-			$(this).addClass("current");
-			$("#header").addClass("show");
-			m4.topEvent.$topView.show();
-		} else{
-			$(this).removeClass("current");
-			$("#header").removeClass("show");
-			m4.topEvent.$topView.hide();
+		if(!index){
+			TweenMax.to(m4.loadEvent.$banner.eq(index), .35, { y:0, opacity:1, ease:Power1.easeOut, onComplete:function(){
+				TweenMax.to($(".swipeCon"), .5, { opacity:1 })
+			}})
+			$(".conBottom").eq(0).find("li").each(function(index){
+				TweenMax.to($(this), .35, { y:0, opacity:1, delay:.15*index, ease: Power1.easeOut })
+			})
 		}
 	};
 };
+
 
 // swipeX
 m4.swipeX = new function(){
@@ -53,9 +47,22 @@ m4.swipeX = new function(){
 			wrapperClass: "inner",
 			slideClass: "swipeCon",
 			pagination: ".paging",
+			parallax: true,
 			slidesPerView: "auto",
 			centeredSlides: false,
-			spaceBetween: 10
+			spaceBetween: 10,
+			speed: 600,
+			onInit: function(swiper){
+				m4.loadEvent.$conBottom.eq(swiper.activeIndex).find("li").each(function(){
+					TweenMax.set($(this), { y: $(this).outerHeight(true), opacity:0 })
+				})
+			},
+			onSlideChangeStart: function(swiper){
+				var activeIndex = swiper.activeIndex;
+				TweenMax.delayedCall(.4, function(){
+					m4.loadEvent.handlePoint(activeIndex);
+				})
+			}
 		});
 	};
 
@@ -71,49 +78,6 @@ m4.swipeX = new function(){
 		m4.swipeX.obj.destroy(true, true);
 	};
 };
-
-m4.view = new function(){
-	this.init = function(){
-		this.reset();
-		this.$btnView.on("click", this.handleClick);
-	};
-
-	this.reset = function(){
-		this.$btnView = m4.$body.find(".btnView");
-		this.$view = m4.$body.find(".view");
-		this.$infoWrap = m4.$body.find(".infoWrap");
-	};
-
-	this.handleClick = function(){
-		if(!m4.view.$btnView.hasClass("current")){
-			m4.view.$btnView.addClass("current");
-			m4.view.Tween = TweenMax.to(m4.$body.find(".cardList"), .4, { y:-215, ease:Power1.easeOut, onComplete:function(){
-				m4.view.$infoWrap.css({ opacity:0 });
-				m4.view.$view.show();
-				TweenMax.to(m4.view.$view, .4, { height:m4.view.$view.find("img").height(), ease:Power1.easeOut });
-				m4.$contents.css({ height: $("#header").outerHeight(true) + m4.view.$view.find("img").outerHeight(true) + 219, paddingBottom:0 });
-			}});
-			TweenMax.to($(".bottom"), .3, { opacity:0 });
-		} else{
-			m4.view.$btnView.removeClass("current");
-			TweenMax.to(m4.view.$view, .4, { height:0, ease:Power1.easeOut, onComplete:function(){ 
-				m4.view.$infoWrap.css({ opacity:1 });
-				m4.view.$view.hide(); 
-				m4.view.Tween.reverse();
-				m4.$contents.css({ height: "auto", paddingBottom:80 });
-			} });
-			TweenMax.to($(".bottom"), .3, { delay:.35, opacity:1 });
-		}
-	};
-
-	this.setSize = function(){
-		if(m4.view.$btnView.hasClass("current")){
-			m4.$contents.css({ height: $("#header").outerHeight(true) + m4.view.$view.find("img").outerHeight(true) + 219 });
-			m4.view.$view.css({ height: m4.view.$view.find("img").height() });
-		}
-	};
-};
-
 // UI Init
 m4.UI = new function(){
 	this.init = function(){

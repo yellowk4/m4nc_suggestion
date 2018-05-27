@@ -63,27 +63,29 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 
 /* Layout */
 #wrap{position:relative;overflow:hidden;width:100%;}
-#header {position:relative;}
-#contents {position:relative;}
-#wrap >.inner{width:100%;position:relative;padding:0 13px;box-sizing:border-box;}
-.inner img{width:100%;}
+#header {position:relative;padding:0 13px;box-sizing:border-box;}
+#contents {position:relative;padding:0 23px 20px;box-sizing:border-box;}
+#wrap >.inner{width:100%;position:relative;padding:0 13px 20px;box-sizing:border-box;}
+img{width:100%;}
 
 /* Header */
 
 /* Contents */
-
 .cardList {position:relative;}
-.cardList .inner {padding: 0 10px;}
-.cardList ul {font-size:0;line-height:0;white-space:nowrap;}
-.cardList ul > li {display:inline-block;width:99%;vertical-align:top;}
-.cardList ul > li > .viewCtrl {display:block;}
-.cardList ul > li > .viewCtrl .viewWrap {position:relative;overflow:hidden;width:100%;}
-.cardList ul > li > .viewCtrl .viewWrap .point{position:absolute;top:98px;left:0;opacity:0;}
-.cardList ul > li > .viewCtrl .img {display:inline-block;padding:23px 0 20px 24px;}
-.cardList ul > li > .viewCtrl .img2 {display:inline-block;position:absolute;top:23px;right:24px;}
-.cardList ul > li > .viewCtrl .btnView {position:absolute;top:0;right:0;width:30px;height:30px;background:url(../images/btn_view.png) no-repeat 0 0;background-size:30px;}
-.cardList ul > li > .viewCtrl .btnView.current {background:url(../images/btn_view2.png) no-repeat 0 0;background-size:30px;}
-.cardList ul > li > .viewCtrl .view {display:none;overflow:hidden;width:100%;height:0;}
+.cardList > ul {font-size:0;line-height:0;white-space:nowrap;}
+.cardList > ul > li {display:inline-block;width:100%;vertical-align:top;opacity:0;}
+.cardList > ul > li:first-child{opacity:1}
+.cardList > ul > li:first-child .topBanner{transform:translateY(50px);opacity:0;}
+.cardList > ul > li > .viewCtrl {display:block;}
+.cardList > ul > li > .viewCtrl .viewWrap {position:relative;overflow:hidden;width:100%;}
+.cardList > ul > li > .viewCtrl .viewWrap .point,
+.cardList > ul > li > .viewCtrl .viewWrap .txt,
+.cardList > ul > li > .viewCtrl .viewWrap .btn{position:absolute;top:0;left:0;opacity:0;}
+.cardList > ul > li > .viewCtrl .viewWrap .point{transform:translateY(20px);}
+.cardList > ul > li > .viewCtrl .viewWrap .txt{transform:translateY(13px);}
+.cardList > ul > li > .viewCtrl .conBottom{margin:0 -10px;}
+
+
 .cardList .paging {position:absolute;bottom:6px;left:0;}
 .cardList .paging .swiper-pagination-bullet {display:inline-block;width:5px;height:5px;margin-right:6px;border-radius:50%;background:#bbb;}
 .cardList .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {background:#20b7d7;}
