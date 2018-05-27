@@ -67,7 +67,7 @@ img {max-width: 100%;}
 .listCon .inner .viewCtrl .on {display:none;}
 .listCon .inner .viewCtrl.current .on {display:block;}
 .listCon .inner .viewCtrl.current .off {display:none;}
-.listCon .inner .view {display:none;overflow:hidden;height:0; padding-top: 20px;}
+.listCon .inner .view {display:none;overflow:hidden;padding-top: 20px;}
 .listCon .inner .view img {width:100%;}
 
 .link {margin: 13px 0 12px;position:relative;z-index:1;}
