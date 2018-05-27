@@ -62,6 +62,7 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 .clfix:after {content:"";display:block;clear:both;visibility:hidden;height:0;}
 
 /* Layout */
+body{overflow:hidden;}
 #wrap{position:relative;overflow:hidden;width:100%;}
 #header {position:relative;padding:0 13px;box-sizing:border-box;}
 #contents {position:relative;padding:0 23px 20px;box-sizing:border-box;}
