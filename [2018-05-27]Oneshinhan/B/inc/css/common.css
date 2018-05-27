@@ -36,7 +36,8 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 /* Layout */
 body {background:#ecf0f3;}
 #wrap {position:relative;overflow:hidden;width:100%;}
-#header {position:relative;height:43px;padding:0 16px;background:#2196f3;}
+/* #header {position:relative;height:43px;padding:0 16px;background:#2196f3;} */
+img {max-width: 100%;}
 #contents {padding-bottom:50px;}
 
 /* Header */
@@ -54,11 +55,11 @@ body {background:#ecf0f3;}
 #header.show .center .topView {display:block;}
 
 /* Contents */
-.conTxt {padding:35px 20px 30px;background:url(../images/bg.png) no-repeat 0 0;background-size:100%;}
+.conTxt {padding:0px 14px 11px;background:url(../images/bg.png) no-repeat 0 0;background-size:100%;}
 .listCon {}
 .listCon > ul {}
-.listCon > ul > li {border-top:7px solid #ecf0f3;}
-.listCon .inner {border-top:1px solid #e2e5e8;border-bottom:1px solid #e2e5e8;}
+/* .listCon > ul > li {border-top:7px solid #ecf0f3;} */
+/* .listCon .inner {border-top:1px solid #e2e5e8;border-bottom:1px solid #e2e5e8;} */
 .listCon .inner .viewCtrl {display:block;}
 .listCon .inner .viewCtrl img {width:100%;}
 .listCon .inner .viewCtrl .on {display:none;}
