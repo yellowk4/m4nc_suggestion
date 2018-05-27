@@ -74,8 +74,6 @@ m4.view = new function(){
 		else m4.$contents.css({ height:"auto" });
 	};
 };
-
-
 m4.allMenu = new function(){
 
 	var classNames = {
@@ -102,10 +100,11 @@ m4.allMenu = new function(){
 				that.$allMenu.find(classNames.con).each(function(){
 					TweenMax.set($(this), { y: $(this).find("img").height(), opacity:0 })
 				})
-
                 TweenMax.to(that.$allMenu, .45, { y:0, ease:Circ.easeIn })
 				TweenMax.set(that.$dim, {zIndex:4});
-				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut })
+				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut, onComplete:function(){
+					m4.$body.css({overflow:'hidden'})
+				}})
 
 				TweenMax.delayedCall(.35, function(){
 					that.$allMenu.find(classNames.con).each(function(idx){
@@ -119,7 +118,9 @@ m4.allMenu = new function(){
 				// 	TweenMax.to($(this),  .35, { y: $(this).find("img").height(), opacity:0, delay:.2 * idx, ease:Power1.easeOut })
 				// })
 
-                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease:Circ.easeIn })
+                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease:Circ.easeIn, onComplete:function(){
+					m4.$body.removeAttr("style");
+				}})
 				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
 					TweenMax.set(that.$dim, { zIndex: -1 })
 				}})
@@ -132,8 +133,9 @@ m4.allMenu = new function(){
 			TweenMax.to(that.$allMenu, .45, {y: that.$allMenu.outerHeight(true) })
 			TweenMax.to($that, .7, { opacity:0, delay:.1, ease: Power1.easeOut, onComplete:function(){
 				TweenMax.set($that, { zIndex: -1 })
-				that.$btnOpen.removeClass(classNames.toggle)
+				m4.$body.removeAttr("style");
 			}})
+			that.$btnOpen.removeClass(classNames.toggle)
 		})
 
 	}
@@ -143,6 +145,7 @@ m4.allMenu = new function(){
 // UI Init
 m4.UI = new function(){
 	this.init = function(){
+		m4.hasJqueryObject( m4.$body.find(".topView") ) && m4.topEvent.init();
 		m4.hasJqueryObject( m4.$body.find(".listCon") ) && m4.view.init();
 		m4.hasJqueryObject( m4.$body.find(".allMenu") ) && m4.allMenu.init();
 	};
