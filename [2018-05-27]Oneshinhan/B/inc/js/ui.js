@@ -37,7 +37,7 @@ m4.view = new function(){
 			$that = $(this);
 		// console.log($that)
 		if(key !== 1) return; 
-		
+
 		if(!m4.view.$listCon.hasClass("current")){
 			m4.view.Tween = TweenMax.to(m4.view.$listCon, .3, { y:0, ease:Power1.easeOut }); //-195
 		}
@@ -113,7 +113,7 @@ m4.allMenu = new function(){
                 TweenMax.to(that.$allMenu, .6, { y:0, ease: Power1.easeOut })
 				TweenMax.set(that.$dim, {zIndex:4});
 				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut, onComplete:function(){
-					// m4.$body.css({overflow:'hidden'})
+					m4.$body.css({overflow:'hidden'})
 				}})
 
 				TweenMax.delayedCall(.35, function(){
@@ -129,7 +129,7 @@ m4.allMenu = new function(){
 				// })
 
                 TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease: Power1.easeOut, onComplete:function(){
-					// m4.$body.removeAttr("style");
+					m4.$body.removeAttr("style");
 				}})
 				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
 					TweenMax.set(that.$dim, { zIndex: -1 })
