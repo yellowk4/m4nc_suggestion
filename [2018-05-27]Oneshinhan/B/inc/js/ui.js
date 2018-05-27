@@ -41,16 +41,16 @@ m4.view = new function(){
 		m4.view.$listCon.addClass("current");
 		if(!$(this).hasClass("current")){
 			$(this).addClass("current").parents("li").addClass("current");
-			m4.view.$view.eq(key).slideDown(500)
+			m4.view.$view.eq(key).delay(100).slideDown(500)
 			// m4.view.$view.eq(key).show();
 			// var imgHeight = m4.view.$view.eq(key).find("img").height();
 			// TweenMax.to(m4.view.$view.eq(key), .5, { delay:.1, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
 			// 	m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
 			// } });
-			TweenMax.to($("html, body"), .5, { scrollTop: $(this).parents("li").offset().top - 7, delay:.35, ease:Linear.easeNone })
+			TweenMax.to($("html, body"), .35, { scrollTop: $(this).parents("li").offset().top - 7, delay:.35, ease:Linear.easeNone })
 		} else{
 			$(this).removeClass("current").parents("li").removeClass("current");
-			m4.view.$view.eq(key).slideUp(500)
+			m4.view.$view.eq(key).delay(100).slideUp(500)
 			TweenMax.delayedCall(.4, function(){
 				if(m4.view.$listCon.find(".viewCtrl.current").length === 0){
 					m4.view.$listCon.removeClass("current");
