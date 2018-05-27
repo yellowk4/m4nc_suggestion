@@ -159,6 +159,9 @@ $(function(){
 });
 
 $(window).on("resize", function(){
-	if(m4.view.$listCon.find(".viewCtrl.current").length !== 0) m4.view.setSize(true);
-	else m4.view.setSize(false);
+	// if(m4.view.$listCon.find(".viewCtrl.current").length !== 0) m4.view.setSize(true);
+	// else m4.view.setSize(false);
+	if(!m4.allMenu.$btnOpen.hasClass("active")){
+		TweenMax.set(m4.allMenu.$allMenu, { y: m4.allMenu.$allMenu.outerHeight(true) })
+	}
 });

@@ -175,5 +175,7 @@ $(function(){
 });
 
 $(window).on("resize", function(){
-	m4.view.setSize(true);
+	if(!m4.allMenu.$btnOpen.hasClass("active")){
+		TweenMax.set(m4.allMenu.$allMenu, { y: m4.allMenu.$allMenu.outerHeight(true) })
+	}
 });
