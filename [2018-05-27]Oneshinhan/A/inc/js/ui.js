@@ -105,7 +105,7 @@ m4.allMenu = new function(){
 		this.$btnOpen = m4.$body.find(".btnOpen");
 		this.$allMenu = m4.$body.find(".allMenu");
 		this.$dim = m4.$body.find(".dim");
-		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true) })
+		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true), opacity:1 })
 		this.addEvent();
 
 
