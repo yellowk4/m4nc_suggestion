@@ -88,7 +88,7 @@ img{width:100%;}
 
 .cardList .pagingWrap{position:absolute;top:15%;left:50%;transform:translateX(-50%)}
 .cardList .paging {display:table;position:relative;}
-.cardList .paging .swiper-pagination-bullet {display:inline-block;width:19px;height:19px;position:relative;margin-left:12px;}
+.cardList .paging .swiper-pagination-bullet {display:inline-block;width:19px;height:19px;position:relative;margin-left:10px;}
 .cardList .paging .swiper-pagination-bullet:first-child{margin-left:0;}
 .cardList .paging  .point{background:url(../images/bullet01.png) center center no-repeat;background-size:19px 19px;}
 .cardList .paging  .bank{background:url(../images/bullet02.png) center center no-repeat;background-size:19px 19px;}
