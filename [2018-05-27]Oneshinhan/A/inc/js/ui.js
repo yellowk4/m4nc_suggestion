@@ -162,7 +162,6 @@ m4.allMenu = new function(){
 m4.UI = new function(){
 	this.init = function(){
 		m4.loadEvent.init();
-		m4.hasJqueryObject( m4.$body.find(".topView") ) && m4.topEvent.init();
 		m4.hasJqueryObject( m4.$body.find(".cardList") ) && m4.swipeX.init();
 		m4.hasJqueryObject( m4.$body.find(".allMenu") ) && m4.allMenu.init();
 	};

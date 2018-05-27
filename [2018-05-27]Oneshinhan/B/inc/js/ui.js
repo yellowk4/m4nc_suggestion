@@ -76,11 +76,75 @@ m4.view = new function(){
 };
 
 
+m4.allMenu = new function(){
+
+	var classNames = {
+		toggle: 'active',
+		con: '.con',
+    }
+
+
+	this.init = function(){
+		this.$btnOpen = m4.$body.find(".btnOpen");
+		this.$allMenu = m4.$body.find(".allMenu");
+		this.$dim = m4.$body.find(".dim");
+		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true) })
+		this.addEvent();
+
+
+	}
+
+	this.addEvent = function(){
+		var that = this;
+		this.$btnOpen.on("click", function(){
+			var $that = $(this);
+            if($that.toggleClass(classNames.toggle).hasClass(classNames.toggle)){
+				that.$allMenu.find(classNames.con).each(function(){
+					TweenMax.set($(this), { y: $(this).find("img").height(), opacity:0 })
+				})
+
+                TweenMax.to(that.$allMenu, .45, { y:0, ease:Circ.easeIn })
+				TweenMax.set(that.$dim, {zIndex:4});
+				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut })
+
+				TweenMax.delayedCall(.35, function(){
+					that.$allMenu.find(classNames.con).each(function(idx){
+						TweenMax.to($(this), .35, { y:0, opacity:1, delay: .2 * idx, ease:Power1.easeOut })
+					})
+				})
+				
+
+            } else {
+				// that.$allMenu.find(classNames.con).each(function(idx){
+				// 	TweenMax.to($(this),  .35, { y: $(this).find("img").height(), opacity:0, delay:.2 * idx, ease:Power1.easeOut })
+				// })
+
+                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease:Circ.easeIn })
+				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
+					TweenMax.set(that.$dim, { zIndex: -1 })
+				}})
+            }
+			
+		})
+
+		this.$dim.on("click", function(){
+			var $that = $(this);
+			TweenMax.to(that.$allMenu, .45, {y: that.$allMenu.outerHeight(true) })
+			TweenMax.to($that, .7, { opacity:0, delay:.1, ease: Power1.easeOut, onComplete:function(){
+				TweenMax.set($that, { zIndex: -1 })
+				that.$btnOpen.removeClass(classNames.toggle)
+			}})
+		})
+
+	}
+
+}
+
 // UI Init
 m4.UI = new function(){
 	this.init = function(){
-		m4.hasJqueryObject( m4.$body.find(".topView") ) && m4.topEvent.init();
 		m4.hasJqueryObject( m4.$body.find(".listCon") ) && m4.view.init();
+		m4.hasJqueryObject( m4.$body.find(".allMenu") ) && m4.allMenu.init();
 	};
 };
 
