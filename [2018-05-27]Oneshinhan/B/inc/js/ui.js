@@ -1,38 +1,32 @@
 var m4 = m4 || {};
 m4.hasJqueryObject = function($elem){ return $elem.length > 0; };
 
-m4.topEvent = new function(){
-	this.init = function(){
-		this.reset();
-		this.$ctrlTop.on("click", this.handleClick);
-	};
-
-	this.reset = function(){
-		this.$ctrlTop = m4.$body.find(".ctrlTop");
-		this.$topView = m4.$body.find(".topView");
-	};
-
-	this.handleClick = function(){
-		if(!$(this).hasClass("current")){
-			$(this).addClass("current");
-			$("#header").addClass("show");
-			m4.topEvent.$topView.show();
-		} else{
-			$(this).removeClass("current");
-			$("#header").removeClass("show");
-			m4.topEvent.$topView.hide();
-		}
-	};
-};
-
 m4.view = new function(){
 	this.init = function(){
+		var that = this;
 		this.reset();
 		this.$viewCtrl.on("click", this.handleClick);
+
+		this.$listCon.find("li").each(function(){
+			TweenMax.set($(this), { y: $(this).outerHeight(true), opacity:0 })
+		})
+
+		TweenMax.set(this.$link, { opacity:0 })
+
+		TweenMax.delayedCall(.5, function(){
+			that.$listCon.find("li").each(function(idx){
+				TweenMax.to($(this), .35, { y:0, opacity:1, delay:.1 * idx, ease:Power1.easeOut })
+			})
+		})
+		TweenMax.delayedCall(1, function(){
+			TweenMax.to(that.$link, .5, { opacity:1, delay:.2, ease:Power1.easeOut })
+		})
+
 	};
 
 	this.reset = function(){
 		this.$listCon = m4.$body.find(".listCon");
+		this.$link = m4.$body.find(".link");
 		this.$viewCtrl = this.$listCon.find(".viewCtrl");
 		this.$view = m4.$body.find(".view");
 		this.$viewCtrl.each(function(idx){ $(this).data("key", idx) });
@@ -49,8 +43,9 @@ m4.view = new function(){
 			m4.view.$view.eq(key).show();
 			var imgHeight = m4.view.$view.eq(key).find("img").height();
 			TweenMax.to(m4.view.$view.eq(key), .5, { delay:.3, height:imgHeight, ease:Power1.easeOut, onComplete:function(){
-				m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
+				// m4.$contents.css({ height:m4.view.$listCon.outerHeight(true)});
 			} });
+			TweenMax.to($("html, body"), .5, { scrollTop: $(this).parents("li").offset().top - 7, delay:.35, ease:Linear.easeNone })
 		} else{
 			$(this).removeClass("current");
 			TweenMax.to(m4.view.$view.eq(key), .4, { height:0, ease:Power1.easeOut, onComplete:function(){ 
@@ -62,6 +57,8 @@ m4.view = new function(){
 				m4.$contents.css({ height:"auto" });
 			} });
 		}
+		
+
 		return false;
 	};
 
