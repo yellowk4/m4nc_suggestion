@@ -85,26 +85,27 @@ img{width:100%;}
 .cardList > ul > li > .viewCtrl .viewWrap .txt{transform:translateY(13px);}
 .cardList > ul > li > .viewCtrl .conBottom{margin:0 -10px;}
 
-
-.cardList .paging {display:table;position:absolute;top:15%;left:50%;transform:translateX(-50%)}
-.cardList .paging .swiper-pagination-bullet {display:inline-block;width:19px;height:19px;margin-left:12px;transform:scale(1.5);opacity:0;}
+.cardList .pagingWrap{position:absolute;top:15%;left:50%;transform:translateX(-50%)}
+.cardList .paging {display:table;position:relative;}
+.cardList .paging .swiper-pagination-bullet {display:inline-block;width:19px;height:19px;position:relative;margin-left:12px;transform:scale(1.5);opacity:0;}
 .cardList .paging .swiper-pagination-bullet:first-child{margin-left:0;}
-.cardList .paging > .point{background:url(../images/bullet01.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .bank{background:url(../images/bullet02.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .card{background:url(../images/bullet03.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .stock{background:url(../images/bullet04.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .insur{background:url(../images/bullet05.png) center center no-repeat;background-size:19px 19px;}
+.cardList .paging  .point{background:url(../images/bullet01.png) center center no-repeat;background-size:19px 19px;}
+.cardList .paging  .bank{background:url(../images/bullet02.png) center center no-repeat;background-size:19px 19px;}
+.cardList .paging  .card{background:url(../images/bullet03.png) center center no-repeat;background-size:19px 19px;}
+.cardList .paging  .stock{background:url(../images/bullet04.png) center center no-repeat;background-size:19px 19px;}
+.cardList .paging  .insur{background:url(../images/bullet05.png) center center no-repeat;background-size:19px 19px;}
 
-.cardList .paging > .swiper-pagination-bullet-active.point{background:url(../images/bullet01_on.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .swiper-pagination-bullet-active.bank{background:url(../images/bullet02_on.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .swiper-pagination-bullet-active.card{background:url(../images/bullet03_on.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .swiper-pagination-bullet-active.stock{background:url(../images/bullet04_on.png) center center no-repeat;background-size:19px 19px;}
-.cardList .paging > .swiper-pagination-bullet-active.insur{background:url(../images/bullet05_on.png) center center no-repeat;background-size:19px 19px;}
+
+.cardList .pagingWrap  .swiper-pagination-bullet-active.point{background:url(../images/bullet01_on.png) center center no-repeat;background-size:19px 19px;}
+.cardList .pagingWrap  .swiper-pagination-bullet-active.bank{background:url(../images/bullet02_on.png) center center no-repeat;background-size:19px 19px;}
+.cardList .pagingWrap  .swiper-pagination-bullet-active.card{background:url(../images/bullet03_on.png) center center no-repeat;background-size:19px 19px;}
+.cardList .pagingWrap  .swiper-pagination-bullet-active.stock{background:url(../images/bullet04_on.png) center center no-repeat;background-size:19px 19px;}
+.cardList .pagingWrap  .swiper-pagination-bullet-active.insur{background:url(../images/bullet05_on.png) center center no-repeat;background-size:19px 19px;}
 
 .cardList .btnOpen{width:48px;height:48px;display:block;position:fixed;bottom:20px;right:13px;z-index:5;background:url(../images/btn_floating.png) center center no-repeat;background-size:48px 48px;border-radius:50%;box-shadow: 3px 4px 20px 0 rgba(0, 0, 0, 0.2);opacity:0;}
 .cardList .btnOpen.active{background-image:url(../images/btn_floating_close.png)}
 
-.allMenu{width:100%;height:85%;position:fixed;bottom:0;right:0;z-index:3;opacity:0;}
+.allMenu{width:100%;height:85%;position:fixed;top:6%;right:0;z-index:3;opacity:0;}
 .allMenu .allMenuInner{width:100%;height:100%;background-color:#fff;}
 
 .dim{width:100%;height:100%;position:fixed;top:0;left:0;bottom:0;right:0;z-index:-1;background:rgba(0,0,0, .7);opacity:0;}

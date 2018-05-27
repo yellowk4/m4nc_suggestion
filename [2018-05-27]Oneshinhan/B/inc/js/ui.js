@@ -96,7 +96,7 @@ m4.allMenu = new function(){
 		this.$btnOpen = m4.$body.find(".btnOpen");
 		this.$allMenu = m4.$body.find(".allMenu");
 		this.$dim = m4.$body.find(".dim");
-		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true), opacity:1 })
+		TweenMax.set(this.$allMenu, {y: this.$allMenu.outerHeight(true), opacity:0 })
 		this.addEvent();
 
 
@@ -110,7 +110,7 @@ m4.allMenu = new function(){
 				that.$allMenu.find(classNames.con).each(function(){
 					TweenMax.set($(this), { y: $(this).find("img").height(), opacity:0 })
 				})
-                TweenMax.to(that.$allMenu, .6, { y:0, ease: Power1.easeOut })
+                TweenMax.to(that.$allMenu, .6, { y:0, opacity:1, ease: Power1.easeOut })
 				TweenMax.set(that.$dim, {zIndex:4});
 				TweenMax.to(that.$dim, .7, { opacity:1, ease: Power1.easeOut, onComplete:function(){
 					m4.$body.css({overflow:'hidden'})
@@ -128,7 +128,7 @@ m4.allMenu = new function(){
 				// 	TweenMax.to($(this),  .35, { y: $(this).find("img").height(), opacity:0, delay:.2 * idx, ease:Power1.easeOut })
 				// })
 
-                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), delay:.25, ease: Power1.easeOut, onComplete:function(){
+                TweenMax.to(that.$allMenu, .45, { y: that.$allMenu.outerHeight(true), opacity:0, delay:.25, ease: Power1.easeOut, onComplete:function(){
 					m4.$body.removeAttr("style");
 				}})
 				TweenMax.to(that.$dim, .7, { opacity:0, delay:.5, ease: Power1.easeOut, onComplete:function(){
