@@ -73,7 +73,7 @@ img {max-width: 100%;}
 .link {margin: 13px 0 12px;position:relative;z-index:1;}
 .bottom {position:fixed;bottom:0;left:0;z-index:3;width:100%;background:rgba(99, 120, 151, .95);text-align:center;}
 .btnOpen{width:48px;height:48px;display:block;position:fixed;bottom:20px;right:20px;z-index:6;background:url(../images/btn_floating.png) center center no-repeat;background-size:48px 48px;border-radius:50%;box-shadow: 3px 4px 20px 0 rgba(0, 0, 0, 0.2);}
-.btnOpen.active{background:url(../images/btn_floating_close.png) center no-}
+.btnOpen.active{background-image:url(../images/btn_floating_close.png)}
 .allMenu{width:100%;height:85%;position:fixed;top:10%;right:0;z-index:5;opacity:0;}
 .allMenu .allMenuInner{width:100%;background-color:#fff;}
 .dim{width:100%;height:100%;position:fixed;top:0;left:0;bottom:0;right:0;z-index:-1;background:rgba(0,0,0, .7);opacity:0;}

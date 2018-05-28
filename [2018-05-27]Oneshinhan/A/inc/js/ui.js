@@ -60,17 +60,19 @@ m4.swipeX = new function(){
 					TweenMax.set($(this), { y: $(this).outerHeight(true), opacity:0 })
 				})
 				TweenMax.delayedCall(.7, function(){
-					// $(".paging").find("span").each(function(idx){
-					// 	TweenMax.to($(this), .5, { scale:1, opacity:1, delay:.1 * idx })
-					// })
+					$(".paging").find("span").each(function(idx){
+						TweenMax.to($(this), .5, { scale:1, opacity:1, delay:.1 * idx })
+					})
 
 					TweenMax.to($(".btnOpen"), 1, { opacity:1, delay:.2, ease:Power1.easeOut })
 				})
 				
 			},
-			onSlideChangeEnd: function(swiper){
+			onSlideChangeStart: function(swiper){
 				var activeIndex = swiper.activeIndex;
-				m4.loadEvent.handlePoint(activeIndex);
+				TweenMax.delayedCall(.4, function(){
+					m4.loadEvent.handlePoint(activeIndex);
+				})
 			},
 			paginationBulletRender: function(swiper, index, Class){
 				return  '<span class="'+ Class + ' ' + icoClassNames[index] +'"></span>';
