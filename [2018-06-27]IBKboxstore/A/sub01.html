@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<title>IBK BOX STORE</title>
+	<link type="text/css" rel="stylesheet" href="inc/css/default.css">
+    <link type="text/css" rel="stylesheet" href="inc/css/sub.css">
+    <script src="inc/js/jquery-1.12.4.js"></script>
+    <script src="inc/js/jquery-ui.js"></script>
+	<!--[if lt IE 9]>
+        <script src="inc/js/html5shiv.js"></script>
+        <script src="inc/js/respond.js"></script>
+    <![endif]-->
+    <script>
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+    </script>
+</head>
+
+<body> 
+	<div class="wrap">
+        <div class="util">
+            <div class="inner">
+                <img alt="" src="inc/images/sub01_top.png" />
+            </div>
+        </div>
+        <div class="subContainer clfix">
+            <div class="leftMenu">
+                <img alt="" src="inc/images/sub01_left_menu.png" />
+            </div>
+            <div class="content">
+                <div class="header">
+                    <img alt="" src="inc/images/sub01_header.png" />
+                </div>
+                <div class="boxWrap" id="sortable">
+                    <!-- box01 -->
+                    <div class="box ui-state-default" style="top:0;left:0"><img src="inc/images/sub01_box01.png" alt=""/></div>
+                    <!-- box02 -->
+                    <div class="box ui-state-default" style="top:0;left:285px"><img src="inc/images/sub01_box02.png" alt=""/></div>
+                    <!-- box03 -->
+                    <div class="box ui-state-default" style="top:0;left:570px"><img src="inc/images/sub01_box03.png" alt=""/></div>
+                    <!-- box04 -->
+                    <div class="box ui-state-default" style="top:297px;left:0"><img src="inc/images/sub01_box04.png" alt=""/></div>
+                    <!-- box05 -->
+                    <div class="box ui-state-default" style="top:297px;left:285px"><img src="inc/images/sub01_box05.png" alt=""/></div>
+                    <!-- box06 -->
+                    <div class="box ui-state-default" style="top:297px;left:570px"><img src="inc/images/sub01_box06.png" alt=""/></div>
+                </div>
+            </div>
+        </div>
+        
+		<div class="footer">
+            <div class="inner">
+                <img alt="" src="inc/images/sub01_footer.png" />
+            </div>
+        </div>
+	</div> <!-- //wrap END -->
+	
+</body>
+
+</html>

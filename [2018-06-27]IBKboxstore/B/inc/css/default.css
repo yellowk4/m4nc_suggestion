@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../font/NanumSquareR.eot');
+  src: local('NanumSquareR'),
+       url('../font/NanumSquareR.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumSquareR.woff') format('woff'),
+       url('../font/NanumSquareR.ttf') format('truetype');
+}
+
+/* @font-face {
+  font-family: 'NanumSquare';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../font/NanumSquareB.eot');
+  src: local('NanumSquareB'),
+       url('../font/NanumSquareB.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumSquareB.woff') format('woff'),
+       url('../font/NanumSquareB.ttf') format('truetype');
+} */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 13px;
+  font: inherit;
+  vertical-align: middle;
+  font-family:'NanumSquare','Malgun Gothic',Malgun Gothic,Dotum,"돋움",Helvetica,sans-serif;
+  font-weight:normal;
+  color:#777;
+  letter-spacing:0;
+  line-height:13px;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{display:block;}
+body{line-height:1;}
+a,button {outline:0 !important;}
+img {border: 0 none;display: block;margin:0;padding:0; max-width: 100%;}
+img,legend,fieldset,button {border:none;}
+ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; } /* 익스 9부터 적용가능 */
+.clfix:after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; } 
+.clfix { display: inline-block; } 
+.clfix { display: block; } 
+* html .clfix { height: 1%; } /* Hides from IE-mac */
+.clfix { zoom: 1; } /*for IE 5.5-7*/
+
+.inner {width:100%; max-width:1180px; margin: 0 auto;position:relative;} /* 반응형시 max-width 조절 */
+
+.footer {width: 100%;background:#3b3b3b; text-align: center;}	
+.footer img {margin: 0 auto;}
+
+.header {width:100%;height:99px;background:url(../images/header_bg.png) left top repeat-x;position: fixed;top:0;left:0;z-index:999;}
+.visual {width:100%;height:470px;background:url(../images/bg.png) center top no-repeat}
+.visual .txt {position: absolute;top:185px;left:0}
+.visual .btn {position: absolute;top:302px;left:0}
+.visual .img {position: absolute;top:65px;right:0;z-index:1;}
+.con01 {background:#fff}
+.con02 {width:100%;background:url(../images/con02_Bg.png) center top no-repeat;}
+.con02 ul li {float:left;width:33.3%;text-align:center;position:relative;height:360px;}
+.con02 ul li img {display:block;margin:0 auto;position: absolute;top:0;left:50%;z-index:2;margin-left:-160px}
+.buLeft {position: absolute;top:-83px;left:-87px;}
+.buRight {position: absolute;top:388px;right:-52px;z-index:0;}
