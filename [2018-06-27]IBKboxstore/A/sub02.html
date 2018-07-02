@@ -15,12 +15,25 @@
         <script src="inc/js/respond.js"></script>
     <![endif]-->
 </head>
-
+    <script>
+       $(function () {
+            $(".infoOver").on("click",function() {
+                $(".infoOverWrap").addClass("active")
+            })
+            $(".infoOverWrap").on("click", function () {
+               $(".infoOverWrap").removeClass("active")
+           })
+        });
+    </script>
 <body> 
 	<div class="sub02 wrap">
         <div class="util">
             <div class="inner">
                 <img alt="" src="inc/images/sub02_top.png" />
+                <button type="button" class="infoOver">기업정보</button>
+                <div class="infoOverWrap">
+                    <img alt="" src="inc/images/sub02_top_over.png" />
+                </div>
             </div>
         </div>
         <div class="subContainer">
@@ -34,7 +47,7 @@
                             <img alt="" src="inc/images/sub02_box01_img.png" />
                         </div>
                         <div class="cardBox back">
-                            <img alt="" src="inc/images/sub02_box01_img.png" />
+                            <img alt="" src="inc/images/sub02_box01_img_over.png" />
                         </div>
                     </div>
                 </li>
