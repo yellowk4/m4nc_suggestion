@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="inc/css/default.css">
     <link type="text/css" rel="stylesheet" href="inc/css/sub.css">
     <script src="inc/js/jquery-1.12.4.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
     <script src="inc/js/jquery-ui.js"></script>
 	<!--[if lt IE 9]>
         <script src="inc/js/html5shiv.js"></script>
@@ -17,8 +18,23 @@
     <![endif]-->
     <script>
         $(function () {
+
+            TweenMax.delayedCall(.5, function(){
+                $(".box").each(function(idx){
+                    var $this = $(this);
+                    TweenMax.delayedCall(.15 * idx, function(){
+                        $this.addClass("on");
+                    })
+                })
+            })
+
             $("#sortable").sortable();
             $("#sortable").disableSelection();
+
+            $(".box").last().on("click", function(){
+                $(this).find("img").removeClass("on").eq(0).addClass("on");
+            })
+
         });
     </script>
 </head>
@@ -50,7 +66,10 @@
                     <!-- box05 -->
                     <div class="box ui-state-default" style="top:297px;left:285px"><img src="inc/images/sub01_box05.png" alt=""/></div>
                     <!-- box06 -->
-                    <div class="box ui-state-default" style="top:297px;left:570px"><img src="inc/images/sub01_box06.png" alt=""/></div>
+                    <div class="box ui-state-default" style="top:297px;left:570px">
+                        <img src="inc/images/sub01_box06.png" alt=""/>
+                        <img class="on" src="inc/images/sub01_box_blank.png" alt=""/>
+                    </div>
                 </div>
             </div>
         </div>

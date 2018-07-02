@@ -91,7 +91,10 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .question ul {position: relative;}
 .question .question01 {position: absolute;top:0;left:0;width:280px;height:330px;background:url(../images/q01.png) left top repeat;margin:0;}
 .question .question01 {padding-left:37px}
-.question li {margin-left:280px;height:110px;width:280px;padding-left:27px;box-sizing:border-box;}
+.question li {margin-left:280px;height:110px;width:280px;padding-left:27px;box-sizing:border-box;overflow:hidden;transform:scaleX(0);transform-origin:0% 50%;transition:350ms transform cubic-bezier(.7,.3,0,1);}
+.question li.on{transform:scaleX(1);}
+.question li p {overflow:hidden;}
+.question li p > span{display:block;transform:translateX(-100%);transform-origin:0 50%;}
 .question li {background:url(../images/q02.png) left top repeat}
 .question li.question03 {background:url(../images/q03.png) left top repeat}
 .question li.question04 {background:url(../images/q04.png) left top repeat}
@@ -112,7 +115,10 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .container .tabViewWrap .tabView {display: none;}
 .container .tabViewWrap .tabView:first-child {display: block;}
 .container .tabViewWrap .tabView ul {overflow: hidden; width: 100%;}
-.container .tabViewWrap .tabView li {float: left; border: 1px solid #ccc; border-left: 0 none;position: relative;}
+.container .tabViewWrap .tabView li {float: left; border: 1px solid #ccc; border-left: 0 none;position: relative;z-index:2;transform:translateX(-200%);transition: 850ms transform cubic-bezier(.52,.01,.16,1) 150ms;}
+.container .tabViewWrap .tabView li:first-child{z-index:3;transform:translateX(-100%);}
+.container .tabViewWrap .tabView li:last-child{z-index:1;transform:translateX(-300%);transition-delay:300ms}
+.container .tabViewWrap .tabView li.on{transform:translateX(0)}
 .container .tabViewWrap .tabView li span {position: absolute;top:0;right:-1px}
 
 .container .noti li {float: left; width: 50%;box-sizing:border-box;padding-left:40px;}

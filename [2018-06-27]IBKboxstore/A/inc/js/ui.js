@@ -11,17 +11,30 @@ var Tab = function Tab(){
 
 	return {
 		init: function(){
+			var _this = this;
 			this.params = {
 				wrapperClass: '.initTab',
 				ctrlClass: '.tabCtrl',
 				viewClass: '.tabView',
-				activeClass: 'current',
+				currentClass: 'current',
+				activeClass: 'on',
 			}
 
 			this.$wrapper = UI.$body.find(this.params.wrapperClass);
 			this.$ctrl = this.$wrapper.find(this.params.ctrlClass);
 			this.$view = this.$wrapper.find(this.params.viewClass);
+
 			this.addEvent();
+
+			TweenMax.delayedCall(.15, function(){
+				_this.$view.eq(0).find("li").each(function(idx){
+					var $this = $(this);
+					TweenMax.delayedCall(.1 * (idx + 1), function(){
+						$this.addClass(_this.params.activeClass)
+					})
+				})
+			})
+
 		},
 		addEvent: function(){
 			var _this = this;
@@ -31,8 +44,14 @@ var Tab = function Tab(){
 		},
 		onClicked: function(params){
 			var idx = $(this).index();
-			$(this).addClass(params.activeClass).siblings().removeClass(params.activeClass);
+			$(this).addClass(params.currentClass).siblings().removeClass(params.currentClass);
 			$(params.viewClass).hide().eq(idx).show();
+			$(params.viewClass).eq(idx).find("li").each(function(idx){
+				var $this = $(this);
+				TweenMax.delayedCall(.1 * (idx + 1), function(){
+					$this.addClass(params.activeClass)
+				})
+			})
 		}
 	}
 
@@ -157,6 +176,41 @@ var CustomSwiper = function(){
 
 }
 
+var initAnimation = function(){
+	return {
+		init: function(){
+			var _this = this;
+			_this.params = {
+				wrapperClass: '.question',
+				ctrlClass: '[class^="question0"]',
+				activeClass: 'on',
+				txtElem: 'span',
+			}
+
+			_this.$wrapper = UI.$body.find(_this.params.wrapperClass);
+			_this.$ctrl = _this.$wrapper.find(_this.params.ctrlClass);
+		
+			TweenMax.delayedCall(.5, function(){
+				_this.$ctrl.eq(0).addClass(_this.params.activeClass)
+				_this.$ctrl.not(_this.$ctrl.eq(0)).each(function(idx){
+					var $this = $(this);
+					TweenMax.delayedCall(.25 * (idx + 1), function(){
+						$this.addClass(_this.params.activeClass)
+					})
+				})
+			})
+		
+			TweenMax.delayedCall(.55, function(){
+				_this.$ctrl.find(_this.params.txtElem).each(function(idx){
+					var $this = $(this);
+					TweenMax.to($this, .35, {x:0, delay:.1 * idx, ease:Power1.easeOut})
+				})
+			})
+
+		},
+	}
+}
+
 
 var UI = (function(){
 	return {
@@ -165,6 +219,7 @@ var UI = (function(){
 			UI.hashMap['Layer'] = this.$body.find(".sideWrap").length && new Layer(); this.find('Layer').init();
 			UI.hashMap['GNB'] = this.$body.find(".header").length && new GNB(); this.find('GNB').init();
 			UI.hashMap['C_Swiper'] = this.$body.find('.swiper-container').length && new CustomSwiper();
+			UI.hashMap['Animation'] = this.$body.find(".question").length && new initAnimation(); this.find('Animation').init();
 		},
 		find: function(Class){
 			return this.hashMap[Class]
