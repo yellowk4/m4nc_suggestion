@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="inc/css/default.css">
     <link type="text/css" rel="stylesheet" href="inc/css/sub.css">
     <script src="inc/js/jquery.min.js"></script>
+    <script src="inc/js/jquery.flip.min.js"></script>
 	<!--[if lt IE 9]>
         <script src="inc/js/html5shiv.js"></script>
         <script src="inc/js/respond.js"></script>
@@ -19,10 +20,13 @@
        $(function () {
             $(".infoOver").on("click",function() {
                 $(".infoOverWrap").addClass("active")
-            })
+            });
             $(".infoOverWrap").on("click", function () {
                $(".infoOverWrap").removeClass("active")
-           })
+            });
+           $(".card01").flip({
+               trigger: 'hover'
+           });
         });
     </script>
 <body> 
@@ -56,17 +60,11 @@
                         <div class="cardBox front">
                             <img alt="" src="inc/images/sub02_box02_img.png" />
                         </div>
-                        <div class="cardBox back">
-                            <img alt="" src="inc/images/sub02_box02_img.png" />
-                        </div>
                     </div>
                 </li>
                 <li>
                     <div class="card card03">
                         <div class="cardBox front">
-                            <img alt="" src="inc/images/sub02_box03_img.png" />
-                        </div>
-                        <div class="cardBox back">
                             <img alt="" src="inc/images/sub02_box03_img.png" />
                         </div>
                     </div>
@@ -78,19 +76,11 @@
             <ul class="box02Wrap clfix">
                 <li>
                     <img alt="" src="inc/images/sub02_li01.png" />
-                    <!-- over -->
-                    <div class="over"><img alt="" src="inc/images/sub02_over_btn.png" /></div>
-                    <!-- //over -->
                 </li>
                 <li>
                     <img alt="" src="inc/images/sub02_li02.png" />
-                    <!-- over -->
-                    <div class="over">
-                        <img alt="" src="inc/images/sub02_over_btn.png" />
-                    </div>
-                    <!-- //over -->
                 </li>
-                <li>
+                <li class="detailOver">
                     <img alt="" src="inc/images/sub02_li03.png" />
                     <!-- over -->
                     <div class="over">
@@ -111,6 +101,5 @@
         </div>
 	</div> <!-- //wrap END -->
     <script src="inc/js/TweenMax.min.js"></script>
-    <script src="inc/js/sub03.js"></script>
 </body>
 </html>

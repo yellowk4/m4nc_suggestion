@@ -10,12 +10,6 @@ m4.loadAnimation = new function () {
 		TweenMax.to(this.$txt, .5, { opacity: 1, y: 0, delay: 1, ease: Power0.easeOut });
 		TweenMax.to(this.$btn, .5, { opacity: 1, y: 0, delay: 1.5, ease: Power0.easeOut });
 
-		this.$card01 = m4.$body.find(".card01");
-		this.$card02 = m4.$body.find(".card02");
-		this.$card03 = m4.$body.find(".card03");
-		TweenMax.to(this.$card01, .5, { className: "+=active", delay: 0 });
-		TweenMax.to(this.$card02, .5, { className: "+=active", delay: .5 });
-		TweenMax.to(this.$card03, .5, { className: "+=active", delay: 1 });
 	};
 };
 

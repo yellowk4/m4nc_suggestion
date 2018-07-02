@@ -22,9 +22,15 @@
             <div class="banner">
                 <div class="inner">
                     <img src="inc/images/banner.png" />
+                    
                     <a href="#none" class="bnOpen">배너 상세 열기</a>
                     <a href="#none" class="bnClose">배너 닫기</a>
                 </div>
+                <!-- 배너 상세열기 -->
+                <div class="bnDetail" style="display:none">
+                    <img src="inc/images/banner_over.png" />
+                </div>
+                <!-- //배너 상세열기 -->
             </div>
             <div class="utill">
                 <div class="inner">
@@ -34,29 +40,74 @@
         </div>
 		
 		<div class="container">
-            
             <div class="header">
                 <div class="inner">
                     <img src="inc/images/header.png" />
+                    <!--
+                        솔루션 메뉴 over 했을때
+                        <img src="inc/images/header_gnb01.png" />
+                    -->
                     <a href="#none" class="menuOpen">메뉴 열기</a>
                     <a href="#none" class="myboxOpen">mybox 열기</a>
                 </div>
+                <div class="moInner">
+                    <img src="inc/images/m_logo.png" />
+                    <img src="inc/images/m_gnb.png" class="moGnb"/>
+                </div>
             </div>
-            <div class="gnb"> <!-- default 안보임 -->
+            <div class="gnb soluton" style="display:none"> <!-- soluton menu 안보임 -->
+                <div class="bg"></div>
+                <div class="wrap">
+                    <div class="inner">
+                        <a href="#none">
+                            <img src="inc/images/gnb.png" />
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+             <div class="gnb box" style="display:none"> <!-- box menu 안보임 -->
                 <div class="inner">
-                    <a href="#none"><img src="inc/images/gnb.png" /></a>
+                    <a href="#none"><img src="inc/images/boxgnb.png" /></a>
                 </div>
             </div>
 
             <div class="inner">
-                <ul class="visual"> <!-- 스와이퍼 1120 * 387 -->
-                    <li>
-                        <img src="inc/images/visual_item1.png" class="bg" /> <!-- 하단 고정 -->
-                        <p class="tit"><img src="inc/images/visual_tit.png" /></p>
-                        <p class="question"><img src="inc/images/visual_que.png" /></p>
-                    </li>
-                </ul>
-
+                <div class="mainVisualWrap">
+                    <div class="mainVisual">
+                        <ul class="mainInner" style="">
+                            <!-- 스와이퍼 1120 * 387 -->
+                            <li>
+                                <div class="bg bg01"></div>
+                                <p class="tit">
+                                    <img src="inc/images/visual_tit.png" />
+                                </p>
+                            </li>
+                            <li>
+                                <div class="bg bg02"></div>
+                                <p class="tit">
+                                    <img src="inc/images/visual02_tit.png" />
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="question clfix">
+                        <div>
+                            <img src="inc/images/q01.png" />
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="inc/images/q02.png" />
+                            </li>
+                            <li>
+                                <img src="inc/images/q03.png" />
+                            </li>
+                            <li>
+                                <img src="inc/images/q04.png" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="initTab clfix">
                     <div class="tabCtrlWrap">
                         <button type="button" class="tabCtrl current"><span>01</span> Start-Up 기업</button>
@@ -68,30 +119,88 @@
                     <div class="tabViewWrap">
                         <div class="tabView">
                             <ul>
-                                <li><img src="inc/images/tab_box01.png" /></li>
-                                <li><img src="inc/images/tab_box02.png" /></li>
-                                <li><img src="inc/images/tab_box03.png" /></li>
+                                <li>
+                                    <img src="inc/images/tab_box01.png" class="pcImg" />
+                                    <img src="inc/images/tab_box01_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/best.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box02.png" class="pcImg" />
+                                    <img src="inc/images/tab_box02_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/new.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box03.png" class="pcImg" />
+                                    <img src="inc/images/tab_box03_m.png" class="mImg" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabView">
+                           <ul>
+                                <li>
+                                    <img src="inc/images/tab_box01.png" class="pcImg" />
+                                    <img src="inc/images/tab_box01_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/best.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box02.png" class="pcImg" />
+                                    <img src="inc/images/tab_box02_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/new.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box03.png" class="pcImg" />
+                                    <img src="inc/images/tab_box03_m.png" class="mImg" />
+                                </li>
                             </ul>
                         </div>
                         <div class="tabView">
                             <ul>
-                                <li><img src="inc/images/tab_box01.png" /></li>
-                                <li><img src="inc/images/tab_box02.png" /></li>
-                                <li><img src="inc/images/tab_box03.png" /></li>
+                                <li>
+                                    <img src="inc/images/tab02_box01.png"  class="pcImg"/>
+                                    <img src="inc/images/tab02_box01_m.png" class="mImg" />
+                                    <span class="bu"><img src="inc/images/best.png" /></span>
+                                    </li>
+                                <li>
+                                    <img src="inc/images/tab02_box02.png" class="pcImg" />
+                                    <img src="inc/images/tab02_box02_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/new.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab02_box03.png" class="pcImg" />
+                                    <img src="inc/images/tab02_box03_m.png" class="mImg" />
+                                </li>
                             </ul>
                         </div>
                         <div class="tabView">
                             <ul>
-                                <li><img src="inc/images/tab_box01.png" /></li>
-                                <li><img src="inc/images/tab_box02.png" /></li>
-                                <li><img src="inc/images/tab_box03.png" /></li>
-                            </ul>
-                        </div>
-                        <div class="tabView">
-                            <ul>
-                                <li><img src="inc/images/tab_box01.png" /></li>
-                                <li><img src="inc/images/tab_box02.png" /></li>
-                                <li><img src="inc/images/tab_box03.png" /></li>
+                                <li>
+                                    <img src="inc/images/tab_box01.png" class="pcImg" />
+                                    <img src="inc/images/tab_box01_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/best.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box02.png" class="pcImg" />
+                                    <img src="inc/images/tab_box02_m.png" class="mImg" />
+                                    <span class="bu">
+                                        <img src="inc/images/new.png" />
+                                    </span>
+                                </li>
+                                <li>
+                                    <img src="inc/images/tab_box03.png" class="pcImg" />
+                                    <img src="inc/images/tab_box03_m.png" class="mImg" />
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -125,14 +234,16 @@
                     </ul>
                 </div>
             </div>
-            
+            <div class="footer">
+                <div class="inner">
+                    <img alt="" src="inc/images/footer_pc.png" />
+                    <!-- 높이 134px -->
+                    <img alt="" src="inc/images/footer_m.png" class="mo"/>
+                </div>
+            </div>
 		</div> <!-- //container END -->
         
-		<div class="footer">
-            <div class="inner">
-                <img alt="" src="inc/images/footer_pc.png" /> <!-- 높이 134px -->
-            </div>
-        </div>
+		
 	</div> <!-- //wrap END -->
 	
 </body>

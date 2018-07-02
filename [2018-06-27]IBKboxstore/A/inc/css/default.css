@@ -68,15 +68,28 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .sideWrap .utill {background: #808aa6; }
 .sideWrap .utill .inner {overflow: hidden; width: 100%;}
 .sideWrap .utill img {float: right;}
+.bnDetail {position: absolute;top:0;left:0;z-index:1;width:100%;height:557px;background:#dde6fb}
+.bnDetail img {width:1120px;height:557px;margin:0 auto}
 
 .container {position: relative; padding-top: 17px;}
 .container .menuOpen {display:block; position: absolute; top: 0; left: 50%; width: 36%; height: 75px; z-index: 10; font-size:0; }
 .container .myboxOpen {display:block; position: absolute; top: 0; right: 0; width: 14%; height: 75px; z-index: 10; font-size:0; }
-.container .gnb {display: none; position: absolute; top:92px; left:0; width: 100%; background: #f4f4f4; border-top: 1px solid #ccc; z-index: 100;}
-.container .visual li {position: relative; height: 387px;} /* 고정 높이 적용 */
-.container .visual li img.bg {position: absolute; bottom:0; left:0; }
-.container .visual .tit {position: absolute; top:80px; left:0; }
-.container .visual .question {position: absolute; top:15px; right:0; }
+.container .gnb { position: absolute; top:92px; left:0; bottom:0;width: 100%;height:auto;background:url(../images/bg.png) left top repeat; border-top: 1px solid #ccc; z-index: 100;}
+.container .gnb .wrap {background:#fff}
+
+.mainVisualWrap {position: relative;}
+.mainVisual {position:relative;overflow:hidden;width:100%;height:387px;}
+.mainVisual .mainInner {height:100%;font-size:0;line-height:0;white-space:nowrap;}
+.mainVisual .mainInner li {position:relative;display:inline-block;position:relative;width:100%;height:100%;text-align:center;}
+.mainVisual .mainInner .tit {position: absolute; top:80px; left:0; }
+.mainVisual .mainInner .question {position: absolute; top:15px; right:0; }
+.mainVisual .mainInner .bg {width:100%;height:100%;background:url(../images/bg01.png) 269px 84px no-repeat;}
+.mainVisual .mainInner .bg02 {background:url(../images/bg02.png) 340px 129px no-repeat;}
+.question {position: absolute;top:15px;right:0;z-index:1;width:560px}
+.question > div,
+.question > ul {float:left}
+.question > div {width:280px}
+
 
 .container .tabCtrlWrap {float: left; width: 25%;}
 .container .tabCtrlWrap .tabCtrl {display: block; width: 100%; padding: 0 20px 0 40px; height: 59px; line-height: 58px; margin-top: -1px; border: 1px solid #ccc; background: #f8f8f8; text-align: left; box-sizing: border-box; color: #999; font-size: 18px;}
@@ -90,21 +103,84 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .container .tabViewWrap .tabView {display: none;}
 .container .tabViewWrap .tabView:first-child {display: block;}
 .container .tabViewWrap .tabView ul {overflow: hidden; width: 100%;}
-.container .tabViewWrap .tabView li {float: left; border: 1px solid #ccc; border-left: 0 none;}
+.container .tabViewWrap .tabView li {float: left; border: 1px solid #ccc; border-left: 0 none;position: relative;}
+.container .tabViewWrap .tabView li span {position: absolute;top:0;right:-1px}
 
-.container .noti li {float: left; width: 50%;}
-.container .sideInfo li {float: left;}
-
+.container .noti li {float: left; width: 50%;box-sizing:border-box;padding-left:40px;}
+.container .sideInfo li {float: left;box-sizing:border-box;padding-left:40px;background:#f7f7f7;width:25%;height:120px;}
+.container .sideInfo li:last-child {padding-left:0;background:#b6b9c3}
+.container .sideInfo li:last-child img {margin:0 auto}
 .footer {width: 100%; border-top: 1px solid #ccc; text-align: center;}	
 .footer img {margin: 0 auto;}
-
+.moInner {display:none}
+.footer .mo {display:none}
+.pcImg {display:block}
+.mImg {display:none}
 @media screen and (max-width:1136px){ /* 본문 너비 1120 + 16 스크롤너비 */
 
   .inner {max-width: initial; padding:0 15px; box-sizing: border-box;}
   .container .visual .question {width: 55%; top: auto; bottom: 9%;}
   .container .sideInfo li {width: 50%; background: #f7f7f7;}
   .container .sideInfo li:last-child {background: #b6b9c3;}
+  .container .tabCtrlWrap {width:100%;float:none}
+  .container .tabViewWrap {width:100%;float:none}
+  .container .tabCtrlWrap .tabCtrl {width:25%;float:left}
+  .container .tabCtrlWrap .tabCtrl {margin-top:0;border-bottom:0 !important}
+  .container .tabViewWrap .tabView li {width:33.33%}
+  .container .tabCtrlWrap .tabCtrl {padding:0 20px}
+  .container .tabViewWrap .tabView li:first-child {border-left:1px solid #ccc}
+  .container .tabCtrlWrap .tabCtrl:nth-child(1),
+  .container .tabCtrlWrap .tabCtrl:nth-child(2),
+  .container .tabCtrlWrap .tabCtrl:nth-child(3) {border-right:0}
+  .container .tabCtrlWrap .tabCtrl {font-size:17px}
+}
+@media screen and (max-width:720px){
+  .inner {padding:0}
+  .sideWrap {display:none}
+  .container {padding-top:0}
+  .header .inner {display:none}
+  .moInner {display:block;position: relative;box-sizing:border-box}
+  .header .moInner {padding:15px 20px}
+  .moGnb {position: absolute;top:15px;right:20px}
+  .gnb {display:none !important}
+  .mainVisual {height:400px;}
+  .question {top:0;position: relative}
+  .mainVisual .mainInner .tit {width:40%;top:23px;left:20px}
+  .question {width:100%}
+  .question > div,
+  .question > ul {width:50%}
+  .question img {width:100%}
+  .mainVisual .mainInner .bg {background: url(../images/bg01.png) 110% 100% no-repeat !important;background-size:60% !important}
+  .mainVisual .mainInner .bg.bg02{background: url(../images/bg02.png) 110% 100% no-repeat !important;background-size:60% !important}
+  .initTab {padding:20px;padding-bottom:0}
+  .container .tabCtrlWrap .tabCtrl {height:72px;line-height:1.2;padding:0 15px}
+  .container .tabCtrlWrap .tabCtrl span {display:block}
+  .container .tabCtrlWrap .tabCtrl {font-size:12px}
+  .container .tabViewWrap .tabView li {float:none;width:100%;border-top:0 !important;border-left:1px solid #ccc !important}
+  .container .tabViewWrap .tabView li:first-child {border-top:1px solid #ccc !important}
+  .container .noti li {width:100%;float:none}
+  .container .sideInfo li {float:none;width:100%;}
+  .footer img {display:none}
+  .footer .mo {display:block;margin:0 !important}
+  .container .sideInfo li {padding-left:20px}
+  .container .noti li {padding-left:20px}
+  .pcImg {display:none}
+  .mImg {display:block}
+}
 
+@media screen and (max-width:560px){
+  
+  .mainVisual {height:202px;}
+  .mainVisual .mainInner .bg {background: url(../images/bg01.png) 110% -84% no-repeat !important;    background-size: 60% !important;}
+
+  .mainVisual .mainInner .bg.bg02{background: url(../images/bg02.png) 110% -84% no-repeat !important;    background-size: 60% !important;}
+}
+
+@media screen and (max-width:430px){
+  .mainVisual {height:202px;}
+  .mainVisual .mainInner .bg {background: url(../images/bg01.png) 110% 108% no-repeat !important;    background-size: 60% !important;}
+
+  .mainVisual .mainInner .bg.bg02{background: url(../images/bg02.png) 110% 108% no-repeat !important;    background-size: 60% !important;}
 }
 
 /* 아래 참고 소스 
