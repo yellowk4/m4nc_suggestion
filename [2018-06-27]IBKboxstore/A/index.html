@@ -8,8 +8,10 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 	<title>IBK BOX STORE</title>
 	<link type="text/css" rel="stylesheet" href="inc/css/default.css">
-    <script src="inc/js/jquery.min.js"></script>
-    <script src="inc/js/ui.js"></script>
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="./inc/js/ui.js"></script>
 	<!--[if lt IE 9]>
         <script src="inc/js/html5shiv.js"></script>
         <script src="inc/js/respond.js"></script>
@@ -55,35 +57,39 @@
                     <img src="inc/images/m_gnb.png" class="moGnb"/>
                 </div>
             </div>
-            <div class="gnb soluton" style="display:none"> <!-- soluton menu 안보임 -->
-                <div class="bg"></div>
-                <div class="wrap">
+            <div class="gnb soluton"> <!-- soluton menu 안보임 -->
+                <div class="wrap" style="display:none">
                     <div class="inner">
                         <a href="#none">
                             <img src="inc/images/gnb.png" />
                         </a>
                     </div>
                 </div>
-                
+                <span class="gDim"></span>
             </div>
-             <div class="gnb box" style="display:none"> <!-- box menu 안보임 -->
-                <div class="inner">
-                    <a href="#none"><img src="inc/images/boxgnb.png" /></a>
+             <div class="gnb box"> <!-- box menu 안보임 -->
+                <div class="wrap" style="display:none">
+                    <div class="inner">
+                        <a href="#none">
+                            <img src="inc/images/boxgnb.png" />
+                        </a>
+                    </div>
                 </div>
+                <span class="gDim"></span>
             </div>
 
             <div class="inner">
                 <div class="mainVisualWrap">
-                    <div class="mainVisual">
-                        <ul class="mainInner" style="">
+                    <div class="mainVisual swiper-container">
+                        <ul class="mainInner swiper-wrapper">
                             <!-- 스와이퍼 1120 * 387 -->
-                            <li>
+                            <li class="swiper-slide">
                                 <div class="bg bg01"></div>
                                 <p class="tit">
                                     <img src="inc/images/visual_tit.png" />
                                 </p>
                             </li>
-                            <li>
+                            <li class="swiper-slide">
                                 <div class="bg bg02"></div>
                                 <p class="tit">
                                     <img src="inc/images/visual02_tit.png" />
@@ -245,7 +251,7 @@
         
 		
 	</div> <!-- //wrap END -->
-	
+	<!-- <div class="dim"></div> -->
 </body>
 
 </html>

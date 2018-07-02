@@ -460,4 +460,33 @@ $(function(){
 	m4.$body = $("body");
 	m4.$dim = m4.$body.find(".dim");
 	m4.UI.startup();
+
+	TweenMax.delayedCall(.5, function(){
+		$(".bgTri01").addClass("on")
+		$(".bgTri02").addClass("on")
+		$(".bgTri03").addClass("on")
+	})
+
+	TweenMax.delayedCall(1, function(){
+		$(".bgTri01").addClass("on2")
+		$(".bgTri02").addClass("on2")
+		$(".bgTri03").addClass("on2")
+		$(".box").eq(0).addClass("on")
+	})
+
+	TweenMax.delayedCall(1.5, function(){
+		$(".txtWrap").find("span").each(function(idx){
+			TweenMax.to($(this).find("em"), .35, { y:0, opacity:1, ease:Power1.easeOut, delay:.1 * idx})
+		})
+	})
+
+	TweenMax.delayedCall(1.8, function(){
+		// TweenMax.set($(".box").eq(0), {zIndex:5,})
+		// TweenMax.to($(".box").eq(0), .3, {y:0, opacity:1, ease:Power1.easeOut, onComplete: function(){
+			$(".box").not($(".box").eq(0)).each(function(idx){
+				TweenMax.to($(this), .35, { y:0, opacity:1, delay:.1 * idx, ease:Power1.easeOut})
+			})
+		// }})
+	})
+
 });
