@@ -71,4 +71,21 @@
 	
 </body>
 
+<script>
+    $(document).ready(function(){
+        var $target = $(".header");
+        var scrollPos = $(".con01").offset().top;
+
+        console.log(scrollPos);
+        $(window).scroll(function(){
+            if($(this).scrollTop() > scrollPos * .6){
+                $target.addClass("change");
+            } else {
+                $target.removeClass("change");
+            }
+        });
+
+    });
+</script>
+
 </html>
