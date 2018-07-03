@@ -6,9 +6,12 @@ m4.loadAnimation = new function () {
 		this.$line1 = m4.$body.find(".sub03 .visual .txtBg");
 		this.$txt = m4.$body.find(".txt");
 		this.$btn = m4.$body.find(".btn");
+		this.$visualImg = m4.$body.find(".visualImg");
+		TweenMax.to(this.$visualImg, .5, { className: "+=on", delay: .2, ease: Power0.easeOut });
 		TweenMax.to(this.$line1, .5, { width: 52 + '%', delay: .5, ease: Power0.easeOut });
 		TweenMax.to(this.$txt, .5, { opacity: 1, y: 0, delay: 1, ease: Power0.easeOut });
 		TweenMax.to(this.$btn, .5, { opacity: 1, y: 0, delay: 1.5, ease: Power0.easeOut });
+		
 
 	};
 };

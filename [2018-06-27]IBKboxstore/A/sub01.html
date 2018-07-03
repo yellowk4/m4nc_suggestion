@@ -35,6 +35,16 @@
                 $(this).find("img").removeClass("on").eq(0).addClass("on");
             })
 
+            TweenMax.delayedCall(.5, function () {
+                $(".sub01Li li").each(function (idx) {
+                    var $this = $(this);
+                    TweenMax.delayedCall(.15 * idx, function () {
+                        $this.addClass("on");
+                    })
+                })
+            })
+
+
         });
     </script>
 </head>
@@ -51,6 +61,18 @@
                 <img alt="" src="inc/images/sub01_left_menu.png" />
             </div>
             <div class="content">
+                <ul class="sub01Li clfix">
+                    <li><img alt="" src="inc/images/sub01_li01.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li02.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li03.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li04.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li05.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li06.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li07.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li08.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li09.png" /></li>
+                    <li><img alt="" src="inc/images/sub01_li10.png" /></li>
+                </ul>
                 <div class="header">
                     <img alt="" src="inc/images/sub01_header.png" />
                 </div>

@@ -155,3 +155,42 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .con02 ul li img {display:block;margin:0 auto;position: absolute;top:0;left:50%;z-index:2;margin-left:-160px}
 .buLeft {position: absolute;top:-83px;left:-87px;}
 .buRight {position: absolute;top:388px;right:-52px;z-index:0;}
+
+.box02 img {position:relative; -webkit-animation: motion 1s linear 1s infinite alternate; /*normal;  Chrome, Safari, Opera */ animation: motion 1s linear 1s infinite alternate; /*normal;  Standard syntax */}
+.box07 img {position:relative; -webkit-animation: motion02 1s linear 1s infinite alternate; /*normal;  Chrome, Safari, Opera */ animation: motion02 1s linear 1s infinite alternate; /*normal;  Standard syntax */}
+.box03 img {position:relative; -webkit-animation: motion03 1s linear 1s infinite alternate; /*normal;  Chrome, Safari, Opera */ animation: motion03 1s linear 1s infinite alternate; /*normal;  Standard syntax */}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes motion {
+    0%   {opacity: 1.0; transform:translateY(10px)}
+    100% {opacity: 1.0; transform:translateY(0px)}
+}
+
+/* Standard syntax */
+@keyframes motion {
+    0%   {opacity: 1.0; transform:translateY(10px)}
+    100% {opacity: 1.0; transform:translateY(0px)}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes motion02 {
+    0%   {opacity: 1.0; transform:translateY(10px)}
+    100% {opacity: 1.0; transform:translateY(0px)}
+}
+
+/* Standard syntax */
+@keyframes motion02 {
+    0%   {opacity: 1.0; transform:translateY(10px)}
+    100% {opacity: 1.0; transform:translateY(0px)}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes motion03 {
+    0%   {opacity: 1.0; transform:translateY(0px)}
+    100% {opacity: 1.0; transform:translateY(10px)}
+}
+
+/* Standard syntax */
+@keyframes motion03 {
+    0%   {opacity: 1.0; transform:translateY(0px)}
+    100% {opacity: 1.0; transform:translateY(10px)}
+}
