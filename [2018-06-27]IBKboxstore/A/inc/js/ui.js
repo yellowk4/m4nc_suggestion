@@ -102,7 +102,7 @@ var Layer = function Layer() {
 	}
 }
 
-var GNB = function(){
+var GNB = function GNB(){
 
 	return {
 		init: function(){
@@ -114,7 +114,9 @@ var GNB = function(){
 				boxClass: '.box',
 				activeClass: 'on',
 				viewClass: '.wrap',
-				dimClass: '.gDim'	
+				dimClass: '.gDim',
+				imgHeaderDefaultsClass: '.header_defaults',
+				imgHeaderActiveClass: '.header_active',	
 			}
 
 			this.$wrapper = UI.$body.find(this.params.wrapperClass);
@@ -141,25 +143,31 @@ var GNB = function(){
 			var _this = this;
 			_this.$box.hide().removeClass(_this.params.activeClass).find(_this.params.viewClass).slideUp(350);
 			_this.$menu.show().addClass(_this.params.activeClass).find(_this.params.viewClass).slideDown(350);
+			$(_this.params.imgHeaderDefaultsClass).hide();
+			$(_this.params.imgHeaderActiveClass).show();
 		},
 		onBoxOpenClicked: function(){
 			var _this = this;
 			_this.$menu.hide().removeClass(_this.params.activeClass).find(_this.params.viewClass).slideUp(350);
 			_this.$box.show().addClass(_this.params.activeClass).find(_this.params.viewClass).slideDown(350);
+			$(_this.params.imgHeaderDefaultsClass).show();
+			$(_this.params.imgHeaderActiveClass).hide();
 		},
 		onDimClicked: function(){
 			var _this = this;
 			_this.$menu.removeClass(_this.params.activeClass).find(_this.params.viewClass).slideUp(350, function(){
-				_this.$menu.hide()
+				_this.$menu.hide();
 			});
 			_this.$box.removeClass(_this.params.activeClass).find(_this.params.viewClass).slideUp(350, function(){
 				_this.$box.hide();
 			});
+			$(_this.params.imgHeaderActiveClass).hide();
+			$(_this.params.imgHeaderDefaultsClass).show();
 		}
 	}
 }
 
-var CustomSwiper = function(){
+var CustomSwiper = function CustomSwiper(){
 	var options = {
 		speed: 1000,
 		slidesPerView: 'auto',
@@ -184,7 +192,7 @@ var CustomSwiper = function(){
 
 }
 
-var initAnimation = function(){
+var InitAnimation = function InitAnimation(){
 	return {
 		init: function(){
 			var _this = this;
@@ -219,15 +227,44 @@ var initAnimation = function(){
 	}
 }
 
+var SubInitAnimation = function SubInitAnimation(){
+	return {
+		init: function(){
+
+			this.params = {
+				lineClass: '.sub03 .visual .txtBg',
+				txtClass: '.txt',
+				btnClass: '.btn',
+				visualImgClass: '.visualImg',
+			}
+
+			this.$line1 = UI.$body.find(this.params.lineClass);
+			this.$txt = UI.$body.find(this.params.txtClass);
+			this.$btn = UI.$body.find(this.params.btnClass);
+			this.$visualImg = UI.$body.find(this.params.visualImgClass);
+			TweenMax.to(this.$visualImg, .5, { className: "+=on", delay: .2, ease: Power0.easeOut });
+			TweenMax.to(this.$line1, .5, { width: 52 + '%', delay: .5, ease: Power0.easeOut });
+			TweenMax.to(this.$txt, .5, { opacity: 1, y: 0, delay: 1, ease: Power0.easeOut });
+			TweenMax.to(this.$btn, .5, { opacity: 1, y: 0, delay: 1.5, ease: Power0.easeOut });
+		}
+	}
+}
+
+
 
 var UI = (function(){
 	return {
 		init: function(){
-			UI.hashMap['Tab'] = this.$body.find(".initTab").length && new Tab(); this.find('Tab').init();
-			UI.hashMap['Layer'] = this.$body.find(".sideWrap").length && new Layer(); this.find('Layer').init();
-			UI.hashMap['GNB'] = this.$body.find(".header").length && new GNB(); this.find('GNB').init();
-			UI.hashMap['C_Swiper'] = this.$body.find('.swiper-container').length && new CustomSwiper();
-			UI.hashMap['Animation'] = this.$body.find(".question").length && new initAnimation(); this.find('Animation').init();
+			this.$body.find(".initTab").length && this.add('Tab', Tab);
+			this.$body.find(".sideWrap").length && this.add('Layer', Layer);
+			this.$body.find(".header").length && this.add('GNB', GNB);
+			this.$body.find('.swiper-container').length && this.add('C_Swiper', CustomSwiper);
+			this.$body.find(".question").length && this.add('Animation', InitAnimation);
+			this.$body.find(".sub03").length && this.add('Sub_Animation', SubInitAnimation);
+		},
+		add: function(name, Class){
+			this.hashMap[name] = new Class();
+			this.find(name).init();
 		},
 		find: function(Class){
 			return this.hashMap[Class]
