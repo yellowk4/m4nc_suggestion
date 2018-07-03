@@ -25,6 +25,17 @@
             $(".infoOverWrap").on("click", function () {
                $(".infoOverWrap").removeClass("active")
             });
+
+            $(".box01Wrap").find("li").each(function(idx){
+                var $this = $(this);
+                TweenMax.delayedCall(.15 * (idx + 1), function(){
+                    $this.addClass("on");
+                })
+                TweenMax.delayedCall(1, function(){
+                    $(".box01Wrap").css({overflow: 'inherit'})
+                })
+            })
+
         });
     </script>
 <body> 

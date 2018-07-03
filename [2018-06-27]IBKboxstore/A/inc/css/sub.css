@@ -22,8 +22,8 @@
     -webkit-transform: translate3d(0, 0, 0) rotateY(0deg) rotateZ(0deg);
             transform: translate3d(0, 0, 0) rotateY(0deg) rotateZ(0deg);
     transition: 500ms opacity linear, 800ms -webkit-transform cubic-bezier(0.2, 0.6, 0.3, 1);
-    transition: 800ms transform cubic-bezier(0.2, 0.6, 0.3, 1), 500ms opacity linear;
-    transition: 800ms transform cubic-bezier(0.2, 0.6, 0.3, 1), 500ms opacity linear, 800ms -webkit-transform cubic-bezier(0.2, 0.6, 0.3, 1);
+    transition: 1200ms transform cubic-bezier(0.2, 0.6, 0.3, 1), 500ms opacity linear;
+    transition: 1200ms transform cubic-bezier(0.2, 0.6, 0.3, 1), 500ms opacity linear, 1200ms -webkit-transform cubic-bezier(0.2, 0.6, 0.3, 1);
 }
 
 .subContainer .box.last img{display:none}
@@ -35,7 +35,12 @@
 .sub01Li li.on{transform:scaleX(1);}
 .sub02 .util {width:100%;height:40px;background:#808aa6}
 .sub02 .subContainer {width:1120px;margin:0 auto}
-.sub02 .box01Wrap > li {float:left;perspective:1000px;}
+.sub02 .box01Wrap {overflow:hidden;}
+.sub02 .box01Wrap > li {float:left;position:relative;z-index:2;perspective:1000px;transform:translateX(-200%);transition:650ms transform cubic-bezier(.52,.01,.16,1) 100ms;}
+
+.sub02 .box01Wrap > li:first-child{transform:translateX(-100%);z-index:3;}
+.sub02 .box01Wrap > li:last-child{transform:translateX(-300%);z-index:1;}
+.sub02 .box01Wrap > li.on{transform:translateX(0)}
 .sub02 .box01Wrap > li:first-child > .card {position:relative;}
 .sub02 .box01Wrap > li:first-child .front,
 .sub02 .box01Wrap > li:first-child .back {transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);transition-duration: .75s;transition-property: transform, opacity;}
@@ -54,7 +59,7 @@
 .sub02 .box02Wrap > li:hover .over span {transform:translateY(0);transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);transition-delay:.6s}
 .sub02 .box02Wrap > li:hover .over span:first-child{transition-delay:.5s;}
 .sub02 .infoOver {position: absolute;top:0;right:0;width:232px;height:40px;background:none;font-size:0}
-.infoOverWrap {position: absolute;top:0;right:0;z-index:1;height:0; overflow: hidden; transition: height .3s ease;}
+.infoOverWrap {position: absolute;top:0;right:0;z-index:5;height:0; overflow: hidden; transition: height .3s ease;}
 .infoOverWrap.active {height: 279px;}
 
 

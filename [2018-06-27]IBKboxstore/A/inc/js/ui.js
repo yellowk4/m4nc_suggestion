@@ -182,7 +182,7 @@ var CustomSwiper = function CustomSwiper(){
 			init: function(){
 				TweenMax.set($(".bg01"), { x: $(".bg01").outerWidth(true) / 2, opacity:0 });
 				TweenMax.delayedCall(.55, function(){
-					TweenMax.to($(".bg01"), .45, {x:0, opacity:1, ease:Power1.easeOut })
+					TweenMax.to($(".bg01"), .6, {x:0, opacity:1, ease:Power1.easeOut })
 				})
 			},
 		}

@@ -21,7 +21,7 @@
     <script>
         $(function () {
 
-            TweenMax.delayedCall(.5, function(){
+            TweenMax.delayedCall(1, function(){
                 $(".box").each(function(idx){
                     var $this = $(this);
                     TweenMax.delayedCall(.15 * idx, function(){
@@ -37,12 +37,10 @@
                 $(this).find("img").removeClass("on").eq(0).addClass("on");
             })
 
-            TweenMax.delayedCall(.5, function () {
-                $(".sub01Li li").each(function (idx) {
-                    var $this = $(this);
-                    TweenMax.delayedCall(.15 * idx, function () {
-                        $this.addClass("on");
-                    })
+            $(".sub01Li li").each(function (idx) {
+                var $this = $(this);
+                TweenMax.delayedCall(.1 * idx, function () {
+                    $this.addClass("on");
                 })
             })
 
