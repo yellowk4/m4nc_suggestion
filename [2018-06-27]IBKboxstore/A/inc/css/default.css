@@ -89,8 +89,7 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .mainVisual .mainInner .bg02 {background:url(../images/bg02.png) 340px 129px no-repeat;}
 .question {position: absolute;top:15px;right:0;z-index:1;width:560px}
 .question ul {position: relative;}
-.question .question01 {position: absolute;top:0;left:0;width:280px;height:330px;background:url(../images/q01.png) left top repeat;margin:0;}
-.question .question01 {padding-left:37px}
+.question .question01 {padding-left:37px;position: absolute;top:0;left:0;width:280px;height:330px;background:url(../images/q01.png) left top repeat;margin:0;transition-duration:250ms;}
 .question li {margin-left:280px;height:110px;width:280px;padding-left:27px;box-sizing:border-box;overflow:hidden;transform:scaleX(0);transform-origin:0% 50%;transition:350ms transform cubic-bezier(.7,.3,0,1);}
 .question li.on{transform:scaleX(1);}
 .question li p {overflow:hidden;}

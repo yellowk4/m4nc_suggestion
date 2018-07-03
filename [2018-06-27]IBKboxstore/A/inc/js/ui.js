@@ -163,13 +163,20 @@ var CustomSwiper = function(){
 	var options = {
 		speed: 1000,
 		slidesPerView: 'auto',
-		parallax: true,
 		effect: 'fade',
 		autoplay: {
 			delay: 5000
 		},
 		fadeEffect: {
 			crossFade: true,
+		},
+		on: {
+			init: function(){
+				TweenMax.set($(".bg01"), { x: $(".bg01").outerWidth(true) / 2, opacity:0 });
+				TweenMax.delayedCall(.55, function(){
+					TweenMax.to($(".bg01"), .45, {x:0, opacity:1, ease:Power1.easeOut })
+				})
+			},
 		}
 	}
 
