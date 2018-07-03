@@ -26,7 +26,7 @@ var Tab = function Tab(){
 
 			this.addEvent();
 
-			TweenMax.delayedCall(.15, function(){
+			TweenMax.delayedCall(.7, function(){
 				_this.$view.eq(0).find("li").each(function(idx){
 					var $this = $(this);
 					TweenMax.delayedCall(.1 * (idx + 1), function(){
@@ -163,6 +163,7 @@ var CustomSwiper = function(){
 	var options = {
 		speed: 1000,
 		slidesPerView: 'auto',
+		parallax: true,
 		effect: 'fade',
 		autoplay: {
 			delay: 5000
