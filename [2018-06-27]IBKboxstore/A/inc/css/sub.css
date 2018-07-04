@@ -43,7 +43,7 @@
 .sub02 .box01Wrap > li.on{transform:translateX(0)}
 .sub02 .box01Wrap > li:first-child > .card {position:relative;}
 .sub02 .box01Wrap > li:first-child .front,
-.sub02 .box01Wrap > li:first-child .back {transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);transition-duration: .75s;transition-property: transform, opacity;}
+.sub02 .box01Wrap > li:first-child .back {transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);transition-duration: .75s;transition-property: transform, opacity;transition-delay:150ms;}
 .sub02 .box01Wrap > li:first-child .front {transform:rotateY(0deg)}
 .sub02 .box01Wrap > li:first-child .back {position:absolute;top:0;left:0;transform:rotateY(-180deg);opacity:0;}
 .sub02 .box01Wrap > li:first-child:hover .front {transform:rotateY(180deg)}
