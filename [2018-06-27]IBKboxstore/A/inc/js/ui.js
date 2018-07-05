@@ -67,11 +67,13 @@ var Layer = function Layer() {
 				closeCtrlClass: '.bnClose',
 				viewClass: '.bnDetail',
 				toggleClass: 'active',
+				dimClass: '.bnDetailDim',
 			}
 
 			this.$wrapper = UI.$body.find(this.params.wrapperClass);
 			this.$openCtrl = this.$wrapper.find(this.params.openCtrlClass);
 			this.$closeCtrl = this.$wrapper.find(this.params.closeCtrlClass);
+			this.$dim = this.$wrapper.find(this.params.dimClass);
 			this.$view = this.$wrapper.find(this.params.viewClass);
 			
 			this.addEvent();
@@ -87,18 +89,22 @@ var Layer = function Layer() {
 				_this.onCloseCtrlClicked.call(_this)
 			})
 
+			_this.$dim.on(Events.Click.Layer, function(){
+				_this.$openCtrl.trigger(Events.Click.Layer);
+			})
+
 		},
 		onOpenCtrlClicked: function(obj){
 			if($(this).toggleClass(obj.params.toggleClass).hasClass(obj.params.toggleClass)) {
-				obj.$view.slideDown(350)
+				obj.$view.addClass(obj.params.toggleClass).slideDown(350);
+				UI.find('GNB').$dim.trigger(Events.Click.GNB);
 			} else {
-				obj.$view.slideUp(350)
+				obj.$view.removeClass(obj.params.toggleClass).slideUp(350);
 			}
 		},
 		onCloseCtrlClicked: function(){
-			this.$wrapper.slideUp(350);
-		}
-
+			this.$wrapper.removeClass(this.params.toggleClass).slideUp(350);
+		},
 	}
 }
 

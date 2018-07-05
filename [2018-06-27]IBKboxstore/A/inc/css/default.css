@@ -67,8 +67,11 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .sideWrap .utill {background: #808aa6; }
 .sideWrap .utill .inner {overflow: hidden; width: 100%;}
 .sideWrap .utill img {float: right;}
-.bnDetail {position: absolute;top:0;left:0;z-index:200;width:100%;height:557px;background:#dde6fb}
+.bnDetail {position: absolute;top:0;left:0;z-index:200;width:100%;height:557px;background:#dde6fb;box-shadow: 0px 9px 29px 0px rgba(0, 0, 0, 0.3); }
+.bnDetailDim {width:100%;height:100%;display:none;position:fixed;top:0;left:0;z-index:199;background:rgba(0, 0, 0, .6);}
 .bnDetail img {width:1120px;height:557px;margin:0 auto}
+
+.bnDetail.active + .bnDetailDim {display:block;}
 
 .container {position: relative; padding-top: 17px;}
 .container .menuOpen {display:block; position: absolute; top: 0; left: 50%; width: 36%; height: 75px; z-index: 10; font-size:0; }
