@@ -87,7 +87,7 @@ ul,ol,li { list-style-type:none; box-sizing:border-box; -moz-box-sizing:border-b
 .container .gnb ul li a{width:100%;display:block;}
 .container .gnb ul li dt > a,
 .container .gnb ul li dd > a {padding:8px 0 8px 13px;box-sizing:border-box;}
-.container .gnb ul li dt > a{font-size:13px;font-weight:bold;color:#0c77e5;}
+.container .gnb ul li dt > a{font-size:13px;font-weight:bold;color:#0c77e5;padding:0 0 0 13px;}
 .container .gnb ul li dd > a{font-size:16px;font-weight:bold;color:#333;}
 .container .gnb ul li dd > a:hover{background-color:#0c77e5;color:#fff;}
 .container .gnb ul li dt + dd {margin-top:11px;}
