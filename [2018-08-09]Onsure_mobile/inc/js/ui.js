@@ -112,10 +112,12 @@ app.initMainBanner = function(){
         var ownerIdx = parseInt($(this).attr("data-owner-idx")),
             _$banner = $banner.filter("[data-idx="+ownerIdx+"]");
         TweenMax.to(_$banner, .45, { y: 0, ease:Power1.easeOut, onComplete: function(){
+            
             TweenMax.to(_$banner.find(".innerWrap"), .35, { opacity:0 })
             TweenMax.to(_$banner.find(".bannerTop"), .35, { height: _$banner.find(bannerTopButtonClass).outerHeight(true), onComplete: function(){
                 TweenMax.set(_$banner.find(bannerTopButtonClass), { display:'block'})
                 TweenMax.to(_$banner.find(bannerTopButtonClass), .35, { opacity:1, ease: Linear.easeNone, onComplete: function(){
+                    
                     isAnimate = setInterval(function(){
                         var nextKey = currentKey + 1;
                         if(nextKey > $banner.length - 1 ) {
@@ -133,6 +135,7 @@ app.initMainBanner = function(){
                     app.CustomSelect.reset();
                 }})
                 _$banner.removeClass(activeClass);
+                TweenMax.set($box, { y: _$banner[0].offsetTop - 20, backgroundColor: bg[ownerIdx]})
                 $('.swiper-wrapper').removeClass(onClass);
             }})
             _$banner.find(".bannerCon").removeAttr("style").find(".bannerProductWrap").hide();
