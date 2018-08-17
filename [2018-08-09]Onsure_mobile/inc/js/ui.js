@@ -29,7 +29,8 @@ app.initUtilList = function(){
             TweenMax.set(app.$dim, {zIndex:6})
             TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
             $.each(all, function(key, value){
-                TweenMax.to(value._this, .6, { y:0, opacity:1, zIndex:1, delay: .1 * key, ease: Power1.easeOut})
+                TweenMax.set(value._this.parent("li"), { display:'block' })
+                TweenMax.to(value._this, .6, { y:0, opacity:1, delay: .1 * key, ease: Power1.easeOut})
             })
             TweenMax.delayedCall(all.length * .1, function(){
                 isClicked = false;
@@ -39,7 +40,9 @@ app.initUtilList = function(){
                 TweenMax.set(app.$dim, { zIndex: -1 })
             }})
             $.each(all, function(key, value){
-                TweenMax.to(value._this, .6, { y: value.y, opacity:0, zIndex:-1, delay: .1 * key, ease: Power1.easeOut })
+                TweenMax.to(value._this, .6, { y: value.y, opacity:0, delay: .1 * key, ease: Power1.easeOut, onComplete: function(){
+                    TweenMax.set(value._this.parent("li"), { display: 'none'})
+                }})
             })
             TweenMax.delayedCall(all.length * .1, function(){
                 isClicked = false;
