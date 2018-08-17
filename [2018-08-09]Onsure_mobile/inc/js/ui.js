@@ -52,12 +52,17 @@ app.initMainBanner = function(){
     var bannerClass = '[class^="banner0"]',
         bannerTopButtonClass = '.bannerTop > button',
         bannerCloseButtonClass = '.btnBannerClose',
+        boxClass = '.box',
         activeClass = 'active',
         onClass = 'on';
 
     var currentKey = 0;
 
-    var $banner = app.$body.find(bannerClass);
+    var $banner = app.$body.find(bannerClass),
+        $box = app.$body.find(boxClass);
+
+    var bg = ['#5878d5', '#27b2a5', '#da5792'];
+    
 
     $banner.each(function(idx){
         var _$this = $(this);
@@ -68,13 +73,20 @@ app.initMainBanner = function(){
         var nextKey = currentKey + 1;
         if(nextKey > $banner.length - 1 ) {
             nextKey = 0;
+            TweenMax.to($box, .35, { y: '+=' + $box.outerHeight(true), onComplete: function(){
+                TweenMax.set($box, { y: - $box.outerHeight(true) })
+                handler(nextKey)
+            }})
+        } else {
+            handler(nextKey)
         }
-        handler(nextKey)
+        
     }, 3000)
 
     var handler = function(nextKey){
         $banner.removeClass(onClass).eq(nextKey).addClass(onClass);
         currentKey = nextKey;
+        TweenMax.to($box, .35, { y: $banner.eq(nextKey)[0].offsetTop - 20, backgroundColor: bg[nextKey], delay:.1 })
     }
 
     $banner.on('click', bannerTopButtonClass, function(){
@@ -85,6 +97,7 @@ app.initMainBanner = function(){
         currentKey = parseInt(_$banner.attr("data-idx"));
         _$banner.addClass([activeClass, onClass].join(' ')).siblings().removeClass([activeClass, onClass].join(' '));
         TweenMax.to(_$this, .35, { opacity:0, ease:Power1.easeOut})
+
         TweenMax.to(_$banner, .45, { y: -(_$banner.offset().top), ease:Power1.easeOut, onComplete: function(){
             TweenMax.to(_$banner.find(".bannerTop"), .35, { height: _$this.next().outerHeight(true), onComplete: function(){
                 TweenMax.set(_$this, { display: 'none' })
@@ -107,8 +120,13 @@ app.initMainBanner = function(){
                         var nextKey = currentKey + 1;
                         if(nextKey > $banner.length - 1 ) {
                             nextKey = 0;
+                            TweenMax.to($box, .35, { y: '+=' + $box.outerHeight(true), onComplete: function(){
+                                TweenMax.set($box, { y: - $box.outerHeight(true) })
+                                handler(nextKey)
+                            }})
+                        } else {
+                            handler(nextKey)
                         }
-                        handler(nextKey)
                     }, 3000)
                     _$banner.find(".innerWrap .step").removeClass("on").eq(0).addClass("on");
 

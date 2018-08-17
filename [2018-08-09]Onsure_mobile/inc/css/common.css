@@ -146,7 +146,7 @@ img {width:100%;}
 
 #container {padding:90px 0 80px;box-sizing:border-box;overflow-x:hidden;}
 
-.bannerListWrap {line-height:1.3;}
+.bannerListWrap {line-height:1.3;position:relative;overflow:hidden;}
 .bannerListWrap .bannerList {padding-top:20px;box-sizing:border-box;}
 .bannerListWrap .bannerList [class^="banner0"]{margin-top:15px;}
 .bannerListWrap .bannerList [class^="banner0"]:first-child {margin-top:0;}
@@ -185,12 +185,9 @@ img {width:100%;}
 .banner03 .inpWrap .inpTxt input::-moz-placeholder {color:#ffcccc;}
 .banner03 .inpWrap .customSelect .customeSelectTit {color:#ffcccc;}
 
-.bannerListWrap .bannerList [class^="banner0"].on .bannerTop {box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+/* .bannerListWrap .bannerList [class^="banner0"].on .bannerTop {box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);} */
 .bannerListWrap .bannerList [class^="banner0"].on .bannerTop > button .bannerTxt {color:#fff;}
 
-.bannerListWrap .bannerList .banner01.on .bannerTop{background-color:#5878d5;}
-.bannerListWrap .bannerList .banner02.on .bannerTop{background-color:#27b2a5;}
-.bannerListWrap .bannerList .banner03.on .bannerTop{background-color:#da5792;}
 .bannerListWrap .bannerList .banner01.on .ico {width:47px;height:38px;background-image:url(../images/ico_main_01_on.png);}
 .bannerListWrap .bannerList .banner02.on .ico {width:58px;height:39px;background-image:url(../images/ico_main_02_on.png);}
 .bannerListWrap .bannerList .banner03.on .ico {width:38px;height:44px;background-image:url(../images/ico_main_03_on.png);}
@@ -198,9 +195,15 @@ img {width:100%;}
 .bannerListWrap .bannerList [class^="banner0"].active {width:100%;height:100%;max-height:100%;position:fixed;left:0;z-index:8;}
 .bannerListWrap .bannerList [class^="banner0"].active .bannerTop{width:100%;position:absolute;top:0;left:0;border-radius:0;transition:450ms border-radius linear;}
 
+.bannerListWrap .bannerList .banner01.active .bannerTop{background-color:#5878d5;}
+.bannerListWrap .bannerList .banner02.active .bannerTop{background-color:#27b2a5;}
+.bannerListWrap .bannerList .banner03.active .bannerTop{background-color:#da5792;}
+
 .bannerListWrap .bannerList [class^="banner0"] .step > p {margin-top:22px;padding:0;font-family:NanumSquareL;font-size:24px;}
 .bannerListWrap .bannerList [class^="banner0"] .step > p > strong {font-family:NanumSquareB;}
 .bannerListWrap .bannerList .banner03 .step > p {margin-top:0;}
+
+.bannerListWrap .box {width:calc(100% - 40px);min-height:104px;position:absolute;top:20px;left:50%;z-index:-1;transform:translateX(-50%);background-color:#5878d5;border-radius:14px;}
 
 .proBanner {margin-top:30px;}
 
