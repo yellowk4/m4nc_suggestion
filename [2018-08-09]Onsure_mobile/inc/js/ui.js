@@ -12,40 +12,48 @@ app.initUtilList = function(){
         isClicked = false;
 
     $util.each(function(){
-        TweenMax.set($(this).find("a"), { y: $(this).outerHeight(true) / 2 });
+        TweenMax.set($(this).find(".ico"), { scale: 0 });
         all.push({
-            y: $(this).outerHeight(true) / 2,
             _this: $(this).find("a")
         })
     })
+
+    all.reverse();
 
     $btnUtilOpen.on("click", function(e){
         if(isClicked) return;
         isClicked = true;
 
-        all.reverse();
+        
 
         if($(this).toggleClass("on").hasClass("on")) {
+        
             TweenMax.set(app.$dim, {zIndex:6})
+            
             TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
+            
             $.each(all, function(key, value){
                 TweenMax.set(value._this.parent("li"), { display:'block' })
-                TweenMax.to(value._this, .6, { y:0, opacity:1, delay: .1 * key, ease: Power1.easeOut})
+                TweenMax.to(value._this.find('.ico'), .3, { scale:1, opacity:1, delay: .05 * key, ease: Power4.easeOut})
+                TweenMax.to(value._this.find('.txt'), .35, { opacity:1, delay: .05 * key, ease: Power4.easeOut })
             })
             TweenMax.delayedCall(all.length * .1, function(){
                 isClicked = false;
             })
         } else {
+
             TweenMax.to(app.$dim, .45, { opacity:0, delay:.1, ease:Linear.easeNone, onComplete: function(){
                 TweenMax.set(app.$dim, { zIndex: -1 })
             }})
             $.each(all, function(key, value){
-                TweenMax.to(value._this, .6, { y: value.y, opacity:0, delay: .1 * key, ease: Power1.easeOut, onComplete: function(){
-                    TweenMax.set(value._this.parent("li"), { display: 'none'})
-                }})
+                TweenMax.to(value._this.find('.ico'), .3, { scale:0, delay: .05 * key, ease: Power4.easeOut })
+                TweenMax.to(value._this.find('.txt'), .35, { opacity:0, delay: .05 * key, ease: Power4.easeOut })
             })
             TweenMax.delayedCall(all.length * .1, function(){
                 isClicked = false;
+                $.each(all, function(key, value){
+                    TweenMax.set(value._this.parent('li'), { display: 'none' })
+                })
             })
         }
     })
@@ -298,6 +306,10 @@ app.initTemplateLayer = function(){
                         })
                         _this.$el.parents("[class^='banner0']").find(".bannerTop").removeAttr("style");
                         _this.$el.parents("[class^='banner0']").find(".innerWrap").css({position: 'relative'})
+                        TweenMax.delayedCall(.5, function(){
+                            _this.$el.parents("[class^='banner0']").find(".bannerCon").css({paddingTop:_this.$el.parents("[class^='banner0']").find(".bannerTop").outerHeight(true) })
+
+                        })
                     }
                 }
             }
