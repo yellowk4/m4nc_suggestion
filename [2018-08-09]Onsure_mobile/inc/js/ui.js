@@ -146,7 +146,15 @@ app.initMainSwiper = function(){
                 })
             },
             slideChangeTransitionStart: function(){
+                var _this = this;
+                
                 $headerMenuList.find(targetElement).removeClass(onClass).eq(this.activeIndex).addClass(onClass).trigger('click', this.activeIndex);
+        
+                if( _this.realIndex === _this.slides.length - 1 ){
+                    app.$container.css({backgroundColor: '#fff'})
+                } else {
+                    app.$container.removeAttr("style")
+                }
             }
         }
     }
