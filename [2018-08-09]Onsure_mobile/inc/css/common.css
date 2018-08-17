@@ -146,7 +146,7 @@ img {width:100%;}
 
 #container {padding:90px 0 80px;box-sizing:border-box;overflow-x:hidden;}
 
-.bannerListWrap {line-height:1.3;position:relative;overflow:hidden;}
+.bannerListWrap {line-height:1.3;position:relative;}
 .bannerListWrap .bannerList {padding-top:20px;box-sizing:border-box;}
 .bannerListWrap .bannerList [class^="banner0"]{margin-top:15px;}
 .bannerListWrap .bannerList [class^="banner0"]:first-child {margin-top:0;}
