@@ -203,7 +203,7 @@ img {width:100%;}
 .bannerListWrap .bannerList [class^="banner0"] .step > p > strong {font-family:NanumSquareB;}
 .bannerListWrap .bannerList .banner03 .step > p {margin-top:0;}
 
-.bannerListWrap .box {width:calc(100% - 40px);min-height:104px;position:absolute;top:20px;left:50%;z-index:-1;transform:translateX(-50%);background-color:#5878d5;border-radius:14px;}
+.bannerListWrap .box {width:calc(100% - 40px);min-height:104px;position:absolute;top:20px;left:50%;z-index:-1;transform:translateX(-50%);background-color:#5878d5;border-radius:14px;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2)}
 
 .proBanner {margin-top:30px;}
 
