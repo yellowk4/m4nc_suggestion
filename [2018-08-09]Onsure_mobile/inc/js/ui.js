@@ -87,9 +87,11 @@ app.initMainBanner = function(){
     }, 3000)
 
     var handler = function(nextKey){
-        $banner.removeClass(onClass).eq(nextKey).addClass(onClass);
         currentKey = nextKey;
-        TweenMax.to($box, .35, { y: $banner.eq(nextKey)[0].offsetTop - 20, backgroundColor: bg[nextKey], opacity:1 })
+        TweenMax.to($box, .7, { y: $banner.eq(nextKey)[0].offsetTop - 20, backgroundColor: bg[nextKey], opacity:1 })
+        TweenMax.delayedCall(.1, function(){
+            $banner.removeClass(onClass).eq(nextKey).addClass(onClass);
+        })
     }
 
     $banner.on('click', bannerTopButtonClass, function(){

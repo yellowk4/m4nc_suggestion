@@ -152,7 +152,7 @@ img {width:100%;}
 .bannerListWrap .bannerList [class^="banner0"]:first-child {margin-top:0;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop{width:calc(100% - 40px);display:block;margin:0 auto;position:relative;border-radius:14px;overflow:hidden;transition:300ms all cubic-bezier(.7,.3,0,1);}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button {width:100%;display:block;padding:25px 34px;box-sizing:border-box;position:relative;z-index:2;text-align:left;}
-.bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .bannerTxt {font-size:24px;color:#555;}
+.bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .bannerTxt {font-size:24px;color:#555;transition:450ms color linear;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .bannerTxt > strong {font-family:NanumSquareB;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .ico {display:block;position:absolute;top:50%;right:34px;background-position:0 0;background-repeat:no-repeat;background-size:100% auto;transform:translateY(-50%);transition:500ms background-image linear;}
 .bannerListWrap .bannerList [class^="banner0"] .innerWrap {width:100%;padding:18px 0 20px;box-sizing:border-box;position:absolute;top:0;left:0;z-index:1;font-size:14px;color:#fff;opacity:0;}
