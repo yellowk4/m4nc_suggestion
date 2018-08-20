@@ -267,7 +267,7 @@
             <input type="radio" name="comparisonRadio" />
           </div>
         </li>
-        <li class="on">
+        <li>
           <div class="listCont">
             <span class="productTitle">한화생명 e연금보험(무)</span>          
             <div class="partArea">
@@ -284,10 +284,11 @@
             </div>
           </div>
           <div class="radioBox">
-            <input type="radio" name="comparisonRadio" checked />
+            <input type="radio" name="comparisonRadio" />
           </div>
         </li>
       </ul>
+      <button class="btnComparison" type="button">비교하기</button>
     </div>
     <!-- // 비교하기 레이어 팝업 -->
 </div>
@@ -350,11 +351,13 @@
       $comparisonRadio = $('input[name=comparisonRadio]'),
       $comparisonList = $('.comparisonList li'),
       $comparisonPopupClose = $('.comparisonPopupClose'),
-      $comparisonOpen = $('.comparisonOpen');
+      $comparisonOpen = $('.comparisonOpen'),
+      $btnComparison = $('.btnComparison');
 
   $comparisonRadio.on('click', function(){
     $comparisonList.removeClass('on');
     $(this).closest('li').addClass('on');
+    $btnComparison.addClass('on');
   })
 
   $comparisonOpen.on('click', function(){
@@ -363,6 +366,7 @@
 
   $comparisonPopupClose.on('click', function(){
     $comparisonPopup.removeClass('on');
+     $btnComparison.removeClass('on');
   })
 
 </script>
