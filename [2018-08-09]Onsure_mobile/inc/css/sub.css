@@ -1,0 +1,77 @@
+@charset "utf-8";
+#header {box-shadow:0px 2px 4px 0px rgba(0, 0, 0, 0.2)}
+#header .storageTab li {float:left; width:50%; text-align:center;}
+#header .storageTab li a {display:block; padding:10px 0;}
+#header .storageTab li.on a{color:#ff9600; border-bottom:2px solid #ff9600; font-weight:600;}
+
+.menuSwiper {width:100%; height:46px; line-height:46px; overflow:hidden; padding-left:20px; box-sizing:border-box; background:#fff; margin-bottom:20px;}
+.menuSwiper ul {width:1000%; overflow:hidden;}
+.menuSwiper ul li {float:left; padding-right:20px; font-size:12px; font-weight:600;}
+.menuSwiper ul li:last-child {padding-right:0;}
+.menuSwiper ul li a {color:#777777;}
+.menuSwiper ul li .count {float:right; display:block; width:26px; height:16px; line-height:16px; text-align:center; background:#c8c8c8; border-radius:8px; margin:15px 0 0 3px; color:#fff; font-weight:400}
+.menuSwiper ul li.on a {color:#ff9600;}
+.menuSwiper ul li.on .count {background:#ff9600 }
+
+/* 내보관함 */
+.storageConts {width:100%; padding:0 20px; box-sizing:border-box;}
+.storageConts .storageNotice {margin-bottom:5px;}
+.storageConts .storageNotice .notice {display:block; margin-bottom:20px; font-size:15px;}
+.storageConts .storageNotice .notice .noticePop {display:inline-block; position:relative;}
+.storageConts .storageNotice .notice .noticePop .noticePopOpen {border-bottom:1px solid #333; font-weight:600;}
+.storageConts .storageNotice .notice .noticePop .tooltip {width:550%; overflow:hidden; position:absolute; top:20px; left:-15px; z-index:9;} 
+.storageConts .storageNotice .notice .noticePop .tooltip img {width:90%}
+.storageConts .storageNotice .notice .maincolor {color:#ff9600; font-weight:600;}
+.storageConts .storageNotice .date {font-size:13px; color:#555555}
+
+/* 상품리스트 */
+.productList {width:100%;}
+.productList li {width:100%; padding:30px; box-sizing:border-box; background:#fff; border-radius:5px; margin-bottom:20px; box-shadow:3px 3px 8px 0 rgba(0, 0, 0, 0.2); position:relative;}
+.productList li .productTitle {display:block; font-size:17px; font-weight:600; margin-bottom:12px;}
+.productList li .productTitle.on::after {display:inline-block; content:''; background:url('../images/ico_close_arrow.png') no-repeat; vertical-align:middle; width:15px; height:15px; background-size:100%; margin-left:5px;}
+.productList li .productTitle.off::after {display:inline-block; content:''; background:url('../images/ico_open_arrow.png') no-repeat; vertical-align:middle; width:15px; height:15px; background-size:100%; margin-left:5px;}
+.productList li .detailInfo {display:none; height:30px; line-height:30px; background:#efefef; font-size:12px; text-align:center; margin-bottom:12px;}
+.productList li .listCont {overflow:hidden; margin-bottom:12px;}
+.productList li .listCont .leftInfo {float:left; width:30%; margin-right:10%;}
+.productList li .listCont .rightInfo {float:left; width:60%; text-align:right;}
+.productList li .listCont .rightInfo.type02 {text-align:left;}
+.productList li .listCont .partTitle {display:block; font-size:15px; color:#777777; margin-bottom:5px;}
+.productList li .listCont .amount {font-size:20px; color:#f45f10; font-weight:600;} 
+.productList li .listCont .amount.type02 {color:#5878d5}
+.productList li .listCont .partCont {font-weight:600; font-size:14px;}
+.productList li .listCont .partArea {margin-bottom:10px;}
+.productList li .listCont .partArea:last-child {margin:0;}
+.productList li .btnArea {width:100%; overflow:hidden;}
+.productList li .btnArea .type01 {float:left; width:41%; height:40px; line-height:40px; border-radius:3px; background:#27b2a5; margin-right:4%; color:#fff; text-align:center;}
+.productList li .btnArea .type02 {float:left; width:55%; height:40px; line-height:40px; border-radius:3px; background:#5878d5; color:#fff; text-align:center;}
+.productList li .listDel {position:absolute; top:15px; right:15px;}
+.productList li .listDel img {width:15px;}
+
+/* 비교하기 팝업 */
+#comparisonPopup {width:100%; height:100%; overflow:hidden; position:fixed; top:100%; left:0; z-index:9999; background:#f5f5f5; transition:0.8s;}
+#comparisonPopup.on {top:0;}
+#comparisonPopup .popupHeaderArea {background:#27b2a5; overflow:hidden; padding-bottom:20px; margin-bottom:20px;}
+#comparisonPopup .popupHeaderArea .popupTitle {padding:20px; box-sizing:border-box; border-bottom:1px solid #21978c; color:#fff; font-size:14px; margin-bottom:20px; overflow:hidden;}
+#comparisonPopup .popupHeaderArea .popupTitle .comparisonPopupClose {float:right; width:4%; margin-top:2px}
+#comparisonPopup .popupHeaderArea .mainCard {width:calc(100% - 40px); background:#fff; margin:0 20px; padding:20px; box-sizing:border-box; border-radius:5px; box-shadow:3px 3px 8px 0 rgba(0, 0, 0, 0.2); }
+
+#comparisonPopup .productTitle {display:block; font-size:16px; font-weight:600; margin-bottom:15px;}
+#comparisonPopup .partArea {overflow: hidden; line-height:24px; margin-bottom:5px}
+#comparisonPopup .partArea:last-child {margin:0;}
+#comparisonPopup .partArea .partTitle {float:left; font-size:15px; color:#777777;}
+#comparisonPopup .partArea .amount {float:right; font-size:20px; color:#f45f10;}
+#comparisonPopup .partArea .partCont {float:right; font-size:14px;}
+
+.comparisonList {width:calc(100% - 40px); margin:0 20px;}
+.comparisonList li {display:table; width:100%; background:#fff; border:3px solid #fff; padding:20px; box-sizing:border-box; border-radius:5px; overflow:hidden; margin-bottom:20px;}
+.comparisonList li .listCont {display:table-cell; width:85%;}
+.comparisonList li .radioBox {display:table-cell; width:15%; text-align:right; vertical-align:middle}
+.comparisonList li .radioBox input[type="radio"] {width:30px; height:30px; background:url('../images/img_checkbox_off.png') no-repeat; background-size:30px;}
+.comparisonList li .radioBox input[type="radio"]:checked {background:url('../images/img_checkbox_on.png') no-repeat; background-size:30px;}
+.comparisonList li.on {border:3px solid #3cb9ae;}
+
+/* 가입중인 상품 */
+.joinProductConts {width:100%; padding:0 20px; box-sizing:border-box;}
+.joinProductConts .noticeArea {overflow:hidden; margin-bottom:10px;}
+.joinProductConts .noticeArea .date {float:left; font-size:12px; color:#555555}
+.joinProductConts .noticeArea .addText {float:right; font-size:12px; color:#999999}
