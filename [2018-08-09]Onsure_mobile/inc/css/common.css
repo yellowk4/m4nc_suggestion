@@ -153,7 +153,7 @@ img {width:100%;}
 #header .headerMenuList li.on a{font-family:NanumSqaureB;color:#ff8a00;}
 #header .headerMenuList .headerMenuLine {width:33%;height:2px;display:block;position:absolute;bottom:0;left:0;background-color:#ff8a00;}
 
-#gnb {width:85%;height:100%;position:absolute;top:0;right:0;z-index:10;background-color:#fff;transform:translateX(100%);opacity:0;}
+#gnb {width:85%;height:100%;position:fixed;top:0;right:0;z-index:10;background-color:#fff;transform:translateX(100%);opacity:0;}
 #gnb .inner {position:relative;}
 #gnb .gnbTop {width:100%;max-height:168px;position:absolute;top:0;left:0;z-index:1;}
 #gnb .gnbTop .tnb {padding:35px 0 15px;box-sizing:border-box;position:relative;background-color:#ff9600;}
