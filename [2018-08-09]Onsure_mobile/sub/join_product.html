@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="format-detection" content="telephone=no">
+<title>한화온슈어</title>
+<link rel="stylesheet" type="text/css" href="../inc/css/common.css">
+<link rel="stylesheet" type="text/css" href="../inc/css/sub.css">
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+  <div class="inner">
+    <div class="headerTop">
+        <h1 class="logo"><a href="javascript:void(0)"><img src="../inc/images/img_logo.png" alt="" /></a></h1>
+        <a href="javascript:void(0)" class="btnAllMenu">전체메뉴</a>
+    </div>
+    <div class="storageTab">
+      <ul>
+        <li><a href="./storage.html">내보관함</a></li>
+        <li class="on"><a href="javascript:void(0)">가입중인 상품</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- //Header -->
+<!-- Wrap -->
+<div id="wrap">
+    <!-- Container -->
+    <div id="container">
+      <!-- menuSwiper -->
+      <div class="menuSwiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><a href="#none">전체 <span class="count">11</span></a></li>
+          <li class="swiper-slide on"><a href="#none">연금보험 <span class="count">6</span></a></li>
+          <li class="swiper-slide"><a href="#none">보장보험 <span class="count">3</span></a></li>
+          <li class="swiper-slide"><a href="#none">연금저축 <span class="count">3</span></a></li>
+          <li class="swiper-slide"><a href="#none">어린이보험 <span class="count">5</span></a></li>
+        </ul>
+      </div>      
+      <!-- //menuSwiper -->
+      <div class="joinProductConts">        
+        <div class="noticeArea">
+          <span class="date">2018.08.06</span>
+          <span class="addText">최대 20개까지 저장됩니다.</span>
+        </div>
+        <!-- 가입중인 상품 리스트 -->
+        <ul class="productList">
+          <li>
+            <span class="step"><img src="../inc/images/ico_step02.png" alt="step02" /></span>
+            <span class="productTitle">한화생명 e연금보험(무)</span>
+            <div class="partArea">
+              <span class="partTitle">월 납입금</span>
+              <span class="amount">20만원</span>
+            </div>
+            <span class="endNotice">가입내역 저장종료일 D-12 남았습니다 </span>
+            <div class="btnArea">
+              <button type="button" class="type01">연장하기</button>
+              <a href="" class="type02">이어서 가입</a>
+            </div>
+            <span class="listDel"><img src="../inc/images/btn_list_del.png" alt="리스트 삭제하기" /></span>
+          </li>         
+        </ul>
+        <!-- // 가입중인 상품 리스트 -->
+      </div>
+    </div>
+    <!-- //Container -->   
+</div>
+<!-- //Wrap -->
+<div class="layerFloatingWrap">
+  <div class="inner">
+    <ul>
+      <li>
+        <a href="javascript:void(0)">
+          <em class="icoCalc"></em>
+          <span class="floatingTxt">보험료 계산기</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)">
+          <em class="icoProductKeep"></em>
+          <span class="floatingTxt">상품보관함</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="btnFloatingWrap">
+  <ul class="utilList">
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">상담가입</em>
+        <span class="ico"><img src="../inc/images/ico_util_01.png" alt="" /></span>
+      </a>
+    </li>
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">상담예약</em>
+        <span class="ico"><img src="../inc/images/ico_util_02.png" alt="" /></span>
+      </a>
+    </li>
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">전화상담</em>
+        <span class="ico"><img src="../inc/images/ico_util_03.png" alt="" /></span>
+      </a>
+    </li>
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">카카오상담톡</em>
+        <span class="ico"><img src="../inc/images/ico_util_04.png" alt="" /></span>
+      </a>
+    </li>        
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">내게맞는 보험찾기</em>
+        <span class="ico"><img src="../inc/images/ico_util_05.png" alt="" /></span>
+      </a>
+    </li>
+    <li class="util">
+      <a href="javscript:void(0)">
+        <em class="txt">나의 보관함</em>
+        <span class="ico"><img src="../inc/images/ico_util_06.png" alt="" /></span>
+      </a>
+    </li>
+  </ul>
+  <button type="button" class="btnUtilOpen"></button>
+</div>
+<div class="dim"></div>
+<script type="text/javascript" src="../inc/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../inc/js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../inc/js/swiper.min.js"></script>
+<script type="text/javascript" src="../inc/js/ui.js"></script>
+</body>
+<script>
+  // 탭메뉴
+  var $storageTab =$('#header .storageTab li');
+
+  $storageTab.on('click', function(){
+    $storageTab.removeClass('on');
+    $(this).addClass('on')
+  })
+
+  // menuSwiper
+  var $menuSwiper = new Swiper('.menuSwiper', {
+    slidesPerView: 'auto',
+    spaceBetween:0,
+  });
+
+  var $menuSwiperList =$('.menuSwiper ul li');
+  $menuSwiperList.on('click', function(){
+    $menuSwiperList.removeClass('on');
+    $(this).addClass('on')
+  })
+
+  // 상령일 툴팁
+  var $noticePopOpen = $('.noticePopOpen'),
+      $noticePopOpenTooltip = $('.noticePop .tooltip');
+
+  $noticePopOpen.on('click', function(){
+    $noticePopOpenTooltip.slideDown();
+  })
+
+  $noticePopOpenTooltip.on('click', function(){
+    $(this).slideUp();
+  })
+
+  // 리스트 타이틀 상세정보
+ var $productTitle = $('.productList .productTitle');
+  $productTitle.on('click', function(){
+    if ($(this).hasClass('off')) {
+      $(this).parent().find('.detailInfo').css('display', 'block');
+      $(this).removeClass('off');
+      $(this).addClass('on');
+    } else {
+      $(this).parent().find('.detailInfo').css('display', 'none');
+      $(this).removeClass('on');
+      $(this).addClass('off');
+    }
+  })
+
+  // 비교하기 레이어팝업
+  var $comparisonPopup = $('#comparisonPopup'),
+      $comparisonRadio = $('input[name=comparisonRadio]'),
+      $comparisonList = $('.comparisonList li'),
+      $comparisonPopupClose = $('.comparisonPopupClose'),
+      $comparisonOpen = $('.comparisonOpen');
+
+  $comparisonRadio.on('click', function(){
+    $comparisonList.removeClass('on');
+    $(this).closest('li').addClass('on');
+  })
+
+  $comparisonOpen.on('click', function(){
+    $comparisonPopup.addClass('on');
+  })
+
+  $comparisonPopupClose.on('click', function(){
+    $comparisonPopup.removeClass('on');
+  })
+
+</script>
+</html>
