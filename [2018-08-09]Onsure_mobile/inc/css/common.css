@@ -228,7 +228,7 @@ img {width:100%;}
 .btnFloatingWrap .btnUtilOpen {width:50px;height:50px;position:absolute;bottom:0;right:0;background-color:#ff9600;}
 .btnFloatingWrap .btnUtilOpen > em{width:19px;height:20px;display:block;position:absolute;top:50%;left:50%;background:url(../images/btn_add.png) 0 0 no-repeat;background-size:100% auto;transform:translate(-50%, -50%);transition:350ms transform cubic-bezier(0, 0, 0.3, 1)}
 .btnFloatingWrap .btnUtilOpen.on > em{transform:translate(-50%, -50%) rotate(135deg)}
-.btnFloatingWrap .utilList li {display:none;margin-top:10px;position:relative;text-align:right;}
+.btnFloatingWrap .utilList li {margin-top:10px;position:relative;z-index:-1;text-align:right;}
 .btnFloatingWrap .utilList li > a {display:block;font-size:0;transform-origin:50% 50%}
 .btnFloatingWrap .utilList li > a > * {display:inline-block;margin-left:11px;vertical-align:middle;}
 .btnFloatingWrap .utilList li > a > *:first-child {margin-left:0;}

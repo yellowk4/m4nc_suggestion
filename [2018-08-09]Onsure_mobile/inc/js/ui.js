@@ -33,7 +33,7 @@ app.initUtilList = function(){
             TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
             
             $.each(all, function(key, value){
-                TweenMax.set(value._this.parent("li"), { display:'block' })
+                TweenMax.set(value._this.parent("li"), { zIndex: 1 })
                 TweenMax.to(value._this.find('.ico'), .3, { scale:1, opacity:1, delay: .05 * key, ease: Power4.easeOut})
                 TweenMax.to(value._this.find('.txt'), .35, { opacity:1, delay: .05 * key, ease: Power4.easeOut })
             })
@@ -52,7 +52,7 @@ app.initUtilList = function(){
             TweenMax.delayedCall(all.length * .1, function(){
                 isClicked = false;
                 $.each(all, function(key, value){
-                    TweenMax.set(value._this.parent('li'), { display: 'none' })
+                    TweenMax.set(value._this.parent('li'), { zIndex: -1 })
                 })
             })
         }
