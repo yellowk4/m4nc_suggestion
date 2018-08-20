@@ -333,6 +333,28 @@ app.initTemplateLayer = function(){
 
 }
 
+app.initGNB = function(){
+    var $gnb = app.$body.find("#gnb"),
+        $btnAllMenu = app.$body.find(".btnAllMenu"),
+        $btnAllMenuClose = app.$body.find(".btnAllMenuClose");
+
+    $btnAllMenu.on('click', function(){
+        TweenMax.set(app.$dim, {zIndex:6})
+        TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
+
+        TweenMax.to($gnb, .65, { x:0 + '%', opacity:1, ease:Power3.easeOut })
+    })
+
+    $btnAllMenuClose.on('click', function(){
+        TweenMax.to(app.$dim, .45, { opacity:0, delay:.1, ease:Linear.easeNone, onComplete: function(){
+            TweenMax.set(app.$dim, { zIndex: -1 })
+        }})
+
+        TweenMax.to($gnb, .65, { x: 100 + '%', opacity:0, ease:Power3.easeOut })
+    })
+}
+
+
 
 $(function(){
     app.$body = $("body");
@@ -343,4 +365,5 @@ $(function(){
     hasJqueryObject(app.$body.find(".bannerListWrap")) && app.initMainBanner();
     hasJqueryObject(app.$body.find('.swiper-container-main')) && app.initMainSwiper();
     hasJqueryObject(app.$body.find("#templateLayerArea")) && app.initTemplateLayer();
+    hasJqueryObject(app.$body.find("#gnb")) && app.initGNB();
 })
