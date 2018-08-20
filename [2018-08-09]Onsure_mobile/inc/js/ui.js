@@ -343,6 +343,11 @@ app.initGNB = function(){
         TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
 
         TweenMax.to($gnb, .65, { x:0 + '%', opacity:1, ease:Power3.easeOut })
+        
+        app.$dim.on('touchmove', function(e){
+            e.preventDefault();
+        })
+    
     })
 
     $btnAllMenuClose.on('click', function(){
@@ -351,6 +356,7 @@ app.initGNB = function(){
         }})
 
         TweenMax.to($gnb, .65, { x: 100 + '%', opacity:0, ease:Power3.easeOut })
+        app.$dim.off('touchmove')
     })
 }
 

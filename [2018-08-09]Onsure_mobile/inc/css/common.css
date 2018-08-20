@@ -153,9 +153,9 @@ img {width:100%;}
 #header .headerMenuList li.on a{font-family:NanumSqaureB;color:#ff8a00;}
 #header .headerMenuList .headerMenuLine {width:33%;height:2px;display:block;position:absolute;bottom:0;left:0;background-color:#ff8a00;}
 
-#gnb {width:85%;height:100%;position:fixed;top:0;right:0;z-index:10;background-color:#fff;transform:translateX(100%);opacity:0;}
+#gnb {width:85%;height:100%;position:absolute;top:0;right:0;z-index:10;background-color:#fff;transform:translateX(100%);opacity:0;}
 #gnb .inner {position:relative;}
-#gnb .gnbTop {width:100%;max-height:168px;position:absolute;top:0;left:0;}
+#gnb .gnbTop {width:100%;max-height:168px;position:absolute;top:0;left:0;z-index:1;}
 #gnb .gnbTop .tnb {padding:35px 0 15px;box-sizing:border-box;position:relative;background-color:#ff9600;}
 #gnb .gnbTop .tnb .inner > * {display:inline-block;margin-left:57px;vertical-align:middle;}
 #gnb .gnbTop .tnb .btnHome {margin-left:0;}
@@ -169,7 +169,7 @@ img {width:100%;}
 #gnb .gnbTop .quickMenu ul li .ico {display:block;width:42px;margin:0 auto;}
 #gnb .gnbTop .quickMenu ul li p {margin-top:6px;font-size:12px;color:#696969;}
 
-#gnb .gnbList {height:100%;padding:168px 0 79px;box-sizing:border-box;overflow-y:auto;}
+#gnb .gnbList {height:100%;padding:168px 0 79px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 #gnb .gnbList dt {padding:14px 20px;box-sizing:border-box;background-color:#ececec;}
 #gnb .gnbList dt > .tit {font-family:NanumSquareB;font-size:13px;color:#393939;vertical-align:middle;}
 #gnb .gnbList dd {border-top:1px solid #ececec;}
