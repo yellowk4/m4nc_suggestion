@@ -125,12 +125,15 @@ img {width:100%;}
 .wd140 {width:140px !important;}
 .wd160 {width:160px !important;}
 
-
 /* COLOR */
 .savingColor {color:#5778d5 !important;} /* 저축보험 Color */
 .pensionColor {color:#019cd4 !important;} /* 연금보험 Color */
 .guaranteeColor {color:#ea7947 !important;} /* 보장보험 Color */
 .childColor {color:#27b2a5 !important;} /* 어린이 보험 Color */
+
+.icoWarning {width:17px;height:17px;display:inline-block;background:url(../images/ico_warning.png) center center no-repeat;background-size:100% auto;}
+
+.imgKeypad {position:absolute;bottom:0;left:0;transform:translateY(100%);}
 
 
 .btnClose {width:15px;height:15px;display:block;background:url(../images/btn_close.png) center center no-repeat;background-size:100% auto;}
@@ -260,6 +263,10 @@ img {width:100%;}
 .layerFloatingWrap ul li > a .icoProductKeep {width:18px;height:18px;background:url(../images/ico_product_keep.png) 0 0 no-repeat;background-size:100% auto;}
 .layerFloatingWrap ul li > a .floatingTxt {font-size:13px;color:#fff;}
 
+.layerFloatingWrap.type02 ul li {}
+
+
+
 .btnFloatingWrap {position:fixed;bottom:0;right:0;z-index:7;}
 .btnFloatingWrap .utilList {padding-bottom:60px;box-sizing:border-box;position:relative;}
 .btnFloatingWrap .btnUtilOpen {width:50px;height:50px;position:absolute;bottom:0;right:0;background-color:#ff9600;}
@@ -310,7 +317,7 @@ img {width:100%;}
 .inpWrap .inpTxt input::-ms-input-placeholder {font-family:NanumSquareB;color: #99ccff;vertical-align:middle;}
 .inpWrap .inpTxt input::-moz-placeholder {font-family:NanumSquareB;color: #99ccff;vertical-align:middle;}
 .inpWrap .customSelect {padding-bottom:9px;box-sizing:border-box;position:relative;}
-.inpWrap .customSelect .customeSelectTit {display:block;padding-right:30px;box-sizing:border-box;position:relative;font-family:NanumSquareB;font-size:24px;color:#99ccff;text-align:left;line-height:40px;}
+.inpWrap .customSelect .customeSelectTit {display:block;padding-right:30px;box-sizing:border-box;position:relative;font-family:NanumSquareB;font-size:24px;color:#99ccff;text-align:left;line-height:40px;white-space:nowrap;}
 .inpWrap .customSelect .customeSelectTit.on {color:#fff;}
 .inpWrap .customSelect .customeSelectTit:after {content:'';width:12px;height:8px;display:block;position:absolute;top:50%;right:0;background:url(../images/arrow_select_down.png) center center no-repeat;background-size:100% auto;transform:translateY(-50%);}
 .inpWrap .customSelect + .txt {margin-left:9px;font-family:NanumSquareL;font-size:24px;}
@@ -359,3 +366,17 @@ img {width:100%;}
 .arrowWrap > * {width:25px;height:25px;display:block;}
 .arrowWrap > .arrowLeft {background:url(../images/arrow_left.png) center center no-repeat;background-size:100% auto;float:left;}
 .arrowWrap > .arrowRight {background:url(../images/arrow_right.png) center center no-repeat;background-size:100% auto;float:right;}
+
+/* 보험료 계산기 */
+#container.calculator {height:100%;padding:0;position:relative;}
+#container.calculator .bannerTop {width:100%;max-height:215px;position:absolute;top:0;left:0;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+#container.calculator .bannerTop .bannerHeader {padding:18px 0;box-sizing:border-box;position:relative;}
+#container.calculator .bannerTop .bannerHeader .tit {font-size:14px;color:#fff;vertical-align:middle;}
+#container.calculator .bannerTop .bannerHeader .btnClose {position:absolute;top:50%;right:20px;transform:translateY(-50%);}
+#container.calculator .bannerTop .bannerInpWrap {padding:30px 0;box-sizing:border-box;border-top:1px solid rgba(0, 0, 0, .15);}
+#container.calculator .bannerTop .btnCalculator {width:100%;display:block;padding:18px 0;box-sizing:border-box;position:absolute;bottom:0;left:0;background-color:rgba(0, 0, 0, .1);text-align:center;}
+#container.calculator .bannerTop .btnCalculator > em {font-size:15px;color:#99ccff;vertical-align:middle;}
+#container.calculator #contents {height:100%;padding-top:215px;box-sizing:border-box;}
+#container.calculator #contents .defaultTxt {padding-top:55px;box-sizing:border-box;text-align:center;}
+#container.calculator #contents .defaultTxt p {margin-top:10px;font-size:12px;color:#888888;}
+

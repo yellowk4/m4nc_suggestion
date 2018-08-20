@@ -239,6 +239,7 @@ app.initTemplateLayer = function(){
         this.data = getData(params.selectType);
         this.$targetNode = $("#templateLayerArea");
         this.targetNodeActiveClass = 'active';
+        console.log(this.data)
     
     }
 
