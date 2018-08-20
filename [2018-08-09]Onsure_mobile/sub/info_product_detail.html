@@ -12,77 +12,26 @@
 <body>
 <!-- Wrap -->
 <div id="wrap">
-    <!-- Container -->
-    <a href="javascript:void(0)" class="btnAllMenu">전체메뉴</a>
-    <div id="container" class="type03">     
-      <div class="productRolling">
-        <div class="productRolling-pagination"></div>
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide">
-            <div class="titleArea">
-              <span class="title">한화생명 e연금보험(무)</span>
-              <p>인터넷 가입이라, 비과세 혜택이라,<br />더 많은 연금수령액을 만들어 드립니다.</p>
-            </div>
-            <div class="contentArea">
-              <ul class="productInfoType01">
-                <li class="type01">
-                  <span class="title">15.4%</span>
-                  <span class="cont">비과세혜택</span>
-                </li>
-                <li class="type02">
-                  <span class="title">340만원</span>
-                  <span class="cont">인터넷가입시 더 수령</span>
-                </li>
-                <li class="type03">
-                  <span class="title">5.5%</span>
-                  <span class="cont">매월적립형 더 많은 연금액</span>
-                </li>
-              </ul>
-            </div>
-            <span class="iconArea"><img src="../inc/images/ico_productRolling01.png" alt="icon" /></span>
-          </li>
-          <li class="swiper-slide">
-            <div class="titleArea">
-              <span class="title">한화생명 e연금보험(무)</span>
-              <p>안정적인 노후를 위해<br />오늘도 걱정하는 고객님께 추천드립니다.</p>
-            </div>
-            <div class="contentArea">
-              <ul class="productInfoType02">
-                <li>금리하락에 불안하신 분</li>
-                <li>자영업자 및 전업주부</li>
-                <li>빠른 은퇴로 인한 생활이 걱정이신 분</li>
-              </ul>
-            </div>
-            <span class="iconArea"><img src="../inc/images/ico_productRolling02.png" alt="icon" /></span>
-          </li>
-          <li class="swiper-slide">
-            <div class="titleArea">
-              <span class="title">한화생명 e연금보험(무)</span>
-              <p>지금도 많은 고객분들이 안정적인<br />노후를 위해 가입하고 계십니다.</p>
-            </div>
-            <div class="contentArea">
-              <ul class="productInfoType02">
-                <li>
-                  <span class="title">38세/여/월 20만원 연금개시 38세/여/월 20만원 연금개시</span>
-                  <span class="name">정**님</span>
-                </li>
-                <li>
-                  <span class="title">원래 들고 있던 연금적금보험</span>
-                  <span class="name">문**님</span>
-                </li>
-                <li>
-                  <span class="title">37세/남/월 11만원 연금개시</span>
-                  <span class="name">곽**님</span>
-                </li>
-              </ul>
-            </div>
-            <span class="iconArea"><img src="../inc/images/ico_productRolling03.png" alt="icon" /></span>
-          </li>
-        </ul>
-        <a href="" class="addView">상세보기</a>
-      </div>      
+  <!-- Container -->
+  <a href="javascript:void(0)" class="btnAllMenu">전체메뉴</a>
+  <div id="container" class="type04">     
+    <div class="infoProductTitleArea">
+      <span class="title">한화생명 e연금보험(무)</span>
+      <p>인터넷 가입이라, 비과세 혜택이라,<br />더 많은 연금수령액을 만들어 드립니다.</p>
     </div>
-    <!-- // Container -->
+    <!-- 상품정보 상세페이지 탭-->
+    <div class="infoProductTab">
+      <ul>
+        <li><a href="javascript:void(0)">필요성</a></li>
+        <li class="on"><a href="javascript:void(0)">특장점</a></li>
+        <li><a href="javascript:void(0)">상세내용</a></li>
+        <li><a href="javascript:void(0)">가입후기</a></li>
+      </ul>
+    </div>
+    <!-- // 상품정보 상세페이지 탭-->
+    <div class="imgbox"><img src="../inc/images/img_infoProduct_detail.jpg" alt="임시이미지" /></div>
+  </div>
+  <!-- // Container -->
 </div>
 <!-- //Wrap -->
 <div class="layerFloatingWrap">
@@ -153,28 +102,5 @@
 <script type="text/javascript" src="../inc/js/ui.js"></script>
 </body>
 <script>
-  var $windowH = $(window).height() / 2 ,
-      $titleArea = $('.productRolling .titleArea'),
-      $contentArea = $('.productRolling .contentArea');
-
-  $titleArea.css('height', $windowH);
-  $contentArea.css('height', $windowH);
-
-  var swiper = new Swiper('.productRolling', {    
-    pagination: {
-      el: '.productRolling-pagination',
-      clickable: true,     
-      renderBullet: function (index, className) {
-        var tabmenu = ['특장점', '추천POINT', 'BEST후기'];
-        return '<span class="' + className + '">' + tabmenu[index] + '</span>';
-      },
-    },
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-  });
-
 </script>
 </html>
