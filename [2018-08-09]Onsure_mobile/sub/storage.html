@@ -325,11 +325,17 @@
       $noticePopOpenTooltip = $('.noticePop .tooltip');
 
   $noticePopOpen.on('click', function(){
-    $noticePopOpenTooltip.slideDown();
+    if($(this).toggleClass('active').hasClass('active')) {
+      $noticePopOpenTooltip.show();
+    } else {
+      $noticePopOpenTooltip.trigger('click')
+    }
+    
   })
 
   $noticePopOpenTooltip.on('click', function(){
-    $(this).slideUp();
+    $(this).hide();
+    $noticePopOpen.removeClass('active');
   })
 
   // 리스트 타이틀 상세정보

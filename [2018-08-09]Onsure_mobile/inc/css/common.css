@@ -408,7 +408,7 @@ img {width:100%;}
 .viewWrap .view .txtWrap .detailTxt strong {font-family:NanumSquareB;}
 .viewWrap .view .img {display:block;margin:20px 0;}
 
-#container.calculator #contents {height:100%;padding-top:215px;box-sizing:border-box;}
+#container.calculator #contents {height:100%;padding-top:215px;box-sizing:border-box;overflow-y:auto;}
 #container.calculator #contents.type02 {padding-top:203px;}
 #container.calculator #contents.type03 > .inner {padding:30px 20px;}
 #container.calculator #contents .defaultTxt {padding-top:55px;box-sizing:border-box;text-align:center;}
