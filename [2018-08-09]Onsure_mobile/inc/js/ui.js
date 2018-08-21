@@ -247,7 +247,14 @@ app.initTemplateLayer = function(){
 
     app.CustomSelect.reset = function(){
         $.each(customSelectAll, function(key, value){
-            value.$el.find(customSelectTitleClass).removeClass("on").text(value.defaultsText);
+            var $el = value.$el.find(customSelectTitleClass);
+            
+            if(!!$el.attr('data-select-disabled')) {
+                $el.text(value.defaultsText);
+            } else {
+                $el.removeClass("on").text(value.defaultsText);
+            }
+            
         })
 
         $(inpTxtClass).each(function(){
