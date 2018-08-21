@@ -130,8 +130,13 @@ img {width:100%;}
 .pensionColor {color:#019cd4 !important;} /* 연금보험 Color */
 .guaranteeColor {color:#ea7947 !important;} /* 보장보험 Color */
 .childColor {color:#27b2a5 !important;} /* 어린이 보험 Color */
+.wonColor {color:#ffff00 !important;} /* 보험료계산기 '원' Color */
+
 
 .icoWarning {width:17px;height:17px;display:inline-block;background:url(../images/ico_warning.png) center center no-repeat;background-size:100% auto;}
+.icoToolTip {width:15px;height:15px;display:block;background:url(../images/ico_tooltip.png) center center no-repeat;background-size:100% auto;}
+.icoToolTip.on {background:url(../images/ico_toolTip_on.png) center center no-repeat;background-size:100% auto;}
+.icoStore {width:18px;height:18px;display:block;background:url(../images/ico_store.png) center center no-repeat;background-size:100% auto;}
 
 .imgKeypad {position:absolute;bottom:0;left:0;transform:translateY(100%);}
 
@@ -263,12 +268,15 @@ img {width:100%;}
 .layerFloatingWrap ul li > a .icoProductKeep {width:18px;height:18px;background:url(../images/ico_product_keep.png) 0 0 no-repeat;background-size:100% auto;}
 .layerFloatingWrap ul li > a .floatingTxt {font-size:13px;color:#fff;}
 
-.layerFloatingWrap.type02 ul li {}
-
-
+.layerFloatingWrap.type02 {padding-right:50px;box-sizing:border-box;}
+.layerFloatingWrap.type02 ul {width:100%;display:table;}
+.layerFloatingWrap.type02 ul li {width:auto;display:table-cell;margin-left:0;}
+.layerFloatingWrap.type02 ul li > a{display:block;padding:15px 0;box-sizing:border-box;background-color:#5878d5;border-right:1px solid #e7e7e7;font-family:nsR;font-size:15px;color:#fff;text-align:center;}
+.layerFloatingWrap.type02 ul li:first-child {width:23%;}
+.layerFloatingWrap.type02 ul li:first-child > a {background-color:#404751;}
 
 .btnFloatingWrap {position:fixed;bottom:0;right:0;z-index:7;}
-.btnFloatingWrap .utilList {padding-bottom:60px;box-sizing:border-box;position:relative;}
+.btnFloatingWrap .utilList {display:none;padding-bottom:60px;box-sizing:border-box;position:relative;}
 .btnFloatingWrap .btnUtilOpen {width:50px;height:50px;position:absolute;bottom:0;right:0;background-color:#ff9600;}
 .btnFloatingWrap .btnUtilOpen > em{width:19px;height:20px;display:block;position:absolute;top:50%;left:50%;background:url(../images/btn_add.png) 0 0 no-repeat;background-size:100% auto;transform:translate(-50%, -50%);transition:350ms transform cubic-bezier(0, 0, 0.3, 1)}
 .btnFloatingWrap .btnUtilOpen.on > em{transform:translate(-50%, -50%) rotate(135deg)}
@@ -369,14 +377,63 @@ img {width:100%;}
 
 /* 보험료 계산기 */
 #container.calculator {height:100%;padding:0;position:relative;}
-#container.calculator .bannerTop {width:100%;max-height:215px;position:absolute;top:0;left:0;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+#container.calculator .bannerTop {width:100%;position:absolute;top:0;left:0;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+#container.calculator .bannerTop.type02 {padding-bottom:36px;z-index:1;}
+#container.calculator .bannerTop.type02 .bannerInpWrap {padding:0;}
 #container.calculator .bannerTop .bannerHeader {padding:18px 0;box-sizing:border-box;position:relative;}
 #container.calculator .bannerTop .bannerHeader .tit {font-size:14px;color:#fff;vertical-align:middle;}
 #container.calculator .bannerTop .bannerHeader .btnClose {position:absolute;top:50%;right:20px;transform:translateY(-50%);}
 #container.calculator .bannerTop .bannerInpWrap {padding:30px 0;box-sizing:border-box;border-top:1px solid rgba(0, 0, 0, .15);}
 #container.calculator .bannerTop .btnCalculator {width:100%;display:block;padding:18px 0;box-sizing:border-box;position:absolute;bottom:0;left:0;background-color:rgba(0, 0, 0, .1);text-align:center;}
 #container.calculator .bannerTop .btnCalculator > em {font-size:15px;color:#99ccff;vertical-align:middle;}
+#container.calculator .bannerTop .btnDetailView {width:100%;display:block;padding:9px 0;box-sizing:border-box;position:absolute;bottom:0;left:0;background-color:#2c3c6a;text-align:center;}
+#container.calculator .bannerTop .btnDetailView .ico {width:12px;height:8px;background:url(../images/arrow_select_down.png) center center no-repeat;background-size:100% auto;}
+#container.calculator .bannerTop .btnDetailView.on .ico {background:url(../images/arrow_select_up.png) center center no-repeat;background-size:100% auto;}
+#container.calculator .bannerTop .btnDetailView strong > * {display:inline-block;margin-left:9px;margin-right:-4px;vertical-align:middle;}
+#container.calculator .bannerTop .btnDetailView strong > *:first-child {margin-left:0;}
+#container.calculator .bannerTop .btnDetailView strong > em {font-family:NanumSquareB;font-size:12px;color:#fff;}
+
+#container.calculator .bannerTop .viewWrap .view {display:none;overflow:hidden;}
+#container.calculator .bannerTop .viewWrap .view:first-child {padding:30px 0;box-sizing:border-box;}
+#container.calculator .bannerTop .viewWrap .view.on {display:block}
+#container.calculator .bannerTop .viewWrap .view > p {position:relative;float:right;}
+#container.calculator .bannerTop .viewWrap .view > p:first-child {float:left;}
+#container.calculator .bannerTop .viewWrap .view > p > * {display:block;}
+#container.calculator .bannerTop .viewWrap .view > p > span {font-size:13px;color:#fff;}
+#container.calculator .bannerTop .viewWrap .view .won {margin-top:12px;font-family:NanumSquareL;font-size:20px;color:#fff;}
+#container.calculator .bannerTop .viewWrap .view .won > strong {font-family:NanumSquareB;}
+
+.viewWrap .view .txtWrap {padding-top:23px;box-sizing:border-box;}
+.viewWrap .view .txtWrap .detailTxt {font-family:NanumSquareL;font-size:20px;color:#fff;}
+.viewWrap .view .txtWrap .detailTxt strong {font-family:NanumSquareB;}
+.viewWrap .view .img {display:block;margin:20px 0;}
+
 #container.calculator #contents {height:100%;padding-top:215px;box-sizing:border-box;}
+#container.calculator #contents.type02 {padding-top:203px;}
+#container.calculator #contents.type03 > .inner {padding:30px 20px;}
 #container.calculator #contents .defaultTxt {padding-top:55px;box-sizing:border-box;text-align:center;}
 #container.calculator #contents .defaultTxt p {margin-top:10px;font-size:12px;color:#888888;}
+#container.calculator #contents .titWrap {overflow:hidden;}
+#container.calculator #contents .titWrap h4 {font-family:NanumSquareB;font-size:18px;color:#222;float:left;}
+#container.calculator #contents .titWrap strong {display:block;font-size:0;float:right;}
+#container.calculator #contents .titWrap strong > * {display:inline-block;margin-left:5px;font-size:13px;color:#555;vertical-align:middle;}
+#container.calculator #contents .titWrap strong > *:first-child {margin-left:0;}
 
+.resultListWrap {border-bottom:1px solid #ccc;box-sizing:border-box;}
+.resultListWrap .resultList li{width:100%;display:inline-block;padding:20px 20px 18px;box-sizing:border-box;position:relative;border-top:1px solid #ccc;}
+.resultListWrap .resultList li:first-child {border-top:none;}
+.resultListWrap .resultList li > * {float:right;}
+.resultListWrap .resultList li > *:first-child {float:left;}
+.resultListWrap .resultList li > p > span {font-size:13px;color:#777777;}
+.resultListWrap .resultList li > p > *{display:inline-block;margin-left:5px;vertical-align:middle;}
+.resultListWrap .resultList li > p > *:first-child {margin-left:0;}
+.resultListWrap .resultList li > strong {padding-right:25px;box-sizing:border-box;background:url(../images/arrow_down.png) right center no-repeat;background-size:13px 7px;font-family:NanumSquareB;font-size:18px;color:#333;}
+.resultListWrap .resultList li > .won {background:none;color:#f45f10;}
+.resultListWrap .resultList li .toolTipBox {max-width:270px;display:none;padding:20px;box-sizing:border-box;position:absolute;top:43px;left:70px;z-index:1;background-color:#555;border-radius:6px;}
+.resultListWrap .resultList li .toolTipBox:before {content:'';width:10px;height:6px;display:block;position:absolute;top:-6px;left:32px;background:url(../images/ico_toolTip_type_02.png) center center no-repeat;background-size:100% auto;}
+.resultListWrap .resultList li .toolTipBox .btnClose {width:12px;height:12px;position:absolute;top:10px;right:10px;}
+
+.historyWrap {margin-top:20px;}
+.historyWrap .historyList .history {margin-top:20px;}
+.historyWrap .historyList .history:first-child {margin-top:0;}
+.historyWrap .historyList .history > a {display:block;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); }

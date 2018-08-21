@@ -6,6 +6,7 @@ app.initUtilList = function(){
         btnUtilOpenClass = '.btnUtilOpen';
 
     var $util = app.$body.find(utilClass),
+        $utilList = app.$body.find('.utilList'),
         $btnUtilOpen = app.$body.find(btnUtilOpenClass);
 
     var all = [],
@@ -27,7 +28,7 @@ app.initUtilList = function(){
         
 
         if($(this).toggleClass("on").hasClass("on")) {
-        
+            TweenMax.set($utilList, { display: 'block' })
             TweenMax.set(app.$dim, {zIndex:6})
             
             TweenMax.to(app.$dim, .45, { opacity:1, delay:.1, ease:Linear.easeNone })
@@ -54,6 +55,7 @@ app.initUtilList = function(){
                 $.each(all, function(key, value){
                     TweenMax.set(value._this.parent('li'), { zIndex: -1 })
                 })
+                TweenMax.set($utilList, { display:'none'})
             })
         }
     })
@@ -361,6 +363,62 @@ app.initGNB = function(){
     })
 }
 
+app.initInpTxt = function(){
+    var $inpWrap = app.$body.find(".inpWrap"),
+        $keypad = app.$body.find(".imgKeypad");
+    
+
+    $inpWrap.find('.inpTxt').on('focusin', function(){
+        TweenMax.to($keypad, .35, { y:0 + '%', ease:Power2.easeOut })
+        app.$body.find(".btnLayerClose").trigger('click');
+    })
+    $inpWrap.find(".inpTxt").on("focusout", function(){
+        TweenMax.to($keypad, .35, { y: 100 + '%', ease: Power2.easeOut })
+    })
+    
+    $keypad.on('click', function(){
+        $inpWrap.find(".inpTxt > input[type='text']").val('730101');
+        $inpWrap.find(".inpTxt").trigger('focusout');
+        $inpWrap.find(".customeSelectTit").focus();
+    })
+}
+
+app.initCalculatorResult = function(){
+    var $viewWrap = app.$body.find(".viewWrap"),
+        $btnDetailView = app.$body.find(".btnDetailView"),
+        $toolTipBox = app.$body.find('.toolTipBox'),
+        $btnToolTipBoxOpen = app.$body.find('.btnToolTipBoxOpen'),
+        $btnToolTipBoxClose = app.$body.find('.btnToolTipBoxClose');
+
+    $btnToolTipBoxOpen.on('click', function(){
+        if($(this).toggleClass('active').hasClass('active')) {
+            $toolTipBox.show();
+        } else {
+            $btnToolTipBoxClose.trigger('click')
+        }
+        
+    })
+
+    $btnToolTipBoxClose.on('click', function(){
+        $toolTipBox.hide();
+        $btnToolTipBoxOpen.removeClass('active');
+    })
+
+
+
+    $btnDetailView.on('click', function(){
+        if($(this).toggleClass('on').hasClass('on')) {
+            $viewWrap.find('.view').slideUp(350).last().slideDown(350)
+        } else {
+            $viewWrap.find('.view').slideUp(350).eq(0).slideDown(350)
+        }
+        
+        // TweenMax.to($viewWrap, .35, { height: $viewWrap.find('.view').not('.on').outerHeight(true), onComplete: function(){
+            
+        // }})
+        
+    })
+}
 
 
 $(function(){
@@ -373,4 +431,6 @@ $(function(){
     hasJqueryObject(app.$body.find('.swiper-container-main')) && app.initMainSwiper();
     hasJqueryObject(app.$body.find("#templateLayerArea")) && app.initTemplateLayer();
     hasJqueryObject(app.$body.find("#gnb")) && app.initGNB();
+    hasJqueryObject(app.$body.find(".imgKeypad")) && app.initInpTxt();
+    hasJqueryObject(app.$body.find('.viewWrap')) && app.initCalculatorResult();
 })
