@@ -384,7 +384,7 @@ app.initInpTxt = function(){
     })
     
     $keypad.on('click', function(){
-        $inpWrap.find(".inpTxt > input[type='text']").val('730101');
+        $inpWrap.find(".inpTxt > input[type='text']").val('840205');
         $inpWrap.find(".inpTxt").trigger('focusout');
         $inpWrap.find(".customeSelectTit").focus();
     })
@@ -393,7 +393,7 @@ app.initInpTxt = function(){
 app.initCalculatorResult = function(){
     var $viewWrap = app.$body.find(".viewWrap"),
         $btnDetailView = app.$body.find(".btnDetailView"),
-        $toolTipBox = app.$body.find('.toolTipBox'),
+        $toolTipBox = app.$body.find('.toolTipBoxTy02'),
         $btnToolTipBoxOpen = app.$body.find('.btnToolTipBoxOpen'),
         $btnToolTipBoxClose = app.$body.find('.btnToolTipBoxClose');
 

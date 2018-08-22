@@ -13,7 +13,7 @@
 <!-- Wrap -->
 <div id="wrap">
   <!-- Container -->
-  <div id="container" class="calculator">     
+  <div id="container" class="calculator bgWhite">     
       <div class="bannerTop type02">
           <div class="bannerHeader">
               <div class="inner">
@@ -25,19 +25,21 @@
                 <div class="inner">
                     <div class="viewWrap">
                         <div class="view on">
-                            <p>
-                                <span>월 납입금</span>
-                                <em class="won wonColor"><strong>300,000</strong> 원</em>
-                            </p>
-                            <p>
-                                <span>매년 예상연금수령액</span>
-                                <em class="won"><strong>4,500,000</strong> 원</em>
-                            </p>
+                            <div class="txtWrap">
+                                <p class="defaultTxt">
+                                    <span>월 납입금</span>
+                                    <em class="won wonColor"><strong>300,000</strong> 원</em>
+                                </p>
+                                <p class="defaultTxt">
+                                    <span>매년 예상연금수령액</span>
+                                    <em class="won"><strong>4,500,000</strong> 원</em>
+                                </p>
+                            </div>
                         </div>
                         <div class="view">
                             <div class="txtWrap">
                                 <p class="detailTxt">
-                                    <strong>45세, 남성</strong>인 고객님께서는<br />
+                                    <strong>35세, 남성</strong>인 고객님께서는<br />
                                     매월 <strong>30만원</strong>의 보험료를 <strong>10년</strong>동안<br />
                                     납부하시면 <strong>65세</strong>부터<br />
                                     매년 <strong>4,500,000원</strong>을 받을 수 있습니다.
@@ -71,9 +73,9 @@
                             <button type="button" class="icoToolTip on btnToolTipBoxOpen"></button>
                         </p>
                         <strong>일반형</strong>
-                        <div class="toolTipBox">
+                        <div class="toolTipBoxTy02">
                             <span class="img">
-                                <img src="../inc/images/img_toolTipBox.png" alt="" />
+                                <img src="../inc/images/img_toolTipBox_02.png" alt="" />
                             </span>
                             <button type="button" class="btnToolTipBoxClose btnClose"></button>
                         </div>
@@ -101,6 +103,31 @@
                    </li>
               </ul>
           </div>
+          <div class="tagListWrap">
+                <div class="inner">
+                    <h4 class="tit">추천설계</h4>
+                    <ul class="tagList">
+                        <li class="tag">
+                            <span class="inpRdo">
+                                <input type="radio" name="sectionTag01" id="sectionTag01" checked/>
+                                <label for="sectionTag01">#30대 인기</label>
+                            </span>
+                        </li>
+                        <li class="tag">
+                            <span class="inpRdo">
+                                <input type="radio" name="sectionTag02" id="sectionTag02"/>
+                                <label for="sectionTag02">#빠른퇴직</label>
+                            </span>
+                        </li>
+                        <li class="tag">
+                            <span class="inpRdo">
+                                <input type="radio" name="sectionTag03" id="sectionTag03"/>
+                                <label for="sectionTag03">#월 10만원 플랜</label>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
       </div>
   </div>
   <!-- // Container -->
@@ -117,8 +144,13 @@
             <a href="javascript:void(0)">
                 <span>가입하기</span>
             </a>
+            <div class="toolTipBoxTy03">
+                <!-- <p>상령일 D-20 / 보험료는 지금이 가장 쌉니다.</p> -->
+                <span><img src="../inc/images/img_toolTipBox_03.png" /></span>
+            </div>
         </li>
     </ul>
+    
 </div>
 <div class="btnFloatingWrap">
     <ul class="utilList">
