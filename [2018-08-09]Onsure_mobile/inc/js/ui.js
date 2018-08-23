@@ -398,7 +398,7 @@ app.initCalculatorResult = function(){
         $btnToolTipBoxClose = app.$body.find('.btnToolTipBoxClose');
 
     $btnToolTipBoxOpen.on('click', function(){
-        if($(this).toggleClass('active').hasClass('active')) {
+        if($(this).toggleClass('on').hasClass('on')) {
             $toolTipBox.show();
         } else {
             $btnToolTipBoxClose.trigger('click')
@@ -408,7 +408,7 @@ app.initCalculatorResult = function(){
 
     $btnToolTipBoxClose.on('click', function(){
         $toolTipBox.hide();
-        $btnToolTipBoxOpen.removeClass('active');
+        $btnToolTipBoxOpen.removeClass('on');
     })
 
 

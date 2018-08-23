@@ -220,9 +220,9 @@ img {width:100%;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .bannerTxt {font-size:24px;color:#555;transition:450ms color linear;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .bannerTxt > strong {font-family:NanumSquareB;}
 .bannerListWrap .bannerList [class^="banner0"] .bannerTop > button .ico {display:block;position:absolute;top:50%;right:34px;background-position:0 0;background-repeat:no-repeat;background-size:100% auto;transform:translateY(-50%);transition:500ms background-image linear;}
-.bannerListWrap .bannerList [class^="banner0"] .innerWrap {width:100%;padding:18px 0 20px;box-sizing:border-box;position:absolute;top:0;left:0;z-index:1;font-size:14px;color:#fff;opacity:0;}
-.bannerListWrap .bannerList [class^="banner0"] .innerWrap p {padding:0 20px;box-sizing:border-box;font-size:14px;}
-.bannerListWrap .bannerList [class^="banner0"] .innerWrap .inner {margin-top:18px;padding-top:20px;border-top:1px solid rgba(0, 0, 0, .15);box-sizing:border-box;}
+.bannerListWrap .bannerList [class^="banner0"] .innerWrap {width:100%;padding:0 0 20px;box-sizing:border-box;position:absolute;top:0;left:0;z-index:1;font-size:14px;color:#fff;opacity:0;}
+.bannerListWrap .bannerList [class^="banner0"] .innerWrap > p {padding:18px 20px;box-sizing:border-box;border-bottom:1px solid rgba(0, 0, 0, .15);font-size:14px;}
+.bannerListWrap .bannerList [class^="banner0"] .innerWrap .inner {padding-top:20px;box-sizing:border-box;}
 
 .bannerListWrap .bannerList [class^="banner0"] .innerWrap .inpWrap {margin-top:17px;}
 .bannerListWrap .bannerList [class^="banner0"] .innerWrap .inpWrap:first-child {margin-top:0;}
@@ -273,9 +273,9 @@ img {width:100%;}
 .bannerListWrap .bannerList .banner02.active .bannerTop{background-color:#27b2a5;}
 .bannerListWrap .bannerList .banner03.active .bannerTop{background-color:#da5792;}
 
-.bannerListWrap .bannerList [class^="banner0"] .step > p {margin-top:22px;padding:0;font-family:NanumSquareL;font-size:24px;}
+.bannerListWrap .bannerList [class^="banner0"] .step > p {padding:0;font-family:NanumSquareL;font-size:24px;}
 .bannerListWrap .bannerList [class^="banner0"] .step > p > strong {font-family:NanumSquareB;}
-.bannerListWrap .bannerList .banner03 .step > p {margin-top:0;}
+/* .bannerListWrap .bannerList .banner03 .step > p {margin-top:0;} */
 
 .bannerListWrap .box {width:calc(100% - 40px);min-height:104px;position:absolute;top:20px;left:50%;z-index:-1;transform:translateX(-50%);background-color:#5878d5;border-radius:14px;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2)}
 
@@ -540,5 +540,5 @@ img {width:100%;}
 .graphWrap .graphInner .txtWrap .price {font-family:NanumSquareB;}
 
 #container > .btnWrap {width:100%;position:absolute;bottom:0;left:0;}
-#container > .btnWrap > [class^='btn'] {width:100%;display:block;padding:18px 0;box-sizing:border-box;background-color:#404751;font-family:nsR;color:#fff;text-align:center;}
+#container > .btnWrap > [class^='btn'] {width:100%;max-height:50px;display:block;padding:16px 0;box-sizing:border-box;background-color:#404751;font-family:nsR;font-size:15px;color:#fff;text-align:center;}
 #container > .btnWrap > .btnDisabled {background-color:#9fa3a8;color:rgba(255, 255, 255, .5);}
