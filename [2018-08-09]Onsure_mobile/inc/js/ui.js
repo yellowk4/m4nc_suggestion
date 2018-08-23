@@ -370,25 +370,25 @@ app.initGNB = function(){
     })
 }
 
-app.initInpTxt = function(){
-    var $inpWrap = app.$body.find(".inpWrap"),
-        $keypad = app.$body.find(".imgKeypad");
+// app.initInpTxt = function(){
+//     var $inpWrap = app.$body.find(".inpWrap"),
+//         $keypad = app.$body.find(".imgKeypad");
     
 
-    $inpWrap.find('.inpTxt').on('focusin', function(){
-        TweenMax.to($keypad, .35, { y:0 + '%', ease:Power2.easeOut })
-        app.$body.find(".btnLayerClose").trigger('click');
-    })
-    $inpWrap.find(".inpTxt").on("focusout", function(){
-        TweenMax.to($keypad, .35, { y: 100 + '%', ease: Power2.easeOut })
-    })
+//     $inpWrap.find('.inpTxt').on('focusin', function(){
+//         TweenMax.to($keypad, .35, { y:0 + '%', ease:Power2.easeOut })
+//         app.$body.find(".btnLayerClose").trigger('click');
+//     })
+//     $inpWrap.find(".inpTxt").on("focusout", function(){
+//         TweenMax.to($keypad, .35, { y: 100 + '%', ease: Power2.easeOut })
+//     })
     
-    $keypad.on('click', function(){
-        $inpWrap.find(".inpTxt > input[type='text']").val('840205');
-        $inpWrap.find(".inpTxt").trigger('focusout');
-        $inpWrap.find(".customeSelectTit").focus();
-    })
-}
+//     $keypad.on('click', function(){
+//         $inpWrap.find(".inpTxt > input[type='text']").val('840205');
+//         $inpWrap.find(".inpTxt").trigger('focusout');
+//         $inpWrap.find(".customeSelectTit").focus();
+//     })
+// }
 
 app.initCalculatorResult = function(){
     var $viewWrap = app.$body.find(".viewWrap"),
@@ -438,6 +438,6 @@ $(function(){
     hasJqueryObject(app.$body.find('.swiper-container-main')) && app.initMainSwiper();
     hasJqueryObject(app.$body.find("#templateLayerArea")) && app.initTemplateLayer();
     hasJqueryObject(app.$body.find("#gnb")) && app.initGNB();
-    hasJqueryObject(app.$body.find(".imgKeypad")) && app.initInpTxt();
+    // hasJqueryObject(app.$body.find(".imgKeypad")) && app.initInpTxt();
     hasJqueryObject(app.$body.find('.viewWrap')) && app.initCalculatorResult();
 })
