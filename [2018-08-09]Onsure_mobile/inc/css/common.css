@@ -481,7 +481,7 @@ img {width:100%;}
 
 .toolTipBoxTy03,
 .toolTipBoxTy04 {width:120%;position:absolute;top:-45px;left:50%;border-radius:4px;text-align:center;/*box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);*/transform:translateX(-50%);}
-.toolTipBoxTy04 {top:-60px;}
+/* .toolTipBoxTy04 {top:-60px;} */
 /* .toolTipBoxTy03:after {content:'';width:9px;height:6px;display:block;position:absolute;bottom:-4px;left:138px;background:url(../images/ico_toolTip_type_03.png) center center no-repeat;background-size:100% auto;}
 .toolTipBoxTy03 > p {font-family:NanumSquareB;font-size:14px;color:#fff;white-space:nowrap;} */
 
