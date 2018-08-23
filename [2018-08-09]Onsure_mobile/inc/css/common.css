@@ -323,7 +323,7 @@ img {width:100%;}
 .productWrap .product {width:49%;margin-left:2%;float:left;}
 .productWrap .product:first-child {margin-left:0;}
 /* .productWrap .product > a {display:block;padding:20px 13px;box-sizing:border-box;background-color:#fff;border-radius:8px;box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);text-align:center;} */
-.productWrap .product > a {display:block;border-radius:11px;box-shadow:3px 3px 8px 0 rgba(0, 0, 0, 0.2);text-align:center;}
+.productWrap .product > a {display:block;border-radius:11px;box-shadow:0px 0px 7px 0 rgba(0, 0, 0, 0.2);text-align:center;}
 .productWrap .product > a > * {display:block;}
 .productWrap .product .ico {max-width:46px;max-height:46px;margin:0 auto;}
 .productWrap .product .tit {margin-top:14px;font-family:NanumSquareB;font-size:14px;color:#333;}
