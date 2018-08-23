@@ -133,14 +133,14 @@ img {width:100%;}
 .wonColor {color:#ffff00 !important;} /* 보험료계산기 '원' Color */
 
 
-.icoWarning {width:17px;height:17px;display:inline-block;background:url(../images/ico_warning.png) center center no-repeat;background-size:100% auto;}
+.icoWarning {width:27px;height:27px;display:inline-block;background:url(../images/ico_warning.png) center center no-repeat;background-size:100% auto;}
 .icoToolTip {width:15px;height:15px;display:block;background:url(../images/ico_tooltip.png) center center no-repeat;background-size:100% auto;}
 .icoToolTip.on {background:url(../images/ico_toolTip_on.png) center center no-repeat;background-size:100% auto;}
 .icoStore {width:18px;height:18px;display:block;background:url(../images/ico_store.png) center center no-repeat;background-size:100% auto;}
 .icoMessage {width:16px;height:12px;display:block;background:url(../images/ico_message.png) center center no-repeat;background-size:100% auto;}
 .icoShare {width:15px;height:18px;display:block;background:url(../images/ico_share.png) center center no-repeat;background-size:100% auto;}
 
-.imgKeypad {position:absolute;bottom:0;left:0;transform:translateY(100%);}
+.imgKeypad {position:fixed;bottom:0;left:0;transform:translateY(100%);}
 
 .btnPrev {width:20px;height:13px;display:block;background:url(../images/btn_prev.png) center center no-repeat;background-size:100% auto;}
 .btnClose {width:15px;height:15px;display:block;background:url(../images/btn_close.png) center center no-repeat;background-size:100% auto;}
@@ -403,7 +403,7 @@ img {width:100%;}
 
 /* 보험료 계산기 */
 #container.calculator {height:100%;padding:0;position:relative;}
-#container.calculator .bannerTop {width:100%;position:absolute;top:0;left:0;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+#container.calculator .bannerTop {width:100%;position:absolute;top:0;left:0;z-index:1;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
 #container.calculator .bannerTop.type02 {padding-bottom:36px;z-index:1;}
 #container.calculator .bannerTop.type02 .bannerInpWrap {padding:0;}
 #container.calculator .bannerTop .bannerHeader {padding:18px 0;box-sizing:border-box;position:relative;}
@@ -477,7 +477,7 @@ img {width:100%;}
 .historyWrap {margin-top:20px;}
 .historyWrap .historyList .history {margin-top:20px;}
 .historyWrap .historyList .history:first-child {margin-top:0;}
-.historyWrap .historyList .history > a {display:block;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2); }
+.historyWrap .historyList .history > a {display:block;box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.2); }
 
 .toolTipBoxTy03,
 .toolTipBoxTy04 {width:120%;position:absolute;top:-45px;left:50%;border-radius:4px;text-align:center;/*box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);*/transform:translateX(-50%);}
