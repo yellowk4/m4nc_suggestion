@@ -126,11 +126,51 @@
 .swiper-wrapper {position: relative; width: 100%; height: 100%; z-index: 1; display: flex;  box-sizing: content-box;}
 .swiper-slide {-webkit-flex-shrink: 0; -ms-flex-negative: 0; flex-shrink: 0; width: 100%; height: 100%; position: relative; -webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; -o-transition-property: transform; transition-property: transform; transition-property: transform, -webkit-transform;}
 
+/* 상품 상세페이지*/
 .infoProductTitleArea {background:#5878d5; box-sizing:border-box; padding:20% 20px 10%;}
 .infoProductTitleArea .title {display:block; font-size:28px; font-weight:600; color:#fff; margin-bottom:10px;}
 .infoProductTitleArea p {color:#fff; font-size:16px; line-height:22px;}
 
-.infoProductTab {background:#fff;overflow:hidden; text-align:center;}
+.infoProductTab {background:#fff;overflow:hidden; text-align:center; margin-bottom:20px;}
 .infoProductTab li {display:inline-block; width:20%;}
 .infoProductTab li a {display:block; padding:12px 0;}
 .infoProductTab li.on a{color:#ff9600; border-bottom:2px solid #ff9600; font-weight:600;}
+
+.infoProductContWrap {padding:0 20px; box-sizing:border-box;}
+.infoProductCont {overflow:hidden; margin-bottom:45px;}
+.infoProductCont .title {display:block; font-size:20px; line-height:28px; font-weight:600; margin-bottom:5px;}
+.infoProductCont p {font-size:14px; color:#555555; margin-bottom:30px; line-height:20px;}
+
+.infoProductImg01 {position:relative; overflow:hidden; text-align:center;}
+.infoProductImg01 .bg {position:relative; animation:infoProductImg01bg 0.5s 0.5s forwards; left:-50%; opacity:0}
+.infoProductImg01 .bg img {width:90%;}
+.infoProductImg01 .number {position:absolute; top:40px; left:44%; font-size:35px; color:#484f69; animation:infoProductImg01number 0.5s 1s forwards; opacity:0; transform:scale(1.5); font-family:'NanumSquareEB';}
+.infoProductImg01 .number span {font-family:'NanumSquareEB';}
+
+@keyframes infoProductImg01bg {to {opacity:1; left:0;}}
+@keyframes infoProductImg01number {to {opacity:1; top:40px; transform:scale(1);}}
+
+
+.infoProductImg02 {position:relative; overflow:hidden; text-align:center;}
+.infoProductImg02 > span {float:left; width:50%; overflow:hidden; bottom:-50px; opacity:0; position:relative;}
+.infoProductImg02 .number {width:50%; display:block; text-align:right; position:absolute; top:0; right:0;font-family:'NanumSquareEB';font-size:30px; color:#484f69;}
+.infoProductImg02 .number span {font-family:'NanumSquareEB';}
+.infoProductImg02.on span.type01 {animation:infoProductImg02 0.5s 0.5s forwards;}
+.infoProductImg02.on span.type02 {animation:infoProductImg02 0.4s 1s forwards;}
+
+@keyframes infoProductImg02 {to {opacity:1; bottom:0;}}
+
+.infoProductImg03 {position:relative; overflow:hidden; text-align:center; opacity:0; transform:scale(0);}
+.infoProductImg03 img {width:60%;}
+.infoProductImg03.on {animation:infoProductImg03 1s 0.5s forwards;}
+
+@keyframes infoProductImg03 {to {opacity:1; transform:scale(1);}}
+
+.infoProductImg04 {overflow:hidden;}
+.infoProductImg04 .type01 {float:left; width:65%; margin-right:5%; left:-100%; opacity:1; position:relative; } 
+.infoProductImg04 .type02 {float:left; width:30%; margin-top:3%; text-align:center; font-size:35px; font-family:'NanumSquareEB'; color:#484f69; opacity:0; transform:scale(0);}
+.infoProductImg04 .type02 span { font-family:'NanumSquareEB';}
+.infoProductImg04.on .type01 {animation:infoProductImg04Type01 0.5s 0.2s forwards;}
+.infoProductImg04.on .type02 {animation:infoProductImg03 0.5s 0.7s forwards;}
+
+@keyframes infoProductImg04Type01 {to {opacity:1; left:0; }}
