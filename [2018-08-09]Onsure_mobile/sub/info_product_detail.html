@@ -124,7 +124,7 @@
             </dd>
         </dl>
         <div class="gnbBtm">
-            <img src="./inc/images/img_gnb_bottom.png" alt="" />
+            <img src="../inc/images/img_gnb_bottom.png" alt="" />
         </div>
     </div>
 </div>
@@ -148,7 +148,43 @@
       </ul>
     </div>
     <!-- // 상품정보 상세페이지 탭-->
-    <div class="imgbox"><img src="../inc/images/img_infoProduct_detail.jpg" alt="임시이미지" /></div>
+    <div class="infoProductContWrap">
+        <div class="infoProductCont">
+            <span class="title">비과세 혜택으로 <br /> 이자소득세 15.4% 면제</span>
+            <p>10년 이상유지시 비과세 혜택으로 더 많은 연금액을<br />수령할 수 있습니다. 연금저축 한도를 초과하신 분,<br />금융소득 종합과세 대상자께 추천합니다.</p>
+            <div class="infoProductImg01">
+                <span class="bg"><img src="../inc/images/img_info_product01.png" alt="" /></span>
+                <span class="number"><span class="countNum"></span>%</span>
+            </div>
+        </div>       
+        <div class="infoProductCont">
+            <span class="title">300만원 이자 발생시</span>
+            <p>- 일반과세상품 : 253만 8천원 수령 (세금 46만 2천원)<br />- 연금보험상품 : 300만원 모두수령 (세금 0원)</p>
+            <div class="infoProductImg02" id="infoProductCont02">
+                <span class="type01"><img src="../inc/images/img_info_product02.png" alt="253만 8천원" /></span>
+                <span class="type02"><img src="../inc/images/img_info_product03.png" alt="300만원" /></span>
+                <div class="number"><span class="countNum">300</span>만원</div>
+            </div>
+        </div>  
+        <div class="infoProductCont">
+            <span class="title">인터넷 가입이라<br />더많은 연금액 수령</span>
+            <p>인터넷 가입을 하시면 동일한 유형의 타 상품에 비해<br />훨씬 더 많은 연금액을 수령하실 수 있습니다. </p>
+            <div class="infoProductImg03"  id="infoProductCont03">
+                <span class="type01"><img src="../inc/images/img_info_product04.png" alt="" /></span>
+            </div>
+        </div>     
+        <div class="infoProductCont">
+            <span class="title">장기유지보너스로<br />5.5% 더 많은 환급률</span>
+            <p>매월 납입하는 적립형에 한하여 장기유지보너스를<br/>가산하여 더 많은 연금액 수령이 가능합니다. </p>
+            <div class="infoProductImg04" id="infoProductCont04">
+                <span class="type01"><img src="../inc/images/img_info_product05.png" alt="" /></span>
+                <div class="type02">
+                    <span class="countNum"></span>%
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="imgBox"><img src="../inc/images/img_infoProduct_detail.jpg" /></div>
   </div>
   <!-- // Container -->
 </div>
@@ -219,12 +255,60 @@
 <script type="text/javascript" src="../inc/js/TweenMax.min.js"></script>
 <script type="text/javascript" src="../inc/js/swiper.min.js"></script>
 <script type="text/javascript" src="../inc/js/ui.js"></script>
+<script type="text/javascript" src="../inc/js/countUp.min.js"></script>
 </body>
 <script>
+// 탭
 var $infoProductTab = $('.infoProductTab li');
 $infoProductTab.on('click', function(){
     $infoProductTab.removeClass('on');
     $(this).addClass('on');
 })
+
+// 숫자 카운트
+var options = {
+    useEasing: true, 
+    useGrouping: true, 
+    separator: ',', 
+    decimal: '.', 
+  };
+
+var infoProductImg01 = new CountUp($(".infoProductImg01 .countNum")[0], 0, 15.4, 1, 2, options);
+var infoProductImg02 = new CountUp($(".infoProductImg02 .countNum")[0], 0, 300, 0, 1.5, options);
+var infoProductImg03 = new CountUp($(".infoProductImg04 .countNum")[0], 0, 5.5, 1, 2, options);
+infoProductImg01.start();
+
+// 스크롤이벤트
+var isVisible01 = false,
+    isVisible02 = false,
+    isVisible03 = false;
+
+$('#wrap').on('scroll',function() {
+    if (checkVisible($('#infoProductCont02'))&&!isVisible01) {       
+        isVisible01=true;
+        $('.infoProductImg02').addClass('on');
+        infoProductImg02.start();        
+    }
+    if (checkVisible($('#infoProductCont03'))&&!isVisible02) {       
+        isVisible02=true;
+        $('.infoProductImg03').addClass('on');      
+    }
+    if (checkVisible($('#infoProductCont04'))&&!isVisible03) {       
+        isVisible03=true;
+        $('.infoProductImg04').addClass('on');
+        infoProductImg03.start();        
+    }
+});
+ 
+function checkVisible( elm, eval ) {
+    eval = eval || "object visible";
+    var viewportHeight = $(window).height(), // Viewport Height
+        scrolltop = $(window).scrollTop(), // Scroll Top
+        y = $(elm).offset().top + 100,
+        elementHeight = $(elm).height();   
+    
+    if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+    if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+}
 </script>
 </html>
