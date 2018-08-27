@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+<meta name="format-detection" content="telephone=no" />
+<title>한화온슈어</title>
+<style>
+    /* Reset */
+    html,body {font-size:12px;color:#000;line-height:1.2;-webkit-text-size-adjust:none;}
+    body,div,form,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,em,p,span,textarea,pre,label,fieldset,th,td,button,a,input,select,hr {margin:0;padding:0;font-family:Arial, dotum;word-break:break-all;}
+    h1,h2,h3,h4,h5,h6,strong,th {font-weight:normal;}
+    em,span,strong {font-size:100%;}
+    em,address {font-style:normal;}
+    ol,ul,dl {list-style:none;}
+    fieldset,img,hr,button {border:0;}
+    img,input,textarea,select {vertical-align:top;}
+    #wrap {text-align: center;}
+</style>
+<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<!-- Wrap -->
+<div id="wrap">
+    <img src="gate.jpg" usemap="#gate" id="gate" style="width:1123px;">
+    <map name="gate">
+        <area shape="rect" coords="376,279,526,429" href="./pc/index.html" target="_blank">
+        <area shape="rect" coords="596,279,746,429" href="./mobile/index.html" target="_blank">
+    </map>
+</div>
+<!-- //Wrap -->
+<script type="text/javascript">
+    function imgMap(){
+        $("area").each(function(){
+            var prt = $(this).parent("map").attr("name");
+            var shape = $(this).attr("shape");
+            var rw = $("#"+prt+"")[0].naturalWidth;
+            var pw = $("#"+prt+"").width();
+            if(shape == "rect"){
+                var rList = $(this).attr("data-coords").split(",");
+                var x1,y1,x2,y2;
+                x1 = rList[0];
+                y1 = rList[1];
+                x2 = rList[2];
+                y2 = rList[3];
+                var xp1 = Math.round(pw / rw * x1);
+                var yp1 = Math.round(pw / rw * y1);
+                var xp2 = Math.round(pw / rw * x2);
+                var yp2 = Math.round(pw / rw * y2);
+                this.coords = xp1+","+yp1+","+xp2+","+yp2;
+
+                
+            }else if(shape == "circle"){
+                var cList = $(this).attr("data-coords").split(",");
+                var x,y,r;
+                x = parseInt( cList[0] );
+                y = parseInt( cList[1] );
+                r = parseInt( cList[2] );
+                var rx = Math.round(pw / rw * x);
+                var ry = Math.round(pw / rw * y);
+                var rr = Math.round(pw / rw * r);
+                this.coords = rx+","+ry+","+rr
+            }
+        })
+    }
+    $("area").each( function(idx){ $(this).attr("data-coords", this.coords ) });
+    $(window).bind("load resize",imgMap);
+</script>
+</body>
+</html>

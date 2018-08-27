@@ -171,12 +171,12 @@ img {width:100%;}
 #header .headerTop .leftWrap {float:left;}
 #header .headerTop .rightWrap {float:right;}
 
-#header .headerTop .leftWrap h3 {font-family:NanumSquareB;font-size:16px;color:#222222;}
+#header .headerTop .leftWrap h3 {font-family:nsB;font-size:16px;color:#222222;}
 
 #header .headerMenuList {width:100%;position:relative;font-size:0;}
 #header .headerMenuList li {width:33%;display:inline-block;}
-#header .headerMenuList li a {display:block;padding:13px 0;box-sizing:border-box;position:relative;font-size:14px;color:#000;text-align:center;}
-#header .headerMenuList li.on a{font-family:NanumSqaureB;color:#ff8a00;}
+#header .headerMenuList li a {display:block;padding:13px 0;box-sizing:border-box;position:relative;font-family:nsR;font-size:14px;color:#000;text-align:center;}
+#header .headerMenuList li.on a{font-family:nsB;color:#ff8a00;}
 #header .headerMenuList .headerMenuLine {width:33%;height:2px;display:block;position:absolute;bottom:0;left:0;background-color:#ff8a00;}
 
 #gnb {width:85%;height:100%;position:fixed;top:0;right:0;z-index:10;background-color:#fff;transform:translateX(100%);opacity:0;}
@@ -279,7 +279,7 @@ img {width:100%;}
 
 .bannerListWrap .box {width:calc(100% - 40px);min-height:104px;position:absolute;top:20px;left:50%;z-index:-1;transform:translateX(-50%);background-color:#5878d5;border-radius:14px;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2)}
 
-.proBanner {margin-top:30px;}
+.proBanner {margin-top:50px;}
 
 .layerFloatingWrap {width:100%;position:fixed;bottom:0;left:0;z-index:5;background-color:#404751;box-shadow: 0px -5px 9px 0px rgba(0, 0, 0, 0.1); }
 .layerFloatingWrap ul {font-size:0;}
@@ -314,6 +314,10 @@ img {width:100%;}
 .btnFloatingWrap .utilList li.on > a {opacity:1;}
 .btnFloatingWrap .utilList li:first-child {margin-top:0;}
 .btnFloatingWrap .utilList li:first-child > a {border-top:none;}
+
+.productListWrap:first-child .product {overflow:hidden;}
+.productListWrap:first-child .product > a {transform:scaleX(0);/*transition:550ms transform cubic-bezier(0.7, 0.3, 0, 1)*/}
+/* .productListWrap:first-child .product.on > a {transform:translateX(0);} */
 
 .productWrap {margin-top:30px;}
 .productWrap * {line-height:1.3;}
@@ -383,9 +387,10 @@ img {width:100%;}
 .section .sectionTop ul li.on button {background-color:#ff9600;border-radius:20px;}
 .section .sectionTop ul li.on button > * {color:#fff;}
 .section .sectionCon {padding:0 0 20px;box-sizing:border-box;background-color:#f5f5f5;}
-.section .sectionCon .topTxt {padding:30px 0;box-sizing:border-box;background-color:#4f70cf;}
+.section .sectionCon .topTxt {padding:30px 0;box-sizing:border-box;background-color:#4f70cf;transform:scaleX(0);transform-origin:100% 50%;}
 .section .sectionCon .topTxt .tit {color:#ffbd70;}
 .section .sectionCon .topTxt .tit + * {color:#fff;}
+.section .sectionCon .topTxt > .inner > * {transform:translateY(30px);opacity:0;}
 
 .tagListWrap {padding:25px 0;box-sizing:border-box;position:relative;background-color:#fff;}
 .tagListWrap .tit {margin-bottom:15px;font-family:NanumSquareB;font-size:20px;color:#000;}
@@ -490,7 +495,7 @@ img {width:100%;}
 .cardWrap .cardList .card:first-child {margin-left:0;float:left;}
 .cardWrap .cardList .card > a {display:block;padding:24px 17px 58px;box-sizing:border-box;text-align:center;border-radius:4px;box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.2); }
 .cardWrap .cardList .card > a > * {display:block;}
-.cardWrap .cardList .card .tit {font-family:NanumSquareEB;font-size:14px;color:#333;}
+.cardWrap .cardList .card .tit {font-family:nsB;font-size:13px;color:#333;}
 .cardWrap .cardList .card .monthPrice {margin-top:19px;font-size:13px;color:#777;}
 .cardWrap .cardList .card .counting {margin-top:6px;font-family:NanumSquareB;font-size:20px;}
 .cardWrap .cardList .card .counting > .price {font-family:NanumSquareB;}
@@ -513,7 +518,7 @@ img {width:100%;}
 .compare.detail .btnDetailToggle.on > em {background:url(../images/arrow_select_up.png) center center no-repeat;background-size:100% auto;}
 
 .graphWrap {padding:0 15px;box-sizing:border-box;text-align:center;}
-.graphWrap h3 {font-family:NanumSquareB;font-size:16px;color:#333;}
+.graphWrap h3 {font-family:nsR;font-size:16px;color:#000;}
 .graphWrap p {margin-top:13px;font-size:14px;color:#777;}
 .graphWrap .graphInner {width:100%;margin-top:10px;position:relative;}
 .graphWrap .graphInner .left {left:0;}

@@ -94,7 +94,7 @@ app.initMainBanner = function(){
             handler(nextKey)
         }
         
-    }, 3000)
+    }, 2000)
 
     var handler = function(nextKey){
         currentKey = nextKey;
@@ -191,6 +191,27 @@ app.initMainSwiper = function(){
                 } else {
                     app.$container.removeAttr("style")
                 }
+            },
+            slideChangeTransitionEnd: function(){
+                var _this = this;
+
+                if(_this.realIndex === 1) {
+                    $(".productListWrap").eq(0).find(".product").each(function(idx){
+                        var _$this = $(this);
+                        TweenMax.to(_$this.find('> a'), .5,  {scaleX:1, delay:.1*idx, ease:Power1.easeOut})
+                    })
+                }
+
+                if(_this.realIndex === 2){
+                    TweenMax.to($(".topTxt"), .5, { scaleX:1, ease:Power1.easeOut, onComplete:function(){
+                        $(".topTxt").find(".inner > *").each(function(idx){
+                            TweenMax.to($(this), .5, { y:0, opacity:1, delay:.1 * idx, ease:Power1.easeOut })
+
+                        })
+                    }})
+
+                }
+
             }
         }
     }

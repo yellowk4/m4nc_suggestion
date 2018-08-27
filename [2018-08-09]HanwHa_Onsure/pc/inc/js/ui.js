@@ -100,7 +100,7 @@ app.initVisualListRolling = function(){
         app.visualKey = nextKey;
     }
 
-    app.timer = setInterval(app.handleVisual, 3000)
+    app.timer = setInterval(app.handleVisual, 2000)
 
 }
 
