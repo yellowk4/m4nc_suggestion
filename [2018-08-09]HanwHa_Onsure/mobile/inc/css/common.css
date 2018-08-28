@@ -111,12 +111,13 @@ input[type=text]::-ms-clear,input[type=password]::-ms-clear,input[type=text]::-m
 .clfix:after {content:"";display:block;clear:both;visibility:hidden;height:0;}
  
 body {overflow:hidden;}
+::-webkit-scrollbar {display:none;}
+* {-ms-overflow-style:none;}
 
 img {width:100%;}
 [class^="swiper-"] .swiper-wrapper {font-size:0;line-height:0;white-space:nowrap;}
 .swiper-wrapper.on {transform:none !important;}
 .swiper-container-main {padding-bottom:10px;box-sizing:border-box;overflow:hidden;}
-::-webkit-scrollbar {display:none;}
 .swiper-container-main .swiper-slide {width:100%;display:inline-block;position:absolute;top:0;left:0;opacity:0;}
 .swiper-container-main .swiper-slide:first-child {opacity:1;}
 .swiper-container-main .swiper-slide-active {position:relative;}
