@@ -178,7 +178,7 @@ app.initMainSwiper = function(){
         on: {
             init: function(){
                 $.each(this.slides, function(key, value){
-                    TweenMax.set($(value), { left: $(value).outerWidth() * key})
+                    TweenMax.set($(value), { left: $(value).outerWidth() * key, opacity:1})
                 })
             },
             slideChangeTransitionStart: function(){
@@ -262,7 +262,7 @@ app.initTemplateLayer = function(){
         this.data = getData(params.selectType);
         this.$targetNode = $("#templateLayerArea");
         this.targetNodeActiveClass = 'active';
-        console.log(this.data)
+        // console.log(this.data)
     
     }
 

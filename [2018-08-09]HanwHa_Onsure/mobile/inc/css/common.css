@@ -116,7 +116,9 @@ img {width:100%;}
 [class^="swiper-"] .swiper-wrapper {font-size:0;line-height:0;white-space:nowrap;}
 .swiper-wrapper.on {transform:none !important;}
 .swiper-container-main {padding-bottom:10px;box-sizing:border-box;overflow:hidden;}
-.swiper-container-main .swiper-slide {width:100%;display:inline-block;position:absolute;top:0;left:0;}
+::-webkit-scrollbar {display:none;}
+.swiper-container-main .swiper-slide {width:100%;display:inline-block;position:absolute;top:0;left:0;opacity:0;}
+.swiper-container-main .swiper-slide:first-child {opacity:1;}
 .swiper-container-main .swiper-slide-active {position:relative;}
 
 
@@ -151,6 +153,16 @@ img {width:100%;}
 
 
 .bgWhite {background-color:#fff !important;}
+
+
+@keyframes aniBubble {
+	from {
+		transform: translate(-50%, 0px);
+	}
+	to {
+		transform: translate(-50%, -8px);
+	}
+}
 
 
 #wrap {width:100%;height:100%;position:relative;overflow-x:hidden;background-color:#efefef;-webkit-overflow-scrolling:touch;}
@@ -396,7 +408,7 @@ img {width:100%;}
 .tagListWrap .tit {margin-bottom:15px;font-family:NanumSquareB;font-size:20px;color:#000;}
 .tagListWrap .tit + * {font-family:NanumSquareL;font-size:15px;}
 .tagListWrap .tagList li:first-child {padding-left:0;}
-.tagListWrap .inpRdo label {min-width:60px;padding:8px 15px;background-color:#fff;border:1px solid #27b2a5;border-radius:6px;color:#27b2a5;}
+.tagListWrap .inpRdo label {min-width:60px;padding:8px 12px;background-color:#fff;border:1px solid #27b2a5;border-radius:6px;color:#27b2a5;}
 .tagListWrap .inpRdo input[type="radio"]:checked + label {background-color:#27b2a5;color:#fff;}
 .tagListWrap .tagList {width:100%;margin:-10px 0 0 -10px;overflow:hidden;}
 .tagListWrap .tagList li{margin:10px 0 0 10px;float:left;}
@@ -408,7 +420,7 @@ img {width:100%;}
 
 /* 보험료 계산기 */
 #container.calculator {height:100%;padding:0;position:relative;}
-#container.calculator .bannerTop {width:100%;position:absolute;top:0;left:0;z-index:1;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
+#container.calculator .bannerTop {width:100%;position:absolute;top:0;left:0;z-index:3;padding-bottom:54px;box-sizing:border-box;background-color:#5878d5;box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);}
 #container.calculator .bannerTop.type02 {padding-bottom:36px;z-index:1;}
 #container.calculator .bannerTop.type02 .bannerInpWrap {padding:0;}
 #container.calculator .bannerTop .bannerHeader {padding:18px 0;box-sizing:border-box;position:relative;}
@@ -485,7 +497,7 @@ img {width:100%;}
 .historyWrap .historyList .history > a {display:block;box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.2); }
 
 .toolTipBoxTy03,
-.toolTipBoxTy04 {width:120%;position:absolute;top:-45px;left:50%;border-radius:4px;text-align:center;/*box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);*/transform:translateX(-50%);}
+.toolTipBoxTy04 {width:120%;position:absolute;top:-45px;left:50%;z-index:1;border-radius:4px;text-align:center;/*box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);*/transform:translateX(-50%);animation:.7s aniBubble infinite alternate linear both;}
 /* .toolTipBoxTy04 {top:-60px;} */
 /* .toolTipBoxTy03:after {content:'';width:9px;height:6px;display:block;position:absolute;bottom:-4px;left:138px;background:url(../images/ico_toolTip_type_03.png) center center no-repeat;background-size:100% auto;}
 .toolTipBoxTy03 > p {font-family:NanumSquareB;font-size:14px;color:#fff;white-space:nowrap;} */
