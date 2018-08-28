@@ -264,7 +264,7 @@
             </div>
           </div>
           <div class="radioBox">
-            <input type="radio" name="comparisonRadio" />
+            <input type="radio" name="comparisonRadio1" />
           </div>
         </li>
         <li>
@@ -284,7 +284,7 @@
             </div>
           </div>
           <div class="radioBox">
-            <input type="radio" name="comparisonRadio" />
+            <input type="radio" name="comparisonRadio2" />
           </div>
         </li>
       </ul>
@@ -360,11 +360,27 @@
       $comparisonOpen = $('.comparisonOpen'),
       $btnComparison = $('.btnComparison');
 
-  $comparisonRadio.on('click', function(){
+  /*$comparisonRadio.on('click', function(){
     $comparisonList.removeClass('on');
     $(this).closest('li').addClass('on');
     $btnComparison.addClass('on');
+  })*/
+
+  $comparisonList.on('click', function(){
+    if($(this).toggleClass('on').hasClass('on')) {
+      $(this).find('input[type="radio"]').prop('checked', true);
+    } else {
+      $(this).find('input[type="radio"]').prop('checked', false);
+    }
+    
+    if($(".radioBox").find(":checked").length > 0) {
+      $btnComparison.addClass('on')
+    } else {
+      $btnComparison.removeClass('on');
+    }
+    
   })
+
 
   $comparisonOpen.on('click', function(){
     $comparisonPopup.addClass('on');
